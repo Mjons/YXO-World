@@ -1,0 +1,1347 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Unleash Young Extraordinary Potential – YXO Workshop</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      :root {
+        --navy: #1a1f4e;
+        --orange: #f97316;
+        --orange-dark: #ea6c0a;
+        --purple: #6366f1;
+        --purple-light: #818cf8;
+        --cream: #f8f7f4;
+        --white: #ffffff;
+        --gray-light: #f1f0ed;
+        --gray-mid: #e5e4e0;
+        --text-dark: #1a1f4e;
+        --text-mid: #4b5563;
+        --text-light: #9ca3af;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "DM Sans", sans-serif;
+        color: var(--text-dark);
+        background: var(--white);
+        overflow-x: hidden;
+      }
+
+      /* ── ANNOUNCEMENT BAR ── */
+      .announcement {
+        background: var(--navy);
+        color: var(--white);
+        text-align: center;
+        padding: 10px 20px;
+        font-size: 13px;
+        font-weight: 500;
+        letter-spacing: 0.01em;
+      }
+      .announcement span {
+        color: var(--orange);
+        font-weight: 700;
+      }
+
+      /* ── NAV ── */
+      nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 16px 48px;
+        background: var(--white);
+        border-bottom: 1px solid var(--gray-mid);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+      .nav-logo {
+        width: 44px;
+        height: 44px;
+        background: var(--navy);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Syne", sans-serif;
+        font-weight: 800;
+        font-size: 13px;
+        color: var(--orange);
+        letter-spacing: 0.05em;
+      }
+      .nav-meta {
+        display: flex;
+        gap: 28px;
+        align-items: center;
+        font-size: 14px;
+        color: var(--text-mid);
+      }
+      .nav-meta span {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+      .nav-meta svg {
+        width: 14px;
+        height: 14px;
+        opacity: 0.6;
+      }
+      .btn-primary {
+        background: var(--orange);
+        color: var(--white);
+        border: none;
+        padding: 12px 24px;
+        border-radius: 100px;
+        font-family: "DM Sans", sans-serif;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        transition:
+          background 0.2s,
+          transform 0.15s;
+      }
+      .btn-primary:hover {
+        background: var(--orange-dark);
+        transform: translateY(-1px);
+      }
+
+      /* ── HERO ── */
+      .hero {
+        background: #f0effe;
+        padding: 72px 48px 64px;
+        display: grid;
+        grid-template-columns: 1fr 380px;
+        gap: 48px;
+        align-items: center;
+        min-height: 520px;
+      }
+      .hero-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        background: var(--white);
+        border: 1.5px solid var(--purple-light);
+        border-radius: 100px;
+        padding: 6px 16px;
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--purple);
+        margin-bottom: 24px;
+      }
+      .hero h1 {
+        font-family: "Syne", sans-serif;
+        font-size: clamp(40px, 5vw, 60px);
+        font-weight: 800;
+        line-height: 1.08;
+        color: var(--navy);
+        margin-bottom: 24px;
+      }
+      .hero h1 .accent-purple {
+        color: var(--purple);
+      }
+      .hero h1 .accent-orange {
+        color: var(--orange);
+      }
+      .hero-desc {
+        font-size: 16px;
+        color: var(--text-mid);
+        line-height: 1.65;
+        max-width: 480px;
+        margin-bottom: 28px;
+      }
+      .hero-features {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px 32px;
+        margin-bottom: 36px;
+      }
+      .hero-feature {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 14px;
+        font-weight: 500;
+        color: var(--text-dark);
+      }
+      .check-icon {
+        width: 20px;
+        height: 20px;
+        background: var(--purple);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+      .check-icon svg {
+        width: 11px;
+        height: 11px;
+      }
+      .hero-rocket {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 140px;
+        filter: drop-shadow(0 20px 40px rgba(99, 102, 241, 0.2));
+        animation: float 4s ease-in-out infinite;
+      }
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-16px);
+        }
+      }
+
+      /* ── TRUST STRIP ── */
+      .trust-strip {
+        border-top: 1px solid var(--gray-mid);
+        border-bottom: 1px solid var(--gray-mid);
+        padding: 24px 48px;
+        display: flex;
+        justify-content: center;
+        gap: 64px;
+        background: var(--white);
+      }
+      .trust-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 14px;
+        font-weight: 600;
+        color: var(--text-dark);
+      }
+      .trust-item span.label {
+        color: var(--text-mid);
+        font-weight: 400;
+      }
+
+      /* ── INFO CARDS ── */
+      .info-cards {
+        display: flex;
+        justify-content: center;
+        gap: 16px;
+        padding: 48px 48px;
+        background: var(--cream);
+        flex-wrap: wrap;
+      }
+      .info-card {
+        background: var(--white);
+        border-radius: 16px;
+        padding: 24px 28px;
+        text-align: center;
+        min-width: 130px;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+      }
+      .info-card-icon {
+        width: 44px;
+        height: 44px;
+        background: linear-gradient(135deg, var(--purple), var(--orange));
+        border-radius: 12px;
+        margin: 0 auto 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+      }
+      .info-card-label {
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--text-light);
+        font-weight: 600;
+        margin-bottom: 6px;
+      }
+      .info-card-value {
+        font-family: "Syne", sans-serif;
+        font-size: 15px;
+        font-weight: 700;
+        color: var(--navy);
+      }
+
+      /* ── SECTION WRAPPER ── */
+      section {
+        padding: 80px 48px;
+      }
+      .section-tag {
+        display: inline-block;
+        background: var(--gray-light);
+        border-radius: 100px;
+        padding: 6px 18px;
+        font-size: 12px;
+        font-weight: 600;
+        color: var(--text-mid);
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        margin-bottom: 16px;
+      }
+      .section-title {
+        font-family: "Syne", sans-serif;
+        font-size: clamp(28px, 4vw, 42px);
+        font-weight: 800;
+        color: var(--navy);
+        margin-bottom: 12px;
+      }
+      .section-sub {
+        font-size: 16px;
+        color: var(--text-mid);
+        line-height: 1.6;
+        max-width: 520px;
+        margin: 0 auto 48px;
+      }
+      .text-center {
+        text-align: center;
+      }
+
+      /* ── SCHEDULE ── */
+      .schedule-section {
+        background: var(--navy);
+        padding: 80px 48px;
+        color: var(--white);
+      }
+      .schedule-section .section-tag {
+        background: rgba(255, 255, 255, 0.1);
+        color: rgba(255, 255, 255, 0.7);
+      }
+      .schedule-section .section-title {
+        color: var(--white);
+      }
+      .schedule-section .section-sub {
+        color: rgba(255, 255, 255, 0.65);
+      }
+      .schedule-list {
+        max-width: 680px;
+        margin: 0 auto;
+      }
+      .schedule-item {
+        display: grid;
+        grid-template-columns: 80px 1fr;
+        gap: 20px;
+        padding: 24px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        align-items: start;
+      }
+      .schedule-item:last-child {
+        border-bottom: none;
+      }
+      .schedule-time {
+        font-family: "Syne", sans-serif;
+        font-size: 13px;
+        font-weight: 700;
+        color: var(--orange);
+        padding-top: 3px;
+        letter-spacing: 0.02em;
+      }
+      .schedule-content h4 {
+        font-family: "Syne", sans-serif;
+        font-size: 16px;
+        font-weight: 700;
+        margin-bottom: 6px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .schedule-content p {
+        font-size: 14px;
+        color: rgba(255, 255, 255, 0.65);
+        line-height: 1.6;
+      }
+      .schedule-break {
+        background: rgba(249, 115, 22, 0.15);
+        border: 1px solid rgba(249, 115, 22, 0.3);
+        border-radius: 10px;
+        padding: 14px 20px;
+        text-align: center;
+        font-size: 14px;
+        font-weight: 600;
+        color: var(--orange);
+        margin: 8px 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+      }
+
+      /* ── SKILLS GRID ── */
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        max-width: 900px;
+        margin: 0 auto;
+      }
+      .skill-card {
+        background: var(--gray-light);
+        border-radius: 16px;
+        padding: 28px 24px;
+        transition:
+          transform 0.2s,
+          box-shadow 0.2s;
+      }
+      .skill-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+      }
+      .skill-icon {
+        width: 48px;
+        height: 48px;
+        background: var(--purple);
+        border-radius: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 22px;
+        margin-bottom: 16px;
+      }
+      .skill-card h3 {
+        font-family: "Syne", sans-serif;
+        font-size: 16px;
+        font-weight: 700;
+        margin-bottom: 8px;
+        color: var(--navy);
+      }
+      .skill-card p {
+        font-size: 14px;
+        color: var(--text-mid);
+        line-height: 1.6;
+      }
+
+      /* ── MENTOR ── */
+      .mentor-section {
+        background: var(--gray-light);
+      }
+      .mentor-card {
+        max-width: 820px;
+        margin: 0 auto;
+        background: var(--white);
+        border-radius: 24px;
+        padding: 40px;
+        display: grid;
+        grid-template-columns: 260px 1fr;
+        gap: 40px;
+        align-items: start;
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.07);
+      }
+      .mentor-video {
+        background: #111;
+        border-radius: 16px;
+        aspect-ratio: 16/9;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        overflow: hidden;
+        position: relative;
+        text-decoration: none;
+      }
+      .mentor-video::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(135deg, #e52d27, #b31217);
+      }
+      .play-btn {
+        position: relative;
+        width: 52px;
+        height: 52px;
+        background: var(--white);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.2s;
+      }
+      .mentor-video:hover .play-btn {
+        transform: scale(1.1);
+      }
+      .play-btn svg {
+        width: 20px;
+        height: 20px;
+        fill: #e52d27;
+        margin-left: 3px;
+      }
+      .ted-badge {
+        position: absolute;
+        bottom: 12px;
+        left: 12px;
+        background: var(--orange);
+        color: var(--white);
+        font-size: 11px;
+        font-weight: 700;
+        padding: 4px 10px;
+        border-radius: 6px;
+      }
+      .mentor-info h3 {
+        font-family: "Syne", sans-serif;
+        font-size: 26px;
+        font-weight: 800;
+        color: var(--navy);
+        margin-bottom: 12px;
+      }
+      .mentor-info p {
+        font-size: 15px;
+        color: var(--text-mid);
+        line-height: 1.65;
+        margin-bottom: 12px;
+      }
+      .mentor-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin: 16px 0;
+      }
+      .mentor-tag {
+        border: 1.5px solid var(--gray-mid);
+        border-radius: 100px;
+        padding: 5px 14px;
+        font-size: 12px;
+        font-weight: 600;
+        color: var(--text-mid);
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+      .mentor-actions {
+        display: flex;
+        gap: 12px;
+        margin-top: 20px;
+        flex-wrap: wrap;
+      }
+      .btn-secondary {
+        background: transparent;
+        color: var(--navy);
+        border: 1.5px solid var(--gray-mid);
+        padding: 10px 20px;
+        border-radius: 100px;
+        font-family: "DM Sans", sans-serif;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        transition:
+          border-color 0.2s,
+          background 0.2s;
+      }
+      .btn-secondary:hover {
+        border-color: var(--purple);
+        background: #f5f4ff;
+      }
+
+      /* ── PRICING ── */
+      .pricing-section {
+        background: var(--orange);
+        text-align: center;
+        padding: 80px 48px;
+      }
+      .pricing-section .section-title {
+        color: var(--white);
+      }
+      .pricing-section .section-sub {
+        color: rgba(255, 255, 255, 0.85);
+        max-width: 540px;
+      }
+      .pricing-card {
+        background: var(--white);
+        border-radius: 24px;
+        padding: 40px;
+        max-width: 400px;
+        margin: 0 auto;
+        text-align: left;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+      }
+      .pricing-label {
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: var(--text-light);
+        font-weight: 700;
+        margin-bottom: 8px;
+      }
+      .pricing-amount {
+        font-family: "Syne", sans-serif;
+        font-size: 64px;
+        font-weight: 800;
+        color: var(--navy);
+        line-height: 1;
+        margin-bottom: 4px;
+      }
+      .pricing-note {
+        font-size: 13px;
+        color: var(--text-light);
+        margin-bottom: 28px;
+      }
+      .pricing-features {
+        list-style: none;
+        margin-bottom: 28px;
+      }
+      .pricing-features li {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 14px;
+        color: var(--text-dark);
+        padding: 10px 0;
+        border-bottom: 1px solid var(--gray-light);
+      }
+      .pricing-features li:last-child {
+        border-bottom: none;
+      }
+      .pricing-features .green-check {
+        width: 20px;
+        height: 20px;
+        background: #22c55e;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+      .pricing-features .green-check svg {
+        width: 11px;
+        height: 11px;
+      }
+      .pricing-cta {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+        font-size: 16px;
+        padding: 16px;
+      }
+      .limited-note {
+        text-align: center;
+        margin-top: 14px;
+        font-size: 13px;
+        color: rgba(255, 255, 255, 0.75);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+      }
+
+      /* ── FAQ ── */
+      .faq-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        max-width: 860px;
+        margin: 0 auto;
+      }
+      .faq-card {
+        background: var(--white);
+        border: 1.5px solid var(--gray-mid);
+        border-radius: 16px;
+        padding: 24px;
+        transition: border-color 0.2s;
+      }
+      .faq-card:hover {
+        border-color: var(--purple-light);
+      }
+      .faq-card h4 {
+        font-family: "Syne", sans-serif;
+        font-size: 15px;
+        font-weight: 700;
+        margin-bottom: 10px;
+        color: var(--navy);
+      }
+      .faq-card p {
+        font-size: 14px;
+        color: var(--text-mid);
+        line-height: 1.65;
+      }
+
+      /* ── FOOTER ── */
+      footer {
+        background: var(--navy);
+        color: var(--white);
+        padding: 48px 48px 24px;
+      }
+      .footer-inner {
+        display: flex;
+        justify-content: space-between;
+        gap: 40px;
+        padding-bottom: 32px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        margin-bottom: 24px;
+      }
+      .footer-left p {
+        font-size: 14px;
+        color: rgba(255, 255, 255, 0.55);
+        margin-top: 10px;
+        max-width: 260px;
+        line-height: 1.6;
+      }
+      .footer-right h5 {
+        font-family: "Syne", sans-serif;
+        font-size: 14px;
+        font-weight: 700;
+        margin-bottom: 14px;
+      }
+      .footer-right a {
+        display: block;
+        font-size: 14px;
+        color: var(--orange);
+        text-decoration: none;
+        margin-bottom: 6px;
+      }
+      .footer-right a:hover {
+        text-decoration: underline;
+      }
+      .footer-right .contact-name {
+        color: rgba(255, 255, 255, 0.8);
+        font-weight: 500;
+        margin-bottom: 2px;
+        font-size: 14px;
+      }
+      .footer-copy {
+        text-align: center;
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.35);
+      }
+
+      /* ── RESPONSIVE ── */
+      @media (max-width: 768px) {
+        nav {
+          padding: 14px 20px;
+        }
+        .nav-meta {
+          display: none;
+        }
+        .hero {
+          grid-template-columns: 1fr;
+          padding: 48px 20px;
+        }
+        .hero-rocket {
+          font-size: 80px;
+          order: -1;
+        }
+        section {
+          padding: 60px 20px;
+        }
+        .schedule-section {
+          padding: 60px 20px;
+        }
+        .skills-grid {
+          grid-template-columns: 1fr;
+        }
+        .mentor-card {
+          grid-template-columns: 1fr;
+        }
+        .faq-grid {
+          grid-template-columns: 1fr;
+        }
+        .trust-strip {
+          padding: 20px;
+          gap: 24px;
+          flex-wrap: wrap;
+        }
+        .info-cards {
+          padding: 32px 20px;
+        }
+        .footer-inner {
+          flex-direction: column;
+        }
+        .pricing-section {
+          padding: 60px 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ANNOUNCEMENT -->
+    <div class="announcement">
+      <span>Limited spots available</span> — Secure your teen's seat before
+      registration closes
+    </div>
+
+    <!-- NAV -->
+    <nav>
+      <div class="nav-logo">YXO</div>
+      <div class="nav-meta">
+        <span>
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <rect x="3" y="4" width="18" height="18" rx="2" />
+            <line x1="16" y1="2" x2="16" y2="6" />
+            <line x1="8" y1="2" x2="8" y2="6" />
+            <line x1="3" y1="10" x2="21" y2="10" />
+          </svg>
+          Feb 28, 2026
+        </span>
+        <span>
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+            <circle cx="12" cy="10" r="3" />
+          </svg>
+          New York City
+        </span>
+        <span>
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <circle cx="12" cy="12" r="10" />
+            <polyline points="12 6 12 12 16 14" />
+          </svg>
+          9 AM – 3 PM
+        </span>
+      </div>
+      <a
+        href="https://buy.stripe.com/bJeeVd7SGd4Na7sg2ycV20t"
+        class="btn-primary"
+        target="_blank"
+        >Register Now →</a
+      >
+    </nav>
+
+    <!-- HERO -->
+    <div class="hero">
+      <div class="hero-left">
+        <div class="hero-badge">⚡ Full Day Workshop for Ages 13–17</div>
+        <h1>
+          Unleash Young<br /><span class="accent-purple">Extraordinary</span
+          ><br /><span class="accent-orange">Potential</span>
+        </h1>
+        <p class="hero-desc">
+          A full-day workshop for young minds (ages 13–17) to explore
+          exponential thinking, discover their purpose, and learn how to shape
+          the future.
+        </p>
+        <div class="hero-features">
+          <div class="hero-feature">
+            <div class="check-icon">
+              <svg viewBox="0 0 12 12" fill="none">
+                <polyline
+                  points="2,6 5,9 10,3"
+                  stroke="white"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+            AI & Technology Mastery
+          </div>
+          <div class="hero-feature">
+            <div class="check-icon">
+              <svg viewBox="0 0 12 12" fill="none">
+                <polyline
+                  points="2,6 5,9 10,3"
+                  stroke="white"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+            Entrepreneurial Thinking
+          </div>
+          <div class="hero-feature">
+            <div class="check-icon">
+              <svg viewBox="0 0 12 12" fill="none">
+                <polyline
+                  points="2,6 5,9 10,3"
+                  stroke="white"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+            Purpose Discovery Workshop
+          </div>
+          <div class="hero-feature">
+            <div class="check-icon">
+              <svg viewBox="0 0 12 12" fill="none">
+                <polyline
+                  points="2,6 5,9 10,3"
+                  stroke="white"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+            Expert-Led Sessions
+          </div>
+        </div>
+        <a
+          href="https://buy.stripe.com/bJeeVd7SGd4Na7sg2ycV20t"
+          class="btn-primary"
+          target="_blank"
+          style="font-size: 15px; padding: 16px 28px"
+          >Reserve Your Teen's Spot →</a
+        >
+      </div>
+      <div class="hero-rocket">🚀</div>
+    </div>
+
+    <!-- TRUST STRIP -->
+    <div class="trust-strip">
+      <div class="trust-item">
+        🎓 Led by
+        <strong style="margin-left: 4px">Singularity University</strong
+        >&nbsp;<span class="label">Alumni</span>
+      </div>
+      <div class="trust-item">
+        👥 <strong>Small Group</strong>&nbsp;<span class="label"
+          >Experience</span
+        >
+      </div>
+    </div>
+
+    <!-- INFO CARDS -->
+    <div class="info-cards">
+      <div class="info-card">
+        <div class="info-card-icon">📅</div>
+        <div class="info-card-label">Date</div>
+        <div class="info-card-value">Feb 28, 2026</div>
+      </div>
+      <div class="info-card">
+        <div class="info-card-icon">👥</div>
+        <div class="info-card-label">Ages</div>
+        <div class="info-card-value">13–17 Years</div>
+      </div>
+      <div class="info-card">
+        <div class="info-card-icon">⏰</div>
+        <div class="info-card-label">Time</div>
+        <div class="info-card-value">9 AM – 3 PM</div>
+      </div>
+      <div class="info-card">
+        <div class="info-card-icon">📍</div>
+        <div class="info-card-label">Location</div>
+        <div class="info-card-value">NYC</div>
+      </div>
+      <div class="info-card">
+        <div class="info-card-icon">💰</div>
+        <div class="info-card-label">Investment</div>
+        <div class="info-card-value">$200</div>
+      </div>
+    </div>
+
+    <!-- SCHEDULE -->
+    <div class="schedule-section">
+      <div class="text-center">
+        <div class="section-tag">The Day's Journey</div>
+        <h2 class="section-title" style="color: white">
+          Your Day of Discovery
+        </h2>
+        <p class="section-sub">
+          Six hours of hands-on learning, collaboration, and discovery
+        </p>
+      </div>
+      <div class="schedule-list">
+        <div class="schedule-item">
+          <div class="schedule-time">9:00 AM</div>
+          <div class="schedule-content">
+            <h4>🎯 Welcome & Icebreaker: Your Extraordinary Future</h4>
+            <p>
+              Build rapport, set expectations, create a safe learning
+              environment. Overview of the day: "Today we're going to think like
+              the people building the future"
+            </p>
+          </div>
+        </div>
+        <div class="schedule-item">
+          <div class="schedule-time">9:30 AM</div>
+          <div class="schedule-content">
+            <h4>🌍 What's Happening in the World</h4>
+            <p>
+              The World is Changing Faster Than Ever. Explore the Exponential
+              Age (Moore's Law, Law of Accelerating Returns), the 7 Mindsets of
+              an Extraordinary Life.
+            </p>
+          </div>
+        </div>
+        <div class="schedule-break">
+          ⚡ 15-Minute Stretch Break — Healthy Snacks & Movement
+        </div>
+        <div class="schedule-item">
+          <div class="schedule-time">10:30 AM</div>
+          <div class="schedule-content">
+            <h4>🤖 AI Is a Superpower You Can Use</h4>
+            <p>
+              Learn what AI can do today with live examples. Discover how
+              workflows change with AI for school, projects, and careers. Master
+              prompts that 10x your creativity & productivity.
+            </p>
+          </div>
+        </div>
+        <div class="schedule-item">
+          <div class="schedule-time">11:15 AM</div>
+          <div class="schedule-content">
+            <h4>🚀 Entrepreneurship: Starting Your Own Company</h4>
+            <p>
+              Learn the differences between Entrepreneur vs Employee mindsets.
+              Understand what a company actually is and why teens today can
+              start real businesses for almost $0.
+            </p>
+          </div>
+        </div>
+        <div class="schedule-break">🍽️ 12:00 PM — Lunch Break</div>
+        <div class="schedule-item">
+          <div class="schedule-time">1:00 PM</div>
+          <div class="schedule-content">
+            <h4>💡 Design Your Extraordinary Life Roadmap</h4>
+            <p>
+              Explore your personal strengths and sense of purpose. Discover
+              your MTP (Massive Transformative Purpose).
+            </p>
+          </div>
+        </div>
+        <div class="schedule-item">
+          <div class="schedule-time">1:45 PM</div>
+          <div class="schedule-content">
+            <h4>🔍 Understanding the World & Spotting Real Problems</h4>
+            <p>
+              Extraordinary people solve meaningful problems. Learn how to spot
+              problems in your city, community, and school. Develop a Problem
+              Solving Mindset.
+            </p>
+          </div>
+        </div>
+        <div class="schedule-item">
+          <div class="schedule-time">2:00 PM</div>
+          <div class="schedule-content">
+            <h4>📱 The Device as Your Tool</h4>
+            <p>
+              Learn to use technology as a powerful tool for creation and
+              problem-solving.
+            </p>
+          </div>
+        </div>
+        <div class="schedule-item">
+          <div class="schedule-time">2:15 PM</div>
+          <div class="schedule-content">
+            <h4>🤝 Hands-on Teambuilding Activity</h4>
+            <p>
+              A fun, hands-on team challenge that teaches design thinking,
+              collaboration, and iteration!
+            </p>
+          </div>
+        </div>
+        <div class="schedule-item">
+          <div class="schedule-time">2:45 PM</div>
+          <div class="schedule-content">
+            <h4>🎓 Closing Ceremony and Certificates</h4>
+            <p>
+              Celebrate your extraordinary journey and receive your certificate
+              of completion!
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SKILLS -->
+    <section class="text-center">
+      <div class="section-tag">What They'll Walk Away With</div>
+      <h2 class="section-title">Skills That Last a Lifetime</h2>
+      <p class="section-sub">
+        By the end of this workshop, your teen will have tangible skills and a
+        new perspective on their potential
+      </p>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <div class="skill-icon">🧠</div>
+          <h3>Exponential Thinking</h3>
+          <p>
+            Understanding how to think 10x bigger and leverage accelerating
+            change instead of being disrupted by it
+          </p>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon">🤖</div>
+          <h3>AI Fluency</h3>
+          <p>
+            Practical skills to use AI tools for school projects, creative work,
+            and problem-solving
+          </p>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon">💡</div>
+          <h3>Entrepreneurial Mindset</h3>
+          <p>
+            The confidence to identify problems, create solutions, and
+            understand how businesses work
+          </p>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon">🧭</div>
+          <h3>Personal Roadmap</h3>
+          <p>
+            A clear sense of their strengths, interests, and a vision for their
+            extraordinary future
+          </p>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon">👥</div>
+          <h3>Collaboration Skills</h3>
+          <p>
+            Experience working in teams on real challenges using design thinking
+            methodology
+          </p>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon">🏆</div>
+          <h3>Certificate of Completion</h3>
+          <p>
+            Recognition of their achievement to add to college applications and
+            portfolios
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- MENTOR -->
+    <section class="mentor-section text-center">
+      <div class="section-tag">Expert Guidance</div>
+      <h2 class="section-title">Meet Your Workshop Mentor</h2>
+      <div class="mentor-card" style="text-align: left">
+        <div class="mentor-video" style="cursor: default">
+          <iframe
+            width="100%"
+            height="100%"
+            src="https://www.youtube.com/embed/nEmjcz5LS-o"
+            title="Natasha Tsakos TED Talk"
+            frameborder="0"
+            allow="
+              accelerometer;
+              autoplay;
+              clipboard-write;
+              encrypted-media;
+              gyroscope;
+              picture-in-picture;
+            "
+            allowfullscreen
+            style="
+              position: absolute;
+              inset: 0;
+              width: 100%;
+              height: 100%;
+              z-index: 1;
+            "
+          ></iframe>
+        </div>
+        <div class="mentor-info">
+          <h3>Natasha Tsakos</h3>
+          <p>
+            Award-winning director, performer, and producer pioneering the
+            intersection of arts, technology, innovation, and space exploration.
+          </p>
+          <p>
+            Founder of SPACE WONDERS, the first theatrical company for space.
+            Her production <em>Paraboles</em> is the first performance in
+            microgravity.
+          </p>
+          <div class="mentor-tags">
+            <div class="mentor-tag">🎓 Singularity University</div>
+            <div class="mentor-tag">🏆 Google/NASA Winner</div>
+            <div class="mentor-tag">🚀 NASA Certified</div>
+            <div class="mentor-tag">🔬 MIT Program</div>
+          </div>
+          <p>
+            Natasha has inspired students worldwide, including 300 young women
+            at Space Center Houston about the future of space experiences.
+          </p>
+          <div class="mentor-actions">
+            <a
+              href="https://www.youtube.com/watch?v=nEmjcz5LS-o"
+              target="_blank"
+              class="btn-primary"
+              >▶ Watch TED Talk</a
+            >
+            <a
+              href="https://openexo.com/yxo-team"
+              target="_blank"
+              class="btn-secondary"
+              >👥 Full Team</a
+            >
+            <a
+              href="https://buy.stripe.com/bJeeVd7SGd4Na7sg2ycV20t"
+              target="_blank"
+              class="btn-primary"
+              >🎟️ Secure Your Spot</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <div class="pricing-section">
+      <h2 class="section-title">Give Your Teen an Unforgettable Day</h2>
+      <p class="section-sub" style="margin: 0 auto 40px">
+        An investment in skills, mindset, and confidence that will pay dividends
+        for years to come
+      </p>
+      <div class="pricing-card">
+        <div class="pricing-label">Workshop Fee</div>
+        <div class="pricing-amount">$200</div>
+        <div class="pricing-note">One-time investment</div>
+        <ul class="pricing-features">
+          <li>
+            <div class="green-check">
+              <svg viewBox="0 0 12 12" fill="none">
+                <polyline
+                  points="2,6 5,9 10,3"
+                  stroke="white"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+            Full 6-hour workshop experience
+          </li>
+          <li>
+            <div class="green-check">
+              <svg viewBox="0 0 12 12" fill="none">
+                <polyline
+                  points="2,6 5,9 10,3"
+                  stroke="white"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+            All materials and workbooks
+          </li>
+          <li>
+            <div class="green-check">
+              <svg viewBox="0 0 12 12" fill="none">
+                <polyline
+                  points="2,6 5,9 10,3"
+                  stroke="white"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+            Healthy snacks and lunch
+          </li>
+          <li>
+            <div class="green-check">
+              <svg viewBox="0 0 12 12" fill="none">
+                <polyline
+                  points="2,6 5,9 10,3"
+                  stroke="white"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+            Certificate of completion
+          </li>
+        </ul>
+        <a
+          href="https://buy.stripe.com/bJeeVd7SGd4Na7sg2ycV20t"
+          target="_blank"
+          class="btn-primary pricing-cta"
+          >Secure Your Teen's Spot →</a
+        >
+      </div>
+      <p class="limited-note">⚠️ Limited spots available</p>
+    </div>
+
+    <!-- FAQ -->
+    <section class="text-center" style="background: var(--gray-light)">
+      <div class="section-tag">Questions?</div>
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <div class="faq-grid" style="margin-top: 40px">
+        <div class="faq-card">
+          <h4>What should my teen bring?</h4>
+          <p>Bring a laptop & Charger.</p>
+        </div>
+        <div class="faq-card">
+          <h4>Is this appropriate for all teens 13–17?</h4>
+          <p>
+            Yes, our curriculum is designed to engage teens across this age
+            range with activities that adapt to different maturity levels.
+          </p>
+        </div>
+        <div class="faq-card">
+          <h4>What if my teen is shy or introverted?</h4>
+          <p>
+            Our facilitators are experienced at creating a welcoming
+            environment. Activities are designed to include everyone
+            comfortably.
+          </p>
+        </div>
+        <div class="faq-card">
+          <h4>Can parents attend?</h4>
+          <p>
+            This is a teen-only experience to allow them to engage freely.
+            Parents are welcome at the closing ceremony at 2:45 PM.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-left">
+          <div
+            class="nav-logo"
+            style="background: rgba(255, 255, 255, 0.1); color: var(--orange)"
+          >
+            YXO
+          </div>
+          <p>Empowering the next generation of innovators</p>
+        </div>
+        <div class="footer-right">
+          <h5>Questions? Get in touch</h5>
+          <div class="contact-name">Lily Safrani</div>
+          <a href="mailto:lily@exospeakers.com">lily@exospeakers.com</a>
+          <div class="contact-name" style="margin-top: 10px">
+            Oliver Sabiston
+          </div>
+          <a href="mailto:oliver.sabiston@openexo.com"
+            >oliver.sabiston@openexo.com</a
+          >
+        </div>
+      </div>
+      <div class="footer-copy">
+        © 2026 Young Extraordinary Odyssey. All rights reserved.
+      </div>
+    </footer>
+  </body>
+</html>
