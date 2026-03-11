@@ -1760,6 +1760,7 @@
           ageRange: document.getElementById("ws-age").value,
           space: document.getElementById("ws-space").value,
         };
+        console.log("Submitting workshop data:", JSON.stringify(data));
         fetch("https://formspree.io/f/xeergvol", {
           method: "POST",
           headers: {
@@ -1769,17 +1770,22 @@
           body: JSON.stringify(data),
         })
           .then(function (response) {
+            console.log("Workshop response status:", response.status);
             if (response.ok) {
               document.getElementById("workshopForm").style.display = "none";
               document.getElementById("workshopSuccess").style.display =
                 "block";
             } else {
+              response.text().then(function (t) {
+                console.error("Workshop error body:", t);
+              });
               alert("Something went wrong. Please try again.");
               submitBtn.disabled = false;
               submitBtn.textContent = "Submit Request";
             }
           })
-          .catch(function () {
+          .catch(function (err) {
+            console.error("Workshop fetch error:", err);
             alert("Network error. Please check your connection and try again.");
             submitBtn.disabled = false;
             submitBtn.textContent = "Submit Request";
@@ -1792,6 +1798,7 @@
         submitBtn.disabled = true;
         submitBtn.textContent = "Joining...";
         var email = document.getElementById("wl-email").value;
+        console.log("Submitting waitlist email:", email);
         fetch("https://formspree.io/f/mbdzoqln", {
           method: "POST",
           headers: {
@@ -1801,17 +1808,22 @@
           body: JSON.stringify({ email: email }),
         })
           .then(function (response) {
+            console.log("Waitlist response status:", response.status);
             if (response.ok) {
               document.getElementById("waitlistForm").style.display = "none";
               document.getElementById("waitlistSuccess").style.display =
                 "block";
             } else {
+              response.text().then(function (t) {
+                console.error("Waitlist error body:", t);
+              });
               alert("Something went wrong. Please try again.");
               submitBtn.disabled = false;
               submitBtn.textContent = "Join Waitlist";
             }
           })
-          .catch(function () {
+          .catch(function (err) {
+            console.error("Waitlist fetch error:", err);
             alert("Network error. Please check your connection and try again.");
             submitBtn.disabled = false;
             submitBtn.textContent = "Join Waitlist";
