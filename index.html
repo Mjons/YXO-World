@@ -123,10 +123,11 @@
         background: #f0effe;
         padding: 72px 48px 64px;
         display: grid;
-        grid-template-columns: 1fr 380px;
+        grid-template-columns: minmax(0, 600px) 380px;
         gap: 48px;
         align-items: center;
         min-height: 520px;
+        justify-content: center;
       }
       .hero-badge {
         display: inline-flex;
@@ -164,9 +165,10 @@
       }
       .hero-features {
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 10px 32px;
+        grid-template-columns: auto auto;
+        gap: 10px 40px;
         margin-bottom: 36px;
+        justify-content: start;
       }
       .hero-feature {
         display: flex;
@@ -1747,6 +1749,9 @@
 
       function submitWorkshop(e) {
         e.preventDefault();
+        var submitBtn = e.target.querySelector('button[type="submit"]');
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Sending...";
         var data = {
           name: document.getElementById("ws-name").value,
           email: document.getElementById("ws-email").value,
@@ -1755,17 +1760,62 @@
           ageRange: document.getElementById("ws-age").value,
           space: document.getElementById("ws-space").value,
         };
-        console.log("Workshop request:", data);
-        document.getElementById("workshopForm").style.display = "none";
-        document.getElementById("workshopSuccess").style.display = "block";
+        fetch("https://formspree.io/f/xeergvol", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify(data),
+        })
+          .then(function (response) {
+            if (response.ok) {
+              document.getElementById("workshopForm").style.display = "none";
+              document.getElementById("workshopSuccess").style.display =
+                "block";
+            } else {
+              alert("Something went wrong. Please try again.");
+              submitBtn.disabled = false;
+              submitBtn.textContent = "Submit Request";
+            }
+          })
+          .catch(function () {
+            alert("Network error. Please check your connection and try again.");
+            submitBtn.disabled = false;
+            submitBtn.textContent = "Submit Request";
+          });
       }
 
       function submitWaitlist(e) {
         e.preventDefault();
+        var submitBtn = e.target.querySelector('button[type="submit"]');
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Joining...";
         var email = document.getElementById("wl-email").value;
-        console.log("Waitlist signup:", email);
-        document.getElementById("waitlistForm").style.display = "none";
-        document.getElementById("waitlistSuccess").style.display = "block";
+        fetch("https://formspree.io/f/mbdzoqln", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({ email: email }),
+        })
+          .then(function (response) {
+            if (response.ok) {
+              document.getElementById("waitlistForm").style.display = "none";
+              document.getElementById("waitlistSuccess").style.display =
+                "block";
+            } else {
+              alert("Something went wrong. Please try again.");
+              submitBtn.disabled = false;
+              submitBtn.textContent = "Join Waitlist";
+            }
+          })
+          .catch(function () {
+            alert("Network error. Please check your connection and try again.");
+            submitBtn.disabled = false;
+            submitBtn.textContent = "Join Waitlist";
+          });
       }
     </script>
 
