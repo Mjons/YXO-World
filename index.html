@@ -71,18 +71,12 @@
         z-index: 100;
       }
       .nav-logo {
-        width: 44px;
-        height: 44px;
-        background: var(--navy);
-        border-radius: 50%;
         display: flex;
         align-items: center;
-        justify-content: center;
-        font-family: "Syne", sans-serif;
-        font-weight: 800;
-        font-size: 13px;
-        color: var(--orange);
-        letter-spacing: 0.05em;
+      }
+      .nav-logo img {
+        height: 44px;
+        width: auto;
       }
       .nav-meta {
         display: flex;
@@ -200,7 +194,6 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 140px;
         filter: drop-shadow(0 20px 40px rgba(99, 102, 241, 0.2));
         animation: float 4s ease-in-out infinite;
       }
@@ -722,21 +715,243 @@
         color: rgba(255, 255, 255, 0.35);
       }
 
+      /* ── CTA SECTION ── */
+      .cta-section {
+        background: var(--cream);
+        text-align: center;
+        padding: 80px 48px;
+      }
+      .cta-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+        margin-top: 32px;
+      }
+      .btn-cta-large {
+        padding: 18px 36px;
+        border-radius: 100px;
+        font-family: "DM Sans", sans-serif;
+        font-size: 16px;
+        font-weight: 700;
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        transition:
+          transform 0.15s,
+          box-shadow 0.2s;
+        border: none;
+      }
+      .btn-cta-large:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+      }
+      .btn-cta-workshop {
+        background: var(--purple);
+        color: var(--white);
+      }
+      .btn-cta-waitlist {
+        background: var(--navy);
+        color: var(--white);
+      }
+
+      /* ── MODAL ── */
+      .modal-overlay {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 1000;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+      }
+      .modal-overlay.active {
+        display: flex;
+      }
+      .modal {
+        background: var(--white);
+        border-radius: 24px;
+        padding: 40px;
+        max-width: 500px;
+        width: 100%;
+        position: relative;
+        max-height: 90vh;
+        overflow-y: auto;
+        box-shadow: 0 24px 64px rgba(0, 0, 0, 0.2);
+      }
+      .modal-close {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        border: 1.5px solid var(--gray-mid);
+        background: var(--white);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+        color: var(--text-mid);
+        transition: border-color 0.2s;
+      }
+      .modal-close:hover {
+        border-color: var(--navy);
+      }
+      .modal h3 {
+        font-family: "Syne", sans-serif;
+        font-size: 24px;
+        font-weight: 800;
+        color: var(--navy);
+        margin-bottom: 8px;
+      }
+      .modal p.modal-desc {
+        font-size: 14px;
+        color: var(--text-mid);
+        line-height: 1.6;
+        margin-bottom: 24px;
+      }
+      .form-group {
+        margin-bottom: 16px;
+      }
+      .form-group label {
+        display: block;
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--text-dark);
+        margin-bottom: 6px;
+      }
+      .form-group input,
+      .form-group select {
+        width: 100%;
+        padding: 12px 16px;
+        border: 1.5px solid var(--gray-mid);
+        border-radius: 12px;
+        font-family: "DM Sans", sans-serif;
+        font-size: 14px;
+        color: var(--text-dark);
+        background: var(--white);
+        transition: border-color 0.2s;
+        outline: none;
+      }
+      .form-group input:focus,
+      .form-group select:focus {
+        border-color: var(--purple);
+      }
+      .form-group input::placeholder {
+        color: var(--text-light);
+      }
+      .form-submit {
+        width: 100%;
+        margin-top: 8px;
+        text-align: center;
+        justify-content: center;
+        font-size: 15px;
+        padding: 14px;
+      }
+      .form-success {
+        display: none;
+        text-align: center;
+        padding: 20px 0;
+      }
+      .form-success .success-icon {
+        width: 64px;
+        height: 64px;
+        background: #22c55e;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 16px;
+        font-size: 28px;
+      }
+      .form-success h4 {
+        font-family: "Syne", sans-serif;
+        font-size: 20px;
+        font-weight: 700;
+        color: var(--navy);
+        margin-bottom: 8px;
+      }
+      .form-success p {
+        font-size: 14px;
+        color: var(--text-mid);
+        line-height: 1.6;
+      }
+
       /* ── RESPONSIVE ── */
       @media (max-width: 768px) {
+        .announcement {
+          font-size: 12px;
+          padding: 8px 16px;
+        }
         nav {
-          padding: 14px 20px;
+          padding: 12px 16px;
+        }
+        .nav-logo img {
+          height: 36px;
         }
         .nav-meta {
           display: none;
         }
+        nav .btn-primary {
+          padding: 10px 18px;
+          font-size: 13px;
+        }
         .hero {
           grid-template-columns: 1fr;
-          padding: 48px 20px;
+          padding: 32px 20px 40px;
+          gap: 24px;
+          min-height: auto;
         }
         .hero-rocket {
-          font-size: 80px;
           order: -1;
+          max-width: 140px;
+          margin: 0 auto;
+        }
+        .hero-rocket img {
+          max-width: 140px !important;
+        }
+        .hero-badge {
+          font-size: 12px;
+          padding: 5px 12px;
+          margin-bottom: 16px;
+        }
+        .hero h1 {
+          font-size: 32px;
+          margin-bottom: 16px;
+        }
+        .hero-desc {
+          font-size: 14px;
+          margin-bottom: 20px;
+        }
+        .hero-features {
+          grid-template-columns: 1fr;
+          gap: 8px;
+          margin-bottom: 24px;
+        }
+        .hero-feature {
+          font-size: 13px;
+        }
+        .trust-strip {
+          padding: 16px 20px;
+          gap: 12px 24px;
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+        .trust-item {
+          font-size: 12px;
+        }
+        .info-cards {
+          padding: 32px 20px;
+          gap: 10px;
+        }
+        .info-card {
+          padding: 16px 14px;
+          min-width: 100px;
         }
         section {
           padding: 60px 20px;
@@ -749,23 +964,49 @@
         }
         .mentor-card {
           grid-template-columns: 1fr;
+          padding: 24px;
+          gap: 24px;
+        }
+        .mentor-info h3 {
+          font-size: 22px;
         }
         .faq-grid {
           grid-template-columns: 1fr;
-        }
-        .trust-strip {
-          padding: 20px;
-          gap: 24px;
-          flex-wrap: wrap;
-        }
-        .info-cards {
-          padding: 32px 20px;
         }
         .footer-inner {
           flex-direction: column;
         }
         .pricing-section {
           padding: 60px 20px;
+        }
+        .pricing-card {
+          padding: 28px;
+        }
+        .pricing-amount {
+          font-size: 48px;
+        }
+        .cta-section {
+          padding: 60px 20px;
+        }
+        .cta-buttons {
+          flex-direction: column;
+          align-items: center;
+        }
+        .modal {
+          padding: 24px;
+          border-radius: 18px;
+        }
+      }
+
+      @media (max-width: 380px) {
+        .hero h1 {
+          font-size: 28px;
+        }
+        .hero-rocket {
+          max-width: 110px;
+        }
+        .hero-rocket img {
+          max-width: 110px !important;
         }
       }
     </style>
@@ -779,7 +1020,9 @@
 
     <!-- NAV -->
     <nav>
-      <div class="nav-logo">YXO</div>
+      <div class="nav-logo">
+        <img src="official_logo.png" alt="YXO" />
+      </div>
       <div class="nav-meta">
         <span>
           <svg
@@ -907,7 +1150,13 @@
           >Reserve Your Teen's Spot →</a
         >
       </div>
-      <div class="hero-rocket">🚀</div>
+      <div class="hero-rocket">
+        <img
+          src="logo_transparent.png"
+          alt="YXO Logo"
+          style="max-width: 320px; width: 100%; height: auto"
+        />
+      </div>
     </div>
 
     <!-- TRUST STRIP -->
@@ -1315,15 +1564,217 @@
       </div>
     </section>
 
+    <!-- CTA: REQUEST & WAITLIST -->
+    <section class="cta-section">
+      <div class="section-tag">Get Involved</div>
+      <h2 class="section-title">Bring YXO to Your Community</h2>
+      <p class="section-sub" style="margin: 0 auto">
+        Want a workshop in your city? Or just want to stay in the loop? We'd
+        love to hear from you.
+      </p>
+      <div class="cta-buttons">
+        <button
+          class="btn-cta-large btn-cta-workshop"
+          onclick="openModal('workshopModal')"
+        >
+          📍 Request a Workshop in Your City
+        </button>
+        <button
+          class="btn-cta-large btn-cta-waitlist"
+          onclick="openModal('waitlistModal')"
+        >
+          📬 Join the Waitlist to Stay Informed
+        </button>
+      </div>
+    </section>
+
+    <!-- WORKSHOP REQUEST MODAL -->
+    <div class="modal-overlay" id="workshopModal">
+      <div class="modal">
+        <button class="modal-close" onclick="closeModal('workshopModal')">
+          ✕
+        </button>
+        <div id="workshopForm">
+          <h3>Request a Workshop</h3>
+          <p class="modal-desc">
+            Tell us about your city and we'll work to bring a YXO Workshop to
+            you.
+          </p>
+          <form onsubmit="submitWorkshop(event)">
+            <div class="form-group">
+              <label for="ws-name">Name</label>
+              <input
+                type="text"
+                id="ws-name"
+                placeholder="Your full name"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="ws-email">Email Address</label>
+              <input
+                type="email"
+                id="ws-email"
+                placeholder="you@example.com"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="ws-city">Your City</label>
+              <input
+                type="text"
+                id="ws-city"
+                placeholder="City, State / Country"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="ws-students">Anticipated Number of Students</label>
+              <select id="ws-students" required>
+                <option value="" disabled selected>Select a range</option>
+                <option value="8-12">8–12 students</option>
+                <option value="13-20">13–20 students</option>
+                <option value="21-30">21–30 students</option>
+                <option value="30+">30+ students</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="ws-age">Age Range of Students</label>
+              <select id="ws-age" required>
+                <option value="" disabled selected>Select age range</option>
+                <option value="10-12">10–12 years</option>
+                <option value="13-15">13–15 years</option>
+                <option value="16-17">16–17 years</option>
+                <option value="mixed">Mixed ages (10–17)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="ws-space"
+                >Do you have a living room or other space to host 8+
+                students?</label
+              >
+              <select id="ws-space" required>
+                <option value="" disabled selected>Select an option</option>
+                <option value="yes-livingroom">
+                  Yes, I have a living room
+                </option>
+                <option value="yes-other">
+                  Yes, I have another suitable space
+                </option>
+                <option value="no-need-help">
+                  No, I'd need help finding a venue
+                </option>
+              </select>
+            </div>
+            <button type="submit" class="btn-primary form-submit">
+              Submit Request →
+            </button>
+          </form>
+        </div>
+        <div class="form-success" id="workshopSuccess">
+          <div class="success-icon">✓</div>
+          <h4>Request Submitted!</h4>
+          <p>
+            Thank you for your interest in bringing YXO to your city. We'll be
+            in touch soon.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- WAITLIST MODAL -->
+    <div class="modal-overlay" id="waitlistModal">
+      <div class="modal">
+        <button class="modal-close" onclick="closeModal('waitlistModal')">
+          ✕
+        </button>
+        <div id="waitlistForm">
+          <h3>Join the Waitlist</h3>
+          <p class="modal-desc">
+            Stay informed about upcoming YXO Workshops, new cities, and early
+            registration access.
+          </p>
+          <form onsubmit="submitWaitlist(event)">
+            <div class="form-group">
+              <label for="wl-email">Email Address</label>
+              <input
+                type="email"
+                id="wl-email"
+                placeholder="you@example.com"
+                required
+              />
+            </div>
+            <button type="submit" class="btn-primary form-submit">
+              Join Waitlist →
+            </button>
+          </form>
+        </div>
+        <div class="form-success" id="waitlistSuccess">
+          <div class="success-icon">✓</div>
+          <h4>You're on the List!</h4>
+          <p>We'll keep you updated on upcoming workshops and events.</p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function openModal(id) {
+        document.getElementById(id).classList.add("active");
+        document.body.style.overflow = "hidden";
+      }
+      function closeModal(id) {
+        document.getElementById(id).classList.remove("active");
+        document.body.style.overflow = "";
+      }
+      // close on overlay click
+      document.querySelectorAll(".modal-overlay").forEach(function (overlay) {
+        overlay.addEventListener("click", function (e) {
+          if (e.target === overlay) {
+            closeModal(overlay.id);
+          }
+        });
+      });
+      // close on Escape
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") {
+          document
+            .querySelectorAll(".modal-overlay.active")
+            .forEach(function (m) {
+              closeModal(m.id);
+            });
+        }
+      });
+
+      function submitWorkshop(e) {
+        e.preventDefault();
+        var data = {
+          name: document.getElementById("ws-name").value,
+          email: document.getElementById("ws-email").value,
+          city: document.getElementById("ws-city").value,
+          students: document.getElementById("ws-students").value,
+          ageRange: document.getElementById("ws-age").value,
+          space: document.getElementById("ws-space").value,
+        };
+        console.log("Workshop request:", data);
+        document.getElementById("workshopForm").style.display = "none";
+        document.getElementById("workshopSuccess").style.display = "block";
+      }
+
+      function submitWaitlist(e) {
+        e.preventDefault();
+        var email = document.getElementById("wl-email").value;
+        console.log("Waitlist signup:", email);
+        document.getElementById("waitlistForm").style.display = "none";
+        document.getElementById("waitlistSuccess").style.display = "block";
+      }
+    </script>
+
     <!-- FOOTER -->
     <footer>
       <div class="footer-inner">
         <div class="footer-left">
-          <div
-            class="nav-logo"
-            style="background: rgba(255, 255, 255, 0.1); color: var(--orange)"
-          >
-            YXO
+          <div class="nav-logo">
+            <img src="logo_icononly.png" alt="YXO" />
           </div>
           <p>Empowering the next generation of innovators</p>
         </div>
