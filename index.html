@@ -1449,12 +1449,13 @@
               class="btn-secondary"
               >👥 Full Team</a
             >
-            <a
-              href="https://buy.stripe.com/bJeeVd7SGd4Na7sg2ycV20t"
-              target="_blank"
+            <button
               class="btn-primary"
-              >🎟️ Secure Your Spot</a
+              onclick="openModal('workshopModal')"
+              style="cursor: pointer; border: none; font-family: inherit"
             >
+              📍 Request a Workshop
+            </button>
           </div>
         </div>
       </div>
@@ -1529,12 +1530,18 @@
             Certificate of completion
           </li>
         </ul>
-        <a
-          href="https://buy.stripe.com/bJeeVd7SGd4Na7sg2ycV20t"
-          target="_blank"
+        <button
           class="btn-primary pricing-cta"
-          >Secure Your Teen's Spot →</a
+          onclick="openModal('workshopModal')"
+          style="
+            cursor: pointer;
+            border: none;
+            font-family: inherit;
+            width: 100%;
+          "
         >
+          Request a Workshop →
+        </button>
       </div>
       <p class="limited-note">⚠️ Limited spots available</p>
     </div>
