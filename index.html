@@ -823,6 +823,107 @@
         line-height: 1.6;
         margin-bottom: 24px;
       }
+
+      /* ── REGISTER CONFIRMATION MODAL ── */
+      .reg-summary {
+        background: var(--cream);
+        border-radius: 16px;
+        padding: 20px;
+        margin-bottom: 22px;
+      }
+      .reg-summary-title {
+        font-family: "Syne", sans-serif;
+        font-size: 15px;
+        font-weight: 800;
+        color: var(--navy);
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
+        margin-bottom: 14px;
+      }
+      .reg-summary-list {
+        list-style: none;
+      }
+      .reg-summary-list li {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 14px;
+        color: var(--text-mid);
+        margin-bottom: 9px;
+      }
+      .reg-summary-list li:last-child {
+        margin-bottom: 0;
+      }
+      .reg-ico {
+        width: 26px;
+        height: 26px;
+        flex: 0 0 26px;
+        background: linear-gradient(135deg, var(--purple), var(--orange));
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 13px;
+      }
+      .reg-options {
+        margin-bottom: 18px;
+      }
+      .reg-option {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        border: 1.5px solid var(--gray-mid);
+        border-radius: 12px;
+        padding: 14px 16px;
+        margin-bottom: 10px;
+        cursor: pointer;
+        transition:
+          border-color 0.2s,
+          background 0.2s;
+      }
+      .reg-option:hover {
+        border-color: var(--purple-light);
+      }
+      .reg-option.selected {
+        border-color: var(--purple);
+        background: #f5f4ff;
+      }
+      .reg-option input {
+        width: 18px;
+        height: 18px;
+        flex: 0 0 18px;
+        accent-color: var(--purple);
+        cursor: pointer;
+      }
+      .reg-option-text {
+        flex: 1;
+      }
+      .reg-option-label {
+        display: block;
+        font-size: 14px;
+        font-weight: 600;
+        color: var(--text-dark);
+      }
+      .reg-option-sub {
+        display: block;
+        font-size: 12px;
+        color: var(--text-light);
+        margin-top: 2px;
+      }
+      .reg-option-price {
+        margin-left: auto;
+        font-family: "Syne", sans-serif;
+        font-size: 18px;
+        font-weight: 800;
+        color: var(--navy);
+      }
+      .reg-note {
+        font-size: 12px;
+        color: var(--text-light);
+        text-align: center;
+        line-height: 1.6;
+        margin-top: 12px;
+      }
       .form-group {
         margin-bottom: 16px;
       }
@@ -1071,13 +1172,9 @@
           10 AM – 4 PM
         </span>
       </div>
-      <a
-        href="https://buy.stripe.com/bJe28r2ym9SBcfAbMicV20F"
-        class="btn-primary"
-        target="_blank"
-        rel="noopener"
-        >Register Here →</a
-      >
+      <button class="btn-primary" onclick="openRegisterModal('1')">
+        Register Here →
+      </button>
     </nav>
 
     <!-- HERO -->
@@ -1151,14 +1248,13 @@
             Expert-Led Sessions
           </div>
         </div>
-        <a
-          href="https://buy.stripe.com/bJe28r2ym9SBcfAbMicV20F"
+        <button
           class="btn-primary"
-          target="_blank"
-          rel="noopener"
+          onclick="openRegisterModal('1')"
           style="font-size: 15px; padding: 16px 28px"
-          >Register Now →</a
         >
+          Register Now →
+        </button>
       </div>
       <div class="hero-rocket">
         <img
@@ -1433,13 +1529,9 @@
               class="btn-secondary"
               >👥 Full Team</a
             >
-            <a
-              href="https://buy.stripe.com/bJe28r2ym9SBcfAbMicV20F"
-              target="_blank"
-              rel="noopener"
-              class="btn-primary"
-              >🎟️ Register Now</a
-            >
+            <button class="btn-primary" onclick="openRegisterModal('1')">
+              🎟️ Register Now
+            </button>
           </div>
         </div>
       </div>
@@ -1504,21 +1596,19 @@
             Certificate of completion
           </li>
         </ul>
-        <a
-          href="https://buy.stripe.com/bJe28r2ym9SBcfAbMicV20F"
-          target="_blank"
-          rel="noopener"
+        <button
           class="btn-primary pricing-cta"
-          >Register 1 Student — $300 →</a
+          onclick="openRegisterModal('1')"
         >
-        <a
-          href="https://buy.stripe.com/9B63cvdd03ud2F0cQmcV20G"
-          target="_blank"
-          rel="noopener"
+          Register 1 Student — $300 →
+        </button>
+        <button
           class="btn-secondary pricing-cta"
+          onclick="openRegisterModal('2')"
           style="margin-top: 10px"
-          >Register 2 Students — $500 →</a
         >
+          Register 2 Students — $500 →
+        </button>
       </div>
       <p class="limited-note">⚠️ Limited spots available</p>
     </div>
@@ -1710,6 +1800,52 @@
       </div>
     </div>
 
+    <!-- REGISTRATION CONFIRMATION MODAL -->
+    <div class="modal-overlay" id="registerModal">
+      <div class="modal">
+        <button class="modal-close" onclick="closeModal('registerModal')">
+          ✕
+        </button>
+        <h3>You're registering for:</h3>
+        <div class="reg-summary">
+          <div class="reg-summary-title">YXO Workshop — Austin, TX</div>
+          <ul class="reg-summary-list">
+            <li><span class="reg-ico">📅</span> Saturday, October 24, 2026</li>
+            <li><span class="reg-ico">⏰</span> 10:00 AM – 4:00 PM</li>
+            <li><span class="reg-ico">📍</span> Austin, Texas</li>
+            <li><span class="reg-ico">👥</span> Ages 13–17</li>
+          </ul>
+        </div>
+        <div class="reg-options">
+          <label class="reg-option selected">
+            <input type="radio" name="regQty" value="1" checked />
+            <span class="reg-option-text">
+              <span class="reg-option-label">1 student</span>
+              <span class="reg-option-sub"
+                >Full-day workshop, materials &amp; certificate</span
+              >
+            </span>
+            <span class="reg-option-price">$300</span>
+          </label>
+          <label class="reg-option">
+            <input type="radio" name="regQty" value="2" />
+            <span class="reg-option-text">
+              <span class="reg-option-label">2 students</span>
+              <span class="reg-option-sub">$250 each — save $100</span>
+            </span>
+            <span class="reg-option-price">$500</span>
+          </label>
+        </div>
+        <button class="btn-primary form-submit" onclick="continueToPayment()">
+          Continue to Payment →
+        </button>
+        <p class="reg-note">
+          Secure checkout is handled by Stripe. You'll confirm your details on
+          the next screen.
+        </p>
+      </div>
+    </div>
+
     <script>
       function openModal(id) {
         document.getElementById(id).classList.add("active");
@@ -1737,6 +1873,48 @@
             });
         }
       });
+
+      // ── REGISTRATION ──
+      // Both Stripe payment links live here and nowhere else.
+      var STRIPE_LINKS = {
+        1: "https://buy.stripe.com/bJe28r2ym9SBcfAbMicV20F",
+        2: "https://buy.stripe.com/9B63cvdd03ud2F0cQmcV20G",
+      };
+
+      function syncRegOptions() {
+        document
+          .querySelectorAll("#registerModal .reg-option")
+          .forEach(function (opt) {
+            var input = opt.querySelector('input[name="regQty"]');
+            opt.classList.toggle("selected", !!input && input.checked);
+          });
+      }
+
+      document
+        .querySelectorAll('#registerModal input[name="regQty"]')
+        .forEach(function (input) {
+          input.addEventListener("change", syncRegOptions);
+        });
+
+      function openRegisterModal(qty) {
+        var radio = document.querySelector(
+          '#registerModal input[name="regQty"][value="' + (qty || "1") + '"]',
+        );
+        if (radio) {
+          radio.checked = true;
+        }
+        syncRegOptions();
+        openModal("registerModal");
+      }
+
+      function continueToPayment() {
+        var checked = document.querySelector(
+          '#registerModal input[name="regQty"]:checked',
+        );
+        var url = STRIPE_LINKS[checked ? checked.value : "1"];
+        closeModal("registerModal");
+        window.open(url, "_blank", "noopener");
+      }
 
       function submitWorkshop(e) {
         e.preventDefault();

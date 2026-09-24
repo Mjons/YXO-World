@@ -1,0 +1,539 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <title>You're Registered – YXO Workshop Austin</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      :root {
+        --navy: #1a1f4e;
+        --orange: #f97316;
+        --orange-dark: #ea6c0a;
+        --purple: #6366f1;
+        --purple-light: #818cf8;
+        --cream: #f8f7f4;
+        --white: #ffffff;
+        --gray-light: #f1f0ed;
+        --gray-mid: #e5e4e0;
+        --text-dark: #1a1f4e;
+        --text-mid: #4b5563;
+        --text-light: #9ca3af;
+      }
+
+      body {
+        font-family: "DM Sans", sans-serif;
+        color: var(--text-dark);
+        background: var(--white);
+        overflow-x: hidden;
+      }
+
+      /* ── NAV ── */
+      nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 16px 48px;
+        background: var(--white);
+        border-bottom: 1px solid var(--gray-mid);
+      }
+      .nav-logo {
+        display: flex;
+        align-items: center;
+      }
+      .nav-logo img {
+        height: 44px;
+        width: auto;
+      }
+      .btn-secondary {
+        background: transparent;
+        color: var(--navy);
+        border: 1.5px solid var(--gray-mid);
+        padding: 10px 20px;
+        border-radius: 100px;
+        font-family: "DM Sans", sans-serif;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        transition:
+          border-color 0.2s,
+          background 0.2s;
+      }
+      .btn-secondary:hover {
+        border-color: var(--purple);
+        background: #f5f4ff;
+      }
+      .btn-primary {
+        background: var(--orange);
+        color: var(--white);
+        border: none;
+        padding: 14px 28px;
+        border-radius: 100px;
+        font-family: "DM Sans", sans-serif;
+        font-size: 15px;
+        font-weight: 600;
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        transition:
+          background 0.2s,
+          transform 0.15s;
+      }
+      .btn-primary:hover {
+        background: var(--orange-dark);
+        transform: translateY(-1px);
+      }
+
+      /* ── CONFIRMATION HEADER ── */
+      .confirm-hero {
+        background: var(--cream);
+        text-align: center;
+        padding: 64px 24px 56px;
+      }
+      .success-icon {
+        width: 76px;
+        height: 76px;
+        background: #22c55e;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 22px;
+        font-size: 36px;
+        color: var(--white);
+        box-shadow: 0 8px 24px rgba(34, 197, 94, 0.25);
+      }
+      .confirm-hero h1 {
+        font-family: "Syne", sans-serif;
+        font-size: 40px;
+        font-weight: 800;
+        color: var(--navy);
+        line-height: 1.15;
+        margin-bottom: 14px;
+      }
+      .confirm-hero p {
+        font-size: 16px;
+        color: var(--text-mid);
+        line-height: 1.6;
+        max-width: 520px;
+        margin: 0 auto;
+      }
+
+      /* ── BOOKING CARD ── */
+      .booking-wrap {
+        padding: 0 24px;
+        margin-top: -32px;
+        margin-bottom: 64px;
+      }
+      .booking-card {
+        background: var(--white);
+        border-radius: 24px;
+        padding: 36px;
+        max-width: 620px;
+        margin: 0 auto;
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+      }
+      .booking-label {
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: var(--text-light);
+        font-weight: 600;
+        margin-bottom: 8px;
+      }
+      .booking-title {
+        font-family: "Syne", sans-serif;
+        font-size: 24px;
+        font-weight: 800;
+        color: var(--navy);
+        margin-bottom: 24px;
+      }
+      .booking-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+        margin-bottom: 28px;
+      }
+      .booking-item {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        background: var(--cream);
+        border-radius: 14px;
+        padding: 16px;
+      }
+      .booking-ico {
+        width: 38px;
+        height: 38px;
+        flex: 0 0 38px;
+        background: linear-gradient(135deg, var(--purple), var(--orange));
+        border-radius: 11px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 17px;
+      }
+      .booking-item-label {
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--text-light);
+        font-weight: 600;
+      }
+      .booking-item-value {
+        font-family: "Syne", sans-serif;
+        font-size: 15px;
+        font-weight: 700;
+        color: var(--navy);
+        margin-top: 2px;
+      }
+      .booking-actions {
+        text-align: center;
+      }
+
+      /* ── NEXT STEPS ── */
+      .next-section {
+        padding: 0 24px 72px;
+      }
+      .next-inner {
+        max-width: 620px;
+        margin: 0 auto;
+      }
+      .next-heading {
+        font-family: "Syne", sans-serif;
+        font-size: 22px;
+        font-weight: 800;
+        color: var(--navy);
+        margin-bottom: 18px;
+      }
+      .next-list {
+        list-style: none;
+        margin-bottom: 40px;
+      }
+      .next-list li {
+        display: flex;
+        gap: 14px;
+        padding: 16px 0;
+        border-bottom: 1px solid var(--gray-mid);
+      }
+      .next-list li:last-child {
+        border-bottom: none;
+      }
+      .next-num {
+        width: 26px;
+        height: 26px;
+        flex: 0 0 26px;
+        background: var(--purple);
+        color: var(--white);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 13px;
+        font-weight: 700;
+      }
+      .next-list h4 {
+        font-family: "Syne", sans-serif;
+        font-size: 15px;
+        font-weight: 700;
+        color: var(--navy);
+        margin-bottom: 4px;
+      }
+      .next-list p {
+        font-size: 14px;
+        color: var(--text-mid);
+        line-height: 1.65;
+      }
+      .callout {
+        background: var(--gray-light);
+        border-left: 3px solid var(--orange);
+        border-radius: 12px;
+        padding: 20px 22px;
+        margin-bottom: 20px;
+      }
+      .callout h4 {
+        font-family: "Syne", sans-serif;
+        font-size: 15px;
+        font-weight: 700;
+        color: var(--navy);
+        margin-bottom: 6px;
+      }
+      .callout p {
+        font-size: 14px;
+        color: var(--text-mid);
+        line-height: 1.65;
+      }
+
+      /* ── FOOTER ── */
+      footer {
+        background: var(--navy);
+        color: var(--white);
+        padding: 48px 48px 24px;
+      }
+      .footer-inner {
+        display: flex;
+        justify-content: space-between;
+        gap: 40px;
+        padding-bottom: 32px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        margin-bottom: 24px;
+      }
+      .footer-left p {
+        font-size: 14px;
+        color: rgba(255, 255, 255, 0.55);
+        margin-top: 10px;
+        max-width: 260px;
+        line-height: 1.6;
+      }
+      .footer-right h5 {
+        font-family: "Syne", sans-serif;
+        font-size: 14px;
+        font-weight: 700;
+        margin-bottom: 14px;
+      }
+      .footer-right a {
+        display: block;
+        font-size: 14px;
+        color: var(--orange);
+        text-decoration: none;
+        margin-bottom: 6px;
+      }
+      .footer-right a:hover {
+        text-decoration: underline;
+      }
+      .footer-right .contact-name {
+        color: rgba(255, 255, 255, 0.8);
+        font-weight: 500;
+        margin-bottom: 2px;
+        font-size: 14px;
+      }
+      .footer-copy {
+        text-align: center;
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.35);
+      }
+
+      @media (max-width: 768px) {
+        nav {
+          padding: 12px 20px;
+        }
+        .confirm-hero {
+          padding: 48px 20px 52px;
+        }
+        .confirm-hero h1 {
+          font-size: 30px;
+        }
+        .booking-card {
+          padding: 26px;
+        }
+        .booking-grid {
+          grid-template-columns: 1fr;
+        }
+        footer {
+          padding: 40px 20px 20px;
+        }
+        .footer-inner {
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- NAV -->
+    <nav>
+      <a href="/" class="nav-logo">
+        <img src="logo_transparent.png" alt="YXO" />
+      </a>
+      <a href="/" class="btn-secondary">← Back to yxo.world</a>
+    </nav>
+
+    <!-- CONFIRMATION -->
+    <div class="confirm-hero">
+      <div class="success-icon">✓</div>
+      <h1>You're registered.</h1>
+      <p>
+        Your spot at the Austin YXO Workshop is confirmed. A receipt is on its
+        way to the email address you used at checkout.
+      </p>
+    </div>
+
+    <div class="booking-wrap">
+      <div class="booking-card">
+        <div class="booking-label">Your registration</div>
+        <div class="booking-title">YXO Workshop — Austin, Texas</div>
+        <div class="booking-grid">
+          <div class="booking-item">
+            <div class="booking-ico">📅</div>
+            <div>
+              <div class="booking-item-label">Date</div>
+              <div class="booking-item-value">Saturday, October 24, 2026</div>
+            </div>
+          </div>
+          <div class="booking-item">
+            <div class="booking-ico">⏰</div>
+            <div>
+              <div class="booking-item-label">Time</div>
+              <div class="booking-item-value">10:00 AM – 4:00 PM</div>
+            </div>
+          </div>
+          <div class="booking-item">
+            <div class="booking-ico">📍</div>
+            <div>
+              <div class="booking-item-label">Location</div>
+              <div class="booking-item-value">Austin, TX</div>
+            </div>
+          </div>
+          <div class="booking-item">
+            <div class="booking-ico">👥</div>
+            <div>
+              <div class="booking-item-label">Ages</div>
+              <div class="booking-item-value">13–17 Years</div>
+            </div>
+          </div>
+        </div>
+        <div class="booking-actions">
+          <button class="btn-primary" onclick="downloadInvite()">
+            📅 Add to Calendar
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- NEXT STEPS -->
+    <div class="next-section">
+      <div class="next-inner">
+        <h2 class="next-heading">What happens next</h2>
+        <ul class="next-list">
+          <li>
+            <div class="next-num">1</div>
+            <div>
+              <h4>Your receipt arrives by email</h4>
+              <p>
+                Stripe sends this automatically, usually within a few minutes.
+                If it hasn't shown up, check your spam folder before getting in
+                touch.
+              </p>
+            </div>
+          </li>
+          <li>
+            <div class="next-num">2</div>
+            <div>
+              <h4>We'll email you the venue details</h4>
+              <p>
+                The YXO team will follow up with the exact address, parking and
+                drop-off instructions, and a short welcome pack closer to the
+                date.
+              </p>
+            </div>
+          </li>
+          <li>
+            <div class="next-num">3</div>
+            <div>
+              <h4>Your teen turns up ready to build</h4>
+              <p>
+                Doors open shortly before 10:00 AM. The day runs through to 4:00
+                PM with breaks built in.
+              </p>
+            </div>
+          </li>
+        </ul>
+
+        <h2 class="next-heading">Good to know</h2>
+        <div class="callout">
+          <h4>What to bring</h4>
+          <p>A laptop and charger. Everything else is provided.</p>
+        </div>
+        <div class="callout">
+          <h4>Parents are welcome at the close</h4>
+          <p>
+            The workshop itself is a teen-only experience so students can engage
+            freely, but parents are invited to the closing ceremony at 3:50 PM.
+          </p>
+        </div>
+        <div class="callout">
+          <h4>Need to change something?</h4>
+          <p>
+            If you need to transfer your spot or have questions about the day,
+            email us using the contacts below and we'll sort it out.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-left">
+          <div class="nav-logo">
+            <img src="logo_icononly.png" alt="YXO" />
+          </div>
+          <p>Empowering the next generation of innovators</p>
+        </div>
+        <div class="footer-right">
+          <h5>Questions? Get in touch</h5>
+          <div class="contact-name">Lily Safrani</div>
+          <a href="mailto:lily@exospeakers.com">lily@exospeakers.com</a>
+          <div class="contact-name" style="margin-top: 10px">
+            Oliver Sabiston
+          </div>
+          <a href="mailto:oliver.sabiston@openexo.com"
+            >oliver.sabiston@openexo.com</a
+          >
+        </div>
+      </div>
+      <div class="footer-copy">
+        © 2026 Young Extraordinary Odyssey. All rights reserved.
+      </div>
+    </footer>
+
+    <script>
+      // Oct 24 2026 is still US Central Daylight Time (UTC-5), so
+      // 10:00 AM – 4:00 PM local is 15:00 – 21:00 UTC.
+      function downloadInvite() {
+        var ics = [
+          "BEGIN:VCALENDAR",
+          "VERSION:2.0",
+          "PRODID:-//YXO World//Workshop//EN",
+          "BEGIN:VEVENT",
+          "UID:yxo-austin-2026-10-24@yxo.world",
+          "DTSTAMP:20260101T000000Z",
+          "DTSTART:20261024T150000Z",
+          "DTEND:20261024T210000Z",
+          "SUMMARY:YXO Workshop — Austin, TX",
+          "LOCATION:Austin, Texas",
+          "DESCRIPTION:A full-day workshop for ages 13–17. Bring a laptop and charger. Venue details to follow by email. Parents are welcome at the closing ceremony at 3:50 PM.",
+          "URL:https://yxo.world",
+          "END:VEVENT",
+          "END:VCALENDAR",
+        ].join("\r\n");
+
+        var blob = new Blob([ics], { type: "text/calendar;charset=utf-8" });
+        var link = document.createElement("a");
+        link.href = URL.createObjectURL(blob);
+        link.download = "yxo-workshop-austin.ics";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        URL.revokeObjectURL(link.href);
+      }
+    </script>
+  </body>
+</html>
