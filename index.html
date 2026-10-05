@@ -211,7 +211,10 @@
         padding: 72px 48px 64px;
         display: grid;
         grid-template-columns: minmax(0, 560px) 380px;
-        gap: 45px;
+        grid-template-areas:
+          "left logo"
+          "left quote";
+        gap: 24px 45px;
         align-items: center;
         min-height: 520px;
         justify-content: center;
@@ -279,12 +282,98 @@
         width: 11px;
         height: 11px;
       }
+      .hero-left {
+        grid-area: left;
+      }
       .hero-rocket {
+        grid-area: logo;
         display: flex;
         align-items: center;
         justify-content: center;
         filter: drop-shadow(0 20px 40px rgba(99, 102, 241, 0.2));
         animation: float 4s ease-in-out infinite;
+      }
+
+      /* ── TESTIMONIALS ── */
+      .testimonials {
+        grid-area: quote;
+        background: var(--white);
+        border-radius: 20px;
+        padding: 22px 24px 16px;
+        box-shadow: 0 8px 28px rgba(99, 102, 241, 0.12);
+        position: relative;
+      }
+      .testimonials::before {
+        content: "\201C";
+        position: absolute;
+        top: -14px;
+        left: 20px;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--purple), var(--orange));
+        color: var(--white);
+        font-family: "Syne", sans-serif;
+        font-size: 30px;
+        line-height: 48px;
+        text-align: center;
+      }
+      .testimonial-track {
+        display: grid;
+      }
+      .testimonial {
+        grid-area: 1 / 1;
+        align-self: center;
+        opacity: 0;
+        visibility: hidden;
+        transition:
+          opacity 0.6s ease,
+          visibility 0.6s;
+      }
+      .testimonial.active {
+        opacity: 1;
+        visibility: visible;
+      }
+      .testimonial p {
+        font-size: 14px;
+        line-height: 1.6;
+        color: var(--text-dark);
+        font-style: italic;
+        margin-bottom: 8px;
+      }
+      .testimonial cite {
+        font-style: normal;
+        font-size: 13px;
+        font-weight: 700;
+        color: var(--purple);
+      }
+      .testimonial-dots {
+        display: flex;
+        justify-content: center;
+        gap: 6px;
+        margin-top: 12px;
+      }
+      .testimonial-dots button {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        border: none;
+        background: var(--gray-mid);
+        cursor: pointer;
+        padding: 0;
+        transition:
+          background 0.2s,
+          width 0.2s;
+      }
+      .testimonial-dots button.active {
+        background: var(--orange);
+        width: 20px;
+        border-radius: 100px;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .testimonial {
+          transition: none;
+        }
       }
       @keyframes float {
         0%,
@@ -1099,12 +1188,15 @@
         }
         .hero {
           grid-template-columns: 1fr;
+          grid-template-areas:
+            "logo"
+            "left"
+            "quote";
           padding: 32px 20px 40px;
           gap: 24px;
           min-height: auto;
         }
         .hero-rocket {
-          order: -1;
           max-width: 140px;
           margin: 0 auto;
         }
@@ -1352,6 +1444,38 @@
           fetchpriority="high"
           style="max-width: 320px; width: 100%; height: auto"
         />
+      </div>
+      <div
+        class="testimonials"
+        role="region"
+        aria-roledescription="carousel"
+        aria-label="What parents are saying"
+      >
+        <div class="testimonial-track">
+          <blockquote class="testimonial active">
+            <p>
+              This program changed my son's life. I'm a total stand for YxO.
+            </p>
+            <cite>— John</cite>
+          </blockquote>
+          <blockquote class="testimonial">
+            <p>
+              Incredible day of learning for the kids — and wow, what a
+              privilege! Truly grateful and appreciative.
+            </p>
+            <cite>— Julie</cite>
+          </blockquote>
+          <blockquote class="testimonial">
+            <p>
+              Thanks for creating such a wonderful opportunity for our teens.
+              Not only was it very engaging, the sense of community around it
+              was rewarding. Looking forward to more insights as we continue to
+              explore this new era.
+            </p>
+            <cite>— Shuchi</cite>
+          </blockquote>
+        </div>
+        <div class="testimonial-dots"></div>
       </div>
     </div>
 
@@ -1964,6 +2088,57 @@
             });
         }
       });
+
+      // ── TESTIMONIALS ──
+      (function () {
+        var box = document.querySelector(".testimonials");
+        var slides = box.querySelectorAll(".testimonial");
+        var dotsWrap = box.querySelector(".testimonial-dots");
+        var current = 0;
+        var timer = null;
+
+        var dots = Array.prototype.map.call(slides, function (_, i) {
+          var dot = document.createElement("button");
+          dot.type = "button";
+          dot.setAttribute("aria-label", "Show testimonial " + (i + 1));
+          dot.addEventListener("click", function () {
+            show(i);
+            start();
+          });
+          dotsWrap.appendChild(dot);
+          return dot;
+        });
+
+        function show(i) {
+          current = i;
+          slides.forEach(function (s, j) {
+            s.classList.toggle("active", j === i);
+            s.setAttribute("aria-hidden", j === i ? "false" : "true");
+          });
+          dots.forEach(function (d, j) {
+            d.classList.toggle("active", j === i);
+          });
+        }
+        function start() {
+          clearInterval(timer);
+          timer = setInterval(function () {
+            show((current + 1) % slides.length);
+          }, 7000);
+        }
+        function stop() {
+          clearInterval(timer);
+        }
+
+        box.addEventListener("mouseenter", stop);
+        box.addEventListener("mouseleave", start);
+        box.addEventListener("focusin", stop);
+        box.addEventListener("focusout", start);
+
+        show(0);
+        if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+          start();
+        }
+      })();
 
       // ── REGISTRATION ──
       // Both Stripe payment links live here and nowhere else.
