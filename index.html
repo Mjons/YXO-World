@@ -385,6 +385,105 @@
         }
       }
 
+      .testimonial-link {
+        display: inline-block;
+        margin-left: 10px;
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--orange);
+        text-decoration: none;
+      }
+      .testimonial-link:hover {
+        text-decoration: underline;
+      }
+
+      /* ── FEATURED STORY ── */
+      .story-section {
+        background: var(--white);
+        padding: 72px 48px;
+        scroll-margin-top: 76px;
+      }
+      .story-inner {
+        max-width: 760px;
+        margin: 0 auto;
+      }
+      .story-headline {
+        font-family: "Syne", sans-serif;
+        font-size: clamp(28px, 4vw, 42px);
+        font-weight: 800;
+        line-height: 1.15;
+        color: var(--navy);
+        margin-bottom: 48px;
+      }
+      .story-headline .accent-orange {
+        color: var(--orange);
+      }
+      .story-card {
+        background: var(--cream);
+        border-radius: 24px;
+        padding: 40px 40px 32px;
+        text-align: left;
+        position: relative;
+      }
+      .story-card::before {
+        content: "\201C";
+        position: absolute;
+        top: -20px;
+        left: 32px;
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--purple), var(--orange));
+        color: var(--white);
+        font-family: "Syne", sans-serif;
+        font-size: 40px;
+        line-height: 64px;
+        text-align: center;
+      }
+      .story-card blockquote p {
+        font-size: 16px;
+        line-height: 1.75;
+        color: var(--text-mid);
+        margin-bottom: 16px;
+      }
+      .story-card blockquote p:first-child {
+        font-size: 18px;
+        font-weight: 600;
+        color: var(--text-dark);
+      }
+      .story-author {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-top: 24px;
+        padding-top: 20px;
+        border-top: 1px solid var(--gray-mid);
+      }
+      .story-avatar {
+        width: 44px;
+        height: 44px;
+        flex: 0 0 44px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--purple), var(--orange));
+        color: var(--white);
+        font-family: "Syne", sans-serif;
+        font-size: 15px;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .story-name {
+        font-family: "Syne", sans-serif;
+        font-size: 15px;
+        font-weight: 700;
+        color: var(--navy);
+      }
+      .story-meta {
+        font-size: 13px;
+        color: var(--text-light);
+      }
+
       /* ── TRUST STRIP ── */
       .trust-strip {
         border-top: 1px solid var(--gray-mid);
@@ -1224,6 +1323,24 @@
         .hero-feature {
           font-size: 13px;
         }
+        .story-section {
+          padding: 56px 20px;
+        }
+        .story-headline {
+          margin-bottom: 40px;
+        }
+        .story-card {
+          padding: 36px 22px 24px;
+        }
+        .story-card::before {
+          left: 22px;
+        }
+        .story-card blockquote p {
+          font-size: 15px;
+        }
+        .story-card blockquote p:first-child {
+          font-size: 16px;
+        }
         .trust-strip {
           padding: 16px 20px;
           gap: 12px 24px;
@@ -1454,9 +1571,13 @@
         <div class="testimonial-track">
           <blockquote class="testimonial active">
             <p>
-              This program changed my son's life. I'm a total stand for YxO.
+              He walked into the program knowing a little about AI and walked
+              out completely inspired by it. … It helped Ben discover a passion.
             </p>
-            <cite>— John</cite>
+            <cite>— John Gleber, YxO NYC</cite>
+            <a class="testimonial-link" href="#bens-story"
+              >Read Ben's story ↓</a
+            >
           </blockquote>
           <blockquote class="testimonial">
             <p>
@@ -1478,6 +1599,47 @@
         <div class="testimonial-dots"></div>
       </div>
     </div>
+
+    <!-- FEATURED STORY -->
+    <section class="story-section text-center" id="bens-story">
+      <div class="story-inner">
+        <div class="section-tag">A Parent's Story</div>
+        <h2 class="story-headline">
+          “It helped Ben
+          <span class="accent-orange">discover a passion.</span>”
+        </h2>
+        <figure class="story-card">
+          <blockquote>
+            <p>YXO was genuinely transformative for our son, Ben.</p>
+            <p>
+              He walked into the program knowing a little about AI and walked
+              out completely inspired by it. Something just clicked. YXO didn’t
+              simply teach him how to use AI, it showed him what was possible
+              and gave him the confidence to start exploring, creating, and
+              learning on his own.
+            </p>
+            <p>
+              The change since then has been incredible. Ben is constantly
+              experimenting with AI, building things, trying new tools, and
+              coming to us excited about what he’s discovered. It has opened up
+              an entirely new world for him and sparked a level of curiosity and
+              excitement that, as parents, is amazing to watch.
+            </p>
+            <p>
+              There are plenty of programs that teach kids new skills. YXO did
+              something much more meaningful. It helped Ben discover a passion.
+            </p>
+          </blockquote>
+          <figcaption class="story-author">
+            <div class="story-avatar" aria-hidden="true">JG</div>
+            <div>
+              <div class="story-name">John Gleber</div>
+              <div class="story-meta">Ben’s dad · YxO NYC</div>
+            </div>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
 
     <!-- TRUST STRIP -->
     <div class="trust-strip">
