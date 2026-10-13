@@ -2258,6 +2258,27 @@
                 required
               />
             </div>
+            <div class="form-group">
+              <label for="wl-source">How did you hear about YXO?</label>
+              <select id="wl-source" required>
+                <option value="" disabled selected>Select one</option>
+                <option>Friend or family</option>
+                <option>School or teacher</option>
+                <option>Social media</option>
+                <option>WhatsApp group</option>
+                <option>Google search</option>
+                <option>A past YXO workshop</option>
+                <option>OpenExO / Singularity community</option>
+                <option>Other</option>
+              </select>
+              <input
+                type="text"
+                id="wl-source-other"
+                placeholder="Tell us where"
+                style="margin-top: 8px"
+                hidden
+              />
+            </div>
             <button type="submit" class="btn-primary form-submit">
               Join Waitlist →
             </button>
@@ -2432,8 +2453,8 @@
       // Formspree endpoints. Which inbox receives each form is set in the
       // Formspree account that owns it — see FORMS.md.
       var FORM_ENDPOINTS = {
-        workshop: "https://formspree.io/f/xeergvol",
-        waitlist: "https://formspree.io/f/mbdzoqln",
+        workshop: "https://formspree.io/f/mvkzwwjk",
+        waitlist: "https://formspree.io/f/mzedjjql",
       };
 
       function syncRegOptions() {
@@ -2510,6 +2531,16 @@
           });
       }
 
+      // Show a text box when "Other" is picked for "How did you hear".
+      document
+        .getElementById("wl-source")
+        .addEventListener("change", function () {
+          var other = document.getElementById("wl-source-other");
+          other.hidden = this.value !== "Other";
+          other.required = !other.hidden;
+          if (!other.hidden) other.focus();
+        });
+
       function submitWaitlist(e) {
         e.preventDefault();
         var submitBtn = e.target.querySelector('button[type="submit"]');
@@ -2520,8 +2551,13 @@
           email: document.getElementById("wl-email").value,
           city: document.getElementById("wl-city").value,
           stateCountry: document.getElementById("wl-region").value,
+          heardFrom: document.getElementById("wl-source").value,
           _subject: "New YXO waitlist signup",
         };
+        if (data.heardFrom === "Other") {
+          data.heardFrom =
+            "Other: " + document.getElementById("wl-source-other").value;
+        }
         fetch(FORM_ENDPOINTS.waitlist, {
           method: "POST",
           headers: {

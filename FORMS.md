@@ -4,10 +4,12 @@ The site has two forms. Both send their answers to **Formspree** (formspree.io),
 
 | Form             | Button on the site                      | What it asks                                                    | Formspree form ID |
 | ---------------- | --------------------------------------- | --------------------------------------------------------------- | ----------------- |
-| Waitlist         | "📬 Join the Waitlist to Stay Informed" | Name, email, city, state/country                                | `mbdzoqln`        |
-| Workshop request | "📍 Request a Workshop in Your City"    | Name, email, city, number of students, age range, hosting space | `xeergvol`        |
+| Waitlist         | "📬 Join the Waitlist to Stay Informed" | Name, email, city, state/country, how they heard about YXO      | `mzedjjql`        |
+| Workshop request | "📍 Request a Workshop in Your City"    | Name, email, city, number of students, age range, hosting space | `mvkzwwjk`        |
 
-**The website code does not decide whose inbox gets the emails.** That is set inside the Formspree account that created the form. Right now both forms belong to Oliver's Formspree account, so the submissions go to him.
+**The website code does not decide whose inbox gets the emails.** That is set inside the Formspree account that created the form. Both forms are now in our own Formspree account. (They used to be in Oliver's, under the IDs `mbdzoqln` and `xeergvol`; older submissions are still stored there.)
+
+To change the "How did you hear about YXO?" choices, search `index.html` for `wl-source` and edit the `<option>` lines. Keep the `Other` option, because picking it shows the type-your-own box.
 
 ---
 
