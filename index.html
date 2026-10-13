@@ -702,69 +702,114 @@
         background: var(--gray-light);
       }
       .mentor-card {
-        max-width: 820px;
+        max-width: 960px;
         margin: 0 auto;
         background: var(--white);
         border-radius: 24px;
-        padding: 40px;
-        display: grid;
-        grid-template-columns: 260px 1fr;
-        gap: 40px;
-        align-items: start;
+        overflow: hidden;
         box-shadow: 0 4px 24px rgba(0, 0, 0, 0.07);
       }
       .mentor-video {
+        display: block;
+        width: 100%;
+        padding: 0;
+        border: 0;
         background: #111;
-        border-radius: 16px;
         aspect-ratio: 16/9;
-        display: flex;
-        align-items: center;
-        justify-content: center;
         cursor: pointer;
         overflow: hidden;
         position: relative;
-        text-decoration: none;
       }
-      .mentor-video::before {
+      .mentor-video img,
+      .mentor-video iframe {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+      .mentor-video img {
+        object-fit: cover;
+        transition: transform 0.4s;
+      }
+      .mentor-video::after {
         content: "";
         position: absolute;
         inset: 0;
-        background: linear-gradient(135deg, #e52d27, #b31217);
+        background: linear-gradient(
+          to top,
+          rgba(0, 0, 0, 0.45),
+          rgba(0, 0, 0, 0) 45%
+        );
+        pointer-events: none;
+      }
+      .mentor-video.playing {
+        cursor: default;
+      }
+      .mentor-video.playing::after {
+        display: none;
+      }
+      .mentor-video:hover img {
+        transform: scale(1.03);
       }
       .play-btn {
-        position: relative;
-        width: 52px;
-        height: 52px;
-        background: var(--white);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+        width: 84px;
+        height: 84px;
+        background: var(--orange);
         border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
         transition: transform 0.2s;
       }
-      .mentor-video:hover .play-btn {
-        transform: scale(1.1);
+      .mentor-video:hover .play-btn,
+      .mentor-video:focus-visible .play-btn {
+        transform: translate(-50%, -50%) scale(1.08);
       }
       .play-btn svg {
-        width: 20px;
-        height: 20px;
-        fill: #e52d27;
-        margin-left: 3px;
+        width: 30px;
+        height: 30px;
+        fill: var(--white);
+        margin-left: 5px;
       }
       .ted-badge {
         position: absolute;
-        bottom: 12px;
-        left: 12px;
-        background: var(--orange);
+        bottom: 20px;
+        left: 24px;
+        z-index: 1;
         color: var(--white);
+        font-size: 14px;
+        font-weight: 600;
+        text-align: left;
+        text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
+      }
+      .ted-badge strong {
+        display: inline-block;
+        background: #e62b1e;
         font-size: 11px;
-        font-weight: 700;
-        padding: 4px 10px;
-        border-radius: 6px;
+        font-weight: 800;
+        letter-spacing: 0.04em;
+        padding: 3px 8px;
+        border-radius: 4px;
+        margin-right: 8px;
+        text-shadow: none;
+      }
+      .mentor-info {
+        display: grid;
+        grid-template-columns: 1fr 260px;
+        gap: 40px;
+        padding: 36px 40px 40px;
+        text-align: left;
       }
       .mentor-info h3 {
         font-family: "Syne", sans-serif;
-        font-size: 26px;
+        font-size: 30px;
         font-weight: 800;
         color: var(--navy);
         margin-bottom: 12px;
@@ -779,7 +824,7 @@
         display: flex;
         flex-wrap: wrap;
         gap: 8px;
-        margin: 16px 0;
+        margin-bottom: 20px;
       }
       .mentor-tag {
         border: 1.5px solid var(--gray-mid);
@@ -794,9 +839,11 @@
       }
       .mentor-actions {
         display: flex;
-        gap: 12px;
-        margin-top: 20px;
-        flex-wrap: wrap;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .mentor-actions > * {
+        justify-content: center;
       }
       .btn-secondary {
         background: transparent;
@@ -1368,12 +1415,29 @@
           grid-template-columns: 1fr;
         }
         .mentor-card {
+          border-radius: 18px;
+        }
+        .mentor-info {
           grid-template-columns: 1fr;
           padding: 24px;
-          gap: 24px;
+          gap: 8px;
         }
         .mentor-info h3 {
-          font-size: 22px;
+          font-size: 24px;
+        }
+        .play-btn {
+          width: 64px;
+          height: 64px;
+        }
+        .play-btn svg {
+          width: 24px;
+          height: 24px;
+          margin-left: 4px;
+        }
+        .ted-badge {
+          bottom: 12px;
+          left: 14px;
+          font-size: 12px;
         }
         .faq-grid {
           grid-template-columns: 1fr;
@@ -1599,6 +1663,78 @@
         <div class="testimonial-dots"></div>
       </div>
     </div>
+
+    <!-- MENTOR -->
+    <section class="mentor-section text-center" id="mentor">
+      <div class="section-tag">Expert Guidance</div>
+      <h2 class="section-title">Meet Your Workshop Mentor</h2>
+      <div class="mentor-card">
+        <button
+          type="button"
+          class="mentor-video"
+          data-video-id="nEmjcz5LS-o"
+          aria-label="Play Natasha Tsakos's TEDx talk"
+        >
+          <img
+            src="https://i.ytimg.com/vi/nEmjcz5LS-o/maxresdefault.jpg"
+            alt=""
+            width="1280"
+            height="720"
+            loading="lazy"
+          />
+          <span class="play-btn" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M6 4l15 8-15 8z" /></svg>
+          </span>
+          <span class="ted-badge"
+            ><strong>TEDx</strong>Watch Natasha's talk</span
+          >
+        </button>
+        <div class="mentor-info">
+          <div>
+            <h3>Natasha Tsakos</h3>
+            <p>
+              Award-winning director, performer, and producer pioneering the
+              intersection of arts, technology, innovation, and space
+              exploration.
+            </p>
+            <p>
+              Founder of SPACE WONDERS, the first theatrical company for space.
+              Her production <em>Paraboles</em> is the first performance in
+              microgravity.
+            </p>
+            <p>
+              Natasha has inspired students worldwide, including 300 young women
+              at Space Center Houston about the future of space experiences.
+            </p>
+          </div>
+          <div>
+            <div class="mentor-tags">
+              <div class="mentor-tag">🎓 Singularity University</div>
+              <div class="mentor-tag">🏆 Google/NASA Winner</div>
+              <div class="mentor-tag">🚀 NASA Certified</div>
+              <div class="mentor-tag">🔬 MIT Program</div>
+            </div>
+            <div class="mentor-actions">
+              <button class="btn-primary" onclick="openRegisterModal('1')">
+                🎟️ Register Now
+              </button>
+              <a
+                href="https://openexo.com/yxo-team"
+                target="_blank"
+                class="btn-secondary"
+                >👥 Full Team</a
+              >
+              <a
+                href="https://www.youtube.com/watch?v=nEmjcz5LS-o"
+                target="_blank"
+                class="btn-secondary"
+                >▶ Watch on YouTube</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- FEATURED STORY -->
     <section class="story-section text-center" id="bens-story">
@@ -1837,79 +1973,6 @@
             Recognition of their achievement to add to college applications and
             portfolios
           </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- MENTOR -->
-    <section class="mentor-section text-center">
-      <div class="section-tag">Expert Guidance</div>
-      <h2 class="section-title">Meet Your Workshop Mentor</h2>
-      <div class="mentor-card" style="text-align: left">
-        <div class="mentor-video" style="cursor: default">
-          <iframe
-            width="100%"
-            height="100%"
-            src="https://www.youtube.com/embed/nEmjcz5LS-o"
-            title="Natasha Tsakos TED Talk"
-            loading="lazy"
-            frameborder="0"
-            allow="
-              accelerometer;
-              autoplay;
-              clipboard-write;
-              encrypted-media;
-              gyroscope;
-              picture-in-picture;
-            "
-            allowfullscreen
-            style="
-              position: absolute;
-              inset: 0;
-              width: 100%;
-              height: 100%;
-              z-index: 1;
-            "
-          ></iframe>
-        </div>
-        <div class="mentor-info">
-          <h3>Natasha Tsakos</h3>
-          <p>
-            Award-winning director, performer, and producer pioneering the
-            intersection of arts, technology, innovation, and space exploration.
-          </p>
-          <p>
-            Founder of SPACE WONDERS, the first theatrical company for space.
-            Her production <em>Paraboles</em> is the first performance in
-            microgravity.
-          </p>
-          <div class="mentor-tags">
-            <div class="mentor-tag">🎓 Singularity University</div>
-            <div class="mentor-tag">🏆 Google/NASA Winner</div>
-            <div class="mentor-tag">🚀 NASA Certified</div>
-            <div class="mentor-tag">🔬 MIT Program</div>
-          </div>
-          <p>
-            Natasha has inspired students worldwide, including 300 young women
-            at Space Center Houston about the future of space experiences.
-          </p>
-          <div class="mentor-actions">
-            <a
-              href="https://www.youtube.com/watch?v=nEmjcz5LS-o"
-              target="_blank"
-              class="btn-primary"
-              >▶ Watch TED Talk</a
-            >
-            <a
-              href="https://openexo.com/yxo-team"
-              target="_blank"
-              class="btn-secondary"
-              >👥 Full Team</a
-            >
-            <button class="btn-primary" onclick="openRegisterModal('1')">
-              🎟️ Register Now
-            </button>
-          </div>
         </div>
       </div>
     </section>
@@ -2156,11 +2219,42 @@
           </p>
           <form onsubmit="submitWaitlist(event)">
             <div class="form-group">
+              <label for="wl-name">Your Name</label>
+              <input
+                type="text"
+                id="wl-name"
+                placeholder="First and last name"
+                autocomplete="name"
+                required
+              />
+            </div>
+            <div class="form-group">
               <label for="wl-email">Email Address</label>
               <input
                 type="email"
                 id="wl-email"
                 placeholder="you@example.com"
+                autocomplete="email"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="wl-city">City</label>
+              <input
+                type="text"
+                id="wl-city"
+                placeholder="e.g. Austin"
+                autocomplete="address-level2"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="wl-region">State / Country</label>
+              <input
+                type="text"
+                id="wl-region"
+                placeholder="e.g. Texas, USA"
+                autocomplete="address-level1"
                 required
               />
             </div>
@@ -2302,11 +2396,44 @@
         }
       })();
 
+      // ── MENTOR VIDEO ──
+      // Shows a thumbnail first and only loads YouTube's player on click,
+      // so the page stays fast.
+      document.querySelectorAll(".mentor-video").forEach(function (box) {
+        box.addEventListener(
+          "click",
+          function () {
+            var iframe = document.createElement("iframe");
+            iframe.src =
+              "https://www.youtube-nocookie.com/embed/" +
+              box.dataset.videoId +
+              "?autoplay=1&rel=0";
+            iframe.title = "Natasha Tsakos TEDx talk";
+            iframe.allow =
+              "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+            iframe.allowFullscreen = true;
+            var player = document.createElement("div");
+            player.className = "mentor-video playing";
+            player.appendChild(iframe);
+            box.replaceWith(player);
+          },
+          { once: true },
+        );
+      });
+
       // ── REGISTRATION ──
       // Both Stripe payment links live here and nowhere else.
       var STRIPE_LINKS = {
         1: "https://buy.stripe.com/bJe28r2ym9SBcfAbMicV20F",
         2: "https://buy.stripe.com/9B63cvdd03ud2F0cQmcV20G",
+      };
+
+      // ── FORMS ──
+      // Formspree endpoints. Which inbox receives each form is set in the
+      // Formspree account that owns it — see FORMS.md.
+      var FORM_ENDPOINTS = {
+        workshop: "https://formspree.io/f/xeergvol",
+        waitlist: "https://formspree.io/f/mbdzoqln",
       };
 
       function syncRegOptions() {
@@ -2357,7 +2484,7 @@
           ageRange: document.getElementById("ws-age").value,
           space: document.getElementById("ws-space").value,
         };
-        fetch("https://formspree.io/f/xeergvol", {
+        fetch(FORM_ENDPOINTS.workshop, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -2388,14 +2515,20 @@
         var submitBtn = e.target.querySelector('button[type="submit"]');
         submitBtn.disabled = true;
         submitBtn.textContent = "Joining...";
-        var email = document.getElementById("wl-email").value;
-        fetch("https://formspree.io/f/mbdzoqln", {
+        var data = {
+          name: document.getElementById("wl-name").value,
+          email: document.getElementById("wl-email").value,
+          city: document.getElementById("wl-city").value,
+          stateCountry: document.getElementById("wl-region").value,
+          _subject: "New YXO waitlist signup",
+        };
+        fetch(FORM_ENDPOINTS.waitlist, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
             Accept: "application/json",
           },
-          body: JSON.stringify({ email: email }),
+          body: JSON.stringify(data),
         })
           .then(function (response) {
             if (response.ok) {
