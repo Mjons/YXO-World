@@ -530,6 +530,23 @@
         font-size: 18px;
         letter-spacing: -0.02em;
       }
+      .nav-right {
+        display: flex;
+        align-items: center;
+        gap: 22px;
+      }
+      .nav-link {
+        font-size: 14px;
+        font-weight: 600;
+        color: var(--paper-74);
+        text-decoration: none;
+        white-space: nowrap;
+        transition: color 0.2s;
+      }
+      .nav-link:hover,
+      .nav-link[aria-current="page"] {
+        color: var(--paper);
+      }
       /* ── HERO ── */
       .hero {
         padding-top: 96px;
@@ -1562,9 +1579,12 @@
           ><strong>YXO</strong>Young Extraordinary Odyssey</span
         >
       </a>
-      <button class="btn btn-mint" onclick="openRegisterModal('1')">
-        Register →
-      </button>
+      <div class="nav-right">
+        <a class="nav-link" href="team.html">Meet the team</a>
+        <button class="btn btn-mint" onclick="openRegisterModal('1')">
+          Register →
+        </button>
+      </div>
     </nav>
 
     <!-- HERO -->
@@ -1742,10 +1762,7 @@
                 >
                   Register →
                 </button>
-                <a
-                  href="https://openexo.com/yxo-team"
-                  target="_blank"
-                  class="btn btn-secondary"
+                <a href="team.html" class="btn btn-secondary"
                   >Meet the full team →</a
                 >
                 <a

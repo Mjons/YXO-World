@@ -1,0 +1,986 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meet the team · YXO Young Extraordinary Odyssey</title>
+    <meta
+      name="description"
+      content="Meet the people behind YXO, the Young Extraordinary Odyssey workshop for teens: founder Lily Safrani and tech mentor Natasha Tsakos."
+    />
+    <link rel="canonical" href="https://yxo.world/team" />
+    <meta name="theme-color" content="#0C1140" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="YXO · Young Extraordinary Odyssey" />
+    <meta property="og:url" content="https://yxo.world/team" />
+    <meta property="og:title" content="Meet the YXO team" />
+    <meta
+      property="og:description"
+      content="The educators and innovators behind the YXO workshop for teens."
+    />
+    <meta property="og:image" content="https://yxo.world/og-image-yxo.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://yxo.world/og-image-yxo.jpg" />
+
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      /* Brand palette: see the YXO brand file, section 6. */
+      :root {
+        --ink: #0c1140;
+        --paper: #f6f2ea;
+        --teal: #14b8a9;
+        --deep-teal: #0e8f86;
+        --mint: #33e9a6;
+        --lime: #bdf542;
+        --yellow: #ffe84a;
+        --coral: #ff6f5a;
+        --pink: #ff4fa0;
+        --amber: #ffc34d;
+
+        --ink-72: rgba(12, 17, 64, 0.72);
+        --ink-28: rgba(12, 17, 64, 0.28);
+        --paper-74: rgba(246, 242, 234, 0.74);
+        --paper-30: rgba(246, 242, 234, 0.3);
+        --paper-12: rgba(246, 242, 234, 0.12);
+
+        --gutter: 72px;
+        --max: 1200px;
+        --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .5 0 0 0 0 .5 0 0 0 0 .5 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      }
+
+      body {
+        font-family: "Inter", system-ui, sans-serif;
+        color: var(--ink);
+        background: var(--paper);
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      /* ── TYPE ── */
+      .kicker {
+        font-size: 13px;
+        font-weight: 700;
+        line-height: 1.2;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--ink-72);
+        margin-bottom: 22px;
+      }
+      .headline {
+        font-weight: 900;
+        font-size: clamp(44px, 6.4vw, 92px);
+        line-height: 0.93;
+        letter-spacing: -0.045em;
+        margin-bottom: 28px;
+      }
+      .subhead {
+        font-size: clamp(17px, 1.6vw, 20px);
+        line-height: 1.45;
+        max-width: 560px;
+        opacity: 0.9;
+      }
+      .hl {
+        display: inline-block;
+        line-height: 0.9;
+        background: var(--paper);
+        color: var(--ink);
+        border-radius: 6px;
+        padding: 0.02em 0.07em 0.08em;
+        margin: 0 -0.02em;
+      }
+      .accent {
+        background: linear-gradient(
+          90deg,
+          var(--mint),
+          var(--lime) 55%,
+          var(--yellow)
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+
+      /* ── BACKGROUND FAMILIES ── */
+      .band {
+        position: relative;
+        overflow: hidden;
+        isolation: isolate;
+        padding: 120px var(--gutter);
+      }
+      .band::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: var(--grain);
+        mix-blend-mode: soft-light;
+        opacity: 0.16;
+        pointer-events: none;
+        z-index: -1;
+      }
+      .band-inner {
+        max-width: var(--max);
+        margin: 0 auto;
+      }
+
+      .bg-ink {
+        --ax: 100%;
+        --ay: 100%;
+        --px: 0%;
+        --py: 0%;
+        background-color: var(--ink);
+        background-image:
+          radial-gradient(
+            ellipse 26% 34% at var(--ax) var(--ay),
+            rgba(255, 232, 74, 0.55),
+            transparent 70%
+          ),
+          radial-gradient(
+            ellipse 44% 56% at var(--ax) var(--ay),
+            rgba(189, 245, 66, 0.4),
+            transparent 70%
+          ),
+          radial-gradient(
+            ellipse 80% 95% at var(--ax) var(--ay),
+            rgba(14, 143, 134, 0.75),
+            transparent 72%
+          ),
+          radial-gradient(
+            ellipse 50% 60% at var(--px) var(--py),
+            rgba(255, 79, 160, 0.3),
+            transparent 70%
+          );
+        color: var(--paper);
+      }
+      .bg-ink .kicker {
+        color: var(--mint);
+      }
+      .aurora-bl {
+        --ax: 0%;
+        --ay: 100%;
+        --px: 100%;
+        --py: 0%;
+      }
+
+      .bg-sun {
+        background-color: var(--mint);
+        background-image:
+          radial-gradient(
+            ellipse 60% 55% at 0% 0%,
+            rgba(255, 232, 74, 0.85),
+            transparent 70%
+          ),
+          radial-gradient(
+            ellipse 60% 60% at 100% 100%,
+            rgba(14, 143, 134, 0.7),
+            transparent 70%
+          ),
+          linear-gradient(170deg, var(--lime), var(--mint) 48%, var(--teal));
+        color: var(--ink);
+      }
+
+      .bg-hot {
+        background-color: var(--coral);
+        background-image:
+          radial-gradient(
+            ellipse 55% 50% at 0% 0%,
+            rgba(255, 232, 74, 0.75),
+            transparent 70%
+          ),
+          radial-gradient(
+            ellipse 60% 60% at 100% 100%,
+            rgba(255, 79, 160, 0.85),
+            transparent 70%
+          ),
+          linear-gradient(160deg, var(--amber), var(--coral) 50%, var(--pink));
+        color: var(--ink);
+      }
+
+      /* ── THE BIG × ── */
+      .bigx {
+        position: absolute;
+        width: var(--size, 520px);
+        height: var(--size, 520px);
+        pointer-events: none;
+        z-index: -1;
+        color: var(--paper);
+      }
+      .bigx::before,
+      .bigx::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 41%;
+        width: 100%;
+        height: 18%;
+        background: currentColor;
+        transform: rotate(45deg);
+      }
+      .bigx::after {
+        transform: rotate(-45deg);
+      }
+      .bigx.coral::before,
+      .bigx.coral::after {
+        background: linear-gradient(
+          90deg,
+          var(--pink),
+          var(--coral) 45%,
+          var(--amber)
+        );
+      }
+      .bigx.aurora::before,
+      .bigx.aurora::after {
+        background: linear-gradient(
+          90deg,
+          var(--teal),
+          var(--mint) 50%,
+          var(--yellow)
+        );
+      }
+      .bigx.br {
+        right: calc(var(--size, 520px) * -0.38);
+        bottom: calc(var(--size, 520px) * -0.38);
+      }
+      .bigx.tr {
+        right: calc(var(--size, 520px) * -0.38);
+        top: calc(var(--size, 520px) * -0.38);
+      }
+
+      /* ── BUTTONS (CTA pills) ── */
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        border: none;
+        border-radius: 6px;
+        padding: 14px 22px;
+        font-family: inherit;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 1.2;
+        text-decoration: none;
+        cursor: pointer;
+        transition:
+          transform 0.15s,
+          box-shadow 0.2s;
+      }
+      .btn:hover {
+        transform: translateY(-2px);
+      }
+      .btn:focus-visible {
+        outline: 3px solid var(--yellow);
+        outline-offset: 3px;
+      }
+      .btn-primary {
+        background: var(--ink);
+        color: var(--yellow);
+      }
+      .btn-primary:hover {
+        box-shadow: 0 10px 24px rgba(12, 17, 64, 0.28);
+      }
+      .btn-mint {
+        background: var(--mint);
+        color: var(--ink);
+      }
+      .btn-mint:hover {
+        box-shadow: 0 10px 28px rgba(51, 233, 166, 0.35);
+      }
+      .btn-secondary {
+        background: transparent;
+        color: var(--ink);
+        box-shadow: inset 0 0 0 1.5px var(--ink-28);
+      }
+      .btn-secondary:hover {
+        box-shadow: inset 0 0 0 1.5px var(--ink);
+      }
+      .btn-ghost {
+        background: transparent;
+        color: var(--paper);
+        box-shadow: inset 0 0 0 1.5px var(--paper-30);
+      }
+      .btn-ghost:hover {
+        box-shadow: inset 0 0 0 1.5px var(--paper);
+      }
+      .btn-lg {
+        padding: 18px 28px;
+        font-size: 17px;
+      }
+
+      /* ── BADGE (logo) ── */
+      .badge {
+        display: inline-block;
+        background: var(--paper);
+        border-radius: 50%;
+        line-height: 0;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+      }
+      .badge img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+
+      /* ── NAV ── */
+      nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        padding: 12px var(--gutter);
+        background: rgba(12, 17, 64, 0.94);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border-bottom: 1px solid var(--paper-12);
+        color: var(--paper);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+      .nav-logo {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        color: var(--paper);
+        text-decoration: none;
+      }
+      .nav-logo .badge {
+        width: 52px;
+      }
+      .nav-logo-text {
+        font-size: 13px;
+        font-weight: 500;
+        line-height: 1.25;
+        color: var(--paper-74);
+      }
+      .nav-logo-text strong {
+        display: block;
+        color: var(--paper);
+        font-weight: 900;
+        font-size: 18px;
+        letter-spacing: -0.02em;
+      }
+
+      .nav-right {
+        display: flex;
+        align-items: center;
+        gap: 22px;
+      }
+      .nav-link {
+        font-size: 14px;
+        font-weight: 600;
+        color: var(--paper-74);
+        text-decoration: none;
+        white-space: nowrap;
+        transition: color 0.2s;
+      }
+      .nav-link:hover,
+      .nav-link[aria-current="page"] {
+        color: var(--paper);
+      }
+      /* ── HERO ── */
+      .hero {
+        padding-top: 96px;
+        padding-bottom: 104px;
+      }
+      .hero h1 {
+        font-weight: 900;
+        font-size: clamp(60px, 9.5vw, 136px);
+        line-height: 0.9;
+        letter-spacing: -0.05em;
+        margin-bottom: 32px;
+      }
+      .hero-people {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 40px;
+      }
+      .hero-person {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        padding: 6px 16px 6px 6px;
+        border-radius: 40px;
+        background: var(--paper-12);
+        box-shadow: inset 0 0 0 1px var(--paper-30);
+        color: var(--paper);
+        text-decoration: none;
+        font-size: 15px;
+        font-weight: 700;
+        transition: box-shadow 0.2s;
+      }
+      .hero-person:hover {
+        box-shadow: inset 0 0 0 1.5px var(--paper);
+      }
+      .hero-person img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+      .hero-person span {
+        font-weight: 500;
+        color: var(--paper-74);
+      }
+
+      /* ── PROFILE ── */
+      .profile {
+        scroll-margin-top: 80px;
+      }
+      .profile-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 400px) minmax(0, 1fr);
+        gap: 64px;
+        align-items: start;
+      }
+      .profile-photo {
+        position: sticky;
+        top: 120px;
+      }
+      .profile-photo img {
+        display: block;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 4 / 5;
+        object-fit: cover;
+        border-radius: 14px;
+        background: var(--paper);
+        box-shadow: 0 30px 70px rgba(12, 17, 64, 0.28);
+      }
+      .profile-role {
+        margin-top: 22px;
+        font-size: 15px;
+        font-weight: 700;
+        line-height: 1.4;
+      }
+      .profile-role span {
+        display: block;
+        font-weight: 500;
+        opacity: 0.72;
+      }
+      .profile-card {
+        background: var(--paper);
+        border-radius: 14px;
+        padding: 44px 48px 48px;
+        box-shadow: 0 30px 70px rgba(12, 17, 64, 0.22);
+      }
+      .profile-card .lead {
+        font-size: clamp(24px, 2.4vw, 32px);
+        font-weight: 800;
+        line-height: 1.12;
+        letter-spacing: -0.03em;
+        margin-bottom: 24px;
+      }
+      .profile-card p {
+        font-size: 17px;
+        line-height: 1.6;
+        opacity: 0.88;
+        margin-bottom: 16px;
+      }
+      .profile-card p.lead {
+        opacity: 1;
+      }
+      .profile-card em {
+        font-style: normal;
+        font-weight: 700;
+      }
+      .profile-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 28px;
+        padding-top: 24px;
+        border-top: 1.5px solid var(--ink-28);
+      }
+      .profile-tag {
+        border-radius: 6px;
+        padding: 7px 12px;
+        font-size: 13px;
+        font-weight: 600;
+        box-shadow: inset 0 0 0 1px var(--ink-28);
+      }
+      .profile-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 28px;
+      }
+
+      /* Natasha's areas of focus */
+      .focus-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0 36px;
+        margin-top: 12px;
+      }
+      .focus-item {
+        padding: 22px 0 6px;
+        border-top: 1.5px solid var(--ink-28);
+      }
+      .focus-item h3 {
+        font-size: 20px;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        line-height: 1.2;
+        margin-bottom: 8px;
+      }
+      .focus-item h3::before {
+        content: "× ";
+        font-weight: 900;
+      }
+      .profile-card .focus-item p {
+        font-size: 15px;
+        line-height: 1.55;
+      }
+      .mission {
+        margin-top: 24px;
+        padding: 28px 30px;
+        border-radius: 10px;
+      }
+      .profile-card .mission p {
+        font-size: clamp(20px, 2vw, 26px);
+        font-weight: 800;
+        line-height: 1.2;
+        letter-spacing: -0.025em;
+        opacity: 1;
+        margin: 0;
+      }
+
+      /* ── CTA ── */
+      .cta-buttons {
+        display: flex;
+        gap: 14px;
+        flex-wrap: wrap;
+        margin-top: 40px;
+      }
+
+      /* ── FOOTER ── */
+      footer {
+        background: var(--ink);
+        color: var(--paper);
+        padding: 56px var(--gutter) 28px;
+        border-top: 1.5px solid var(--paper-12);
+      }
+      .footer-inner {
+        max-width: var(--max);
+        margin: 0 auto;
+      }
+      .footer-top {
+        display: flex;
+        justify-content: space-between;
+        gap: 40px;
+        padding-bottom: 36px;
+        border-bottom: 1.5px solid var(--paper-12);
+        margin-bottom: 22px;
+      }
+      .footer-left .badge {
+        width: 72px;
+        margin-bottom: 18px;
+      }
+      .footer-left p {
+        font-size: 30px;
+        font-weight: 900;
+        letter-spacing: -0.045em;
+        line-height: 1;
+      }
+      .footer-right h5 {
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--mint);
+        margin-bottom: 14px;
+      }
+      .footer-right a {
+        display: block;
+        font-size: 15px;
+        color: var(--paper);
+        text-decoration: none;
+        border-bottom: 1px solid var(--paper-30);
+        width: fit-content;
+      }
+      .footer-right a:hover {
+        border-bottom-color: var(--paper);
+      }
+      .footer-right .contact-name {
+        font-weight: 700;
+        margin-bottom: 4px;
+        font-size: 15px;
+      }
+      .footer-copy {
+        font-size: 13px;
+        color: var(--paper-74);
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+
+      /* ── RESPONSIVE ── */
+      @media (max-width: 1024px) {
+        :root {
+          --gutter: 40px;
+        }
+        .profile-grid {
+          grid-template-columns: 1fr;
+          gap: 40px;
+        }
+        .profile-photo {
+          position: static;
+          max-width: 360px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        :root {
+          --gutter: 20px;
+        }
+        .band {
+          padding-top: 72px;
+          padding-bottom: 72px;
+        }
+        .hero {
+          padding-top: 56px;
+        }
+        nav {
+          padding: 10px var(--gutter);
+        }
+        .nav-logo .badge {
+          width: 42px;
+        }
+        .nav-logo-text {
+          display: none;
+        }
+        nav .btn {
+          padding: 11px 16px;
+          font-size: 15px;
+        }
+        .profile-photo {
+          max-width: 280px;
+        }
+        .profile-card {
+          padding: 28px 22px 26px;
+        }
+        .profile-card p {
+          font-size: 16px;
+        }
+        .focus-grid {
+          grid-template-columns: 1fr;
+        }
+        .mission {
+          padding: 22px;
+        }
+        .profile-actions .btn,
+        .cta-buttons .btn {
+          width: 100%;
+        }
+        .footer-top {
+          flex-direction: column;
+        }
+        .bigx {
+          --size: 300px !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- NAV -->
+    <nav>
+      <a class="nav-logo" href="index.html">
+        <span class="badge"
+          ><img src="logo_hero.webp" alt="YXO" width="52" height="52"
+        /></span>
+        <span class="nav-logo-text"
+          ><strong>YXO</strong>Young Extraordinary Odyssey</span
+        >
+      </a>
+      <div class="nav-right">
+        <a class="nav-link" href="team.html" aria-current="page"
+          >Meet the team</a
+        >
+        <a class="btn btn-mint" href="index.html#register">Register →</a>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="band bg-ink hero">
+      <span
+        class="bigx aurora br"
+        style="--size: 560px"
+        aria-hidden="true"
+      ></span>
+      <div class="band-inner">
+        <div class="kicker">Meet the team</div>
+        <h1>The people behind the <span class="accent">odyssey.</span></h1>
+        <p class="subhead">
+          The educators and innovators who built the Young Extraordinary
+          Odyssey, and who spend the day in the room with your teen.
+        </p>
+        <div class="hero-people">
+          <a class="hero-person" href="#lily">
+            <img src="team-lily-safrani.jpg" alt="" width="40" height="40" />
+            Lily Safrani <span>Founder</span>
+          </a>
+          <a class="hero-person" href="#natasha">
+            <img
+              src="team-natasha-tsakos.jpg"
+              alt=""
+              width="40"
+              height="40"
+              style="object-position: 50% 25%"
+            />
+            Natasha Tsakos <span>Tech mentor</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- LILY -->
+    <section class="band bg-sun profile" id="lily">
+      <span
+        class="bigx coral br"
+        style="--size: 620px"
+        aria-hidden="true"
+      ></span>
+      <div class="band-inner">
+        <div class="kicker">Founder · YXO</div>
+        <h2 class="headline">Lily <span class="hl">Safrani.</span></h2>
+        <div class="profile-grid">
+          <div class="profile-photo">
+            <img
+              src="team-lily-safrani.jpg"
+              alt="Lily Safrani"
+              width="400"
+              height="400"
+              style="object-position: 60% 50%"
+            />
+            <div class="profile-role">
+              Founder, YXO<span>Young Extraordinary Odyssey</span>
+            </div>
+          </div>
+          <div class="profile-card">
+            <p class="lead">
+              A serial entrepreneur who brings strategic vision and a hands-on
+              approach to complex, real-world problems.
+            </p>
+            <p>
+              Lily has launched and led enterprises in both the tech and
+              consulting sectors, notably as the Founder and CEO of
+              <em>ExO Speakers</em> and a Contributing Architect at
+              <em>ExO Works</em>, where she focused on disruption and
+              innovation.
+            </p>
+            <p>
+              Yet her most powerful ventures apply this same exponential mindset
+              to learning and community. Early in her career she launched
+              <em>Sarah and David Interactive</em>, a publishing company that
+              created a full curriculum for teaching Hebrew reading and writing.
+              Inspired by her deep immersion in Silicon Valley culture, she
+              championed the creation of <em>The Innovative School</em>, a
+              progressive elementary school in Miami Beach.
+            </p>
+            <p>
+              During the 2020 lockdown she co-founded <em>Camp Howland</em>, a
+              “driveway summer camp” born from the immediate need to give
+              neighborhood children structure and social time while creating
+              purpose for home-bound college students. It was a true example of
+              using existing resources for a high-impact community solution.
+            </p>
+            <p>
+              Today Lily brings that drive to YXO, the Young Extraordinary
+              Odyssey workshop for teens, continuing her focus on cultivating
+              the next generation of innovators.
+            </p>
+            <div class="profile-tags">
+              <div class="profile-tag">Serial entrepreneur</div>
+              <div class="profile-tag">Founder &amp; CEO, ExO Speakers</div>
+              <div class="profile-tag">ExO Works</div>
+              <div class="profile-tag">The Innovative School</div>
+              <div class="profile-tag">Camp Howland</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NATASHA -->
+    <section class="band bg-hot profile" id="natasha">
+      <span class="bigx tr" style="--size: 560px" aria-hidden="true"></span>
+      <div class="band-inner">
+        <div class="kicker">
+          Tech mentor · Award-winning director &amp; producer
+        </div>
+        <h2 class="headline">Natasha <span class="hl">Tsakos.</span></h2>
+        <div class="profile-grid">
+          <div class="profile-photo">
+            <img
+              src="team-natasha-tsakos.jpg"
+              alt="Natasha Tsakos"
+              width="800"
+              height="1000"
+            />
+            <div class="profile-role">
+              Tech Mentor<span>Award-winning director &amp; producer</span>
+            </div>
+          </div>
+          <div class="profile-card">
+            <p class="lead">
+              An award-winning director, performer and producer pioneering the
+              intersection of arts, technology, innovation and space
+              exploration.
+            </p>
+            <div class="focus-grid">
+              <div class="focus-item">
+                <h3>Space &amp; innovation</h3>
+                <p>
+                  Founder of <em>SPACE WONDERS</em>, the first theatrical
+                  company for space, developing experiences born from the medium
+                  of space and felt on Earth. Her flagship production,
+                  <em>Paraboles</em>, is the first research-driven performance
+                  in microgravity and a cultural prototype for life beyond
+                  Earth.
+                </p>
+              </div>
+              <div class="focus-item">
+                <h3>Global impact</h3>
+                <p>
+                  She has captivated audiences across six continents, from TED
+                  and the Super Bowl with Cirque du Soleil to the G20 Summit,
+                  Discovery Channel and Tribeca Film Festival. She speaks at the
+                  United Nations General Assembly and Google.
+                </p>
+              </div>
+              <div class="focus-item">
+                <h3>Strategic partnerships</h3>
+                <p>
+                  Drawing on work with NASA, MIT and the International Institute
+                  for Astronautical Sciences, Natasha brings a research-driven
+                  approach to artistic innovation.
+                </p>
+              </div>
+              <div class="focus-item">
+                <h3>Singularity University</h3>
+                <p>
+                  A graduate of SU’s Global Solutions Program (2015) at NASA
+                  Research Park, and winner of SU’s Global Impact Competition,
+                  sponsored by Google and NASA.
+                </p>
+              </div>
+              <div class="focus-item">
+                <h3>Youth engagement</h3>
+                <p>
+                  Years spent turning “showmaking” into a practical toolkit for
+                  young creators: workshops in storytelling, experiential design
+                  and creativity with technology, from Telemundo’s
+                  <em>Protagonista de la Novela</em> to DASH, the Art Directors
+                  Club and Miami Animation &amp; Gaming International Complex.
+                  Most recently she sparked a room of 300 eleven-year-old girls
+                  at Space Center Houston.
+                </p>
+              </div>
+              <div class="focus-item">
+                <h3>Education</h3>
+                <p>
+                  BFA in Theatre (New World School of the Arts / University of
+                  Florida), plus a NASA certificate of training (Chamber Flight
+                  to FL250), MIT’s New Space Economy program, a NASA L’SPACE
+                  certificate, and studies with the IIAS.
+                </p>
+              </div>
+            </div>
+            <div class="mission bg-ink">
+              <div class="kicker">Her mission</div>
+              <p>
+                To create extraordinary experiences, on this planet and beyond,
+                that inspire wonder and awaken new ways of being.
+              </p>
+            </div>
+            <div class="profile-actions">
+              <a
+                href="https://www.youtube.com/watch?v=nEmjcz5LS-o"
+                target="_blank"
+                rel="noopener"
+                class="btn btn-primary"
+                >Watch her TEDx talk →</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="band bg-ink aurora-bl">
+      <span
+        class="bigx aurora br"
+        style="--size: 640px"
+        aria-hidden="true"
+      ></span>
+      <div class="band-inner">
+        <div class="kicker">Austin · Oct 24 &nbsp;·&nbsp; Miami · Nov 7</div>
+        <h2 class="headline">
+          Meet them <span class="accent">in person.</span>
+        </h2>
+        <p class="subhead">
+          Spend a full day with the YXO team: AI, entrepreneurial thinking and a
+          personal roadmap for teens 13 to 17.
+        </p>
+        <div class="cta-buttons">
+          <a class="btn btn-mint btn-lg" href="index.html#register"
+            >Save your spot →</a
+          >
+          <a class="btn btn-ghost btn-lg" href="index.html"
+            >See the workshop →</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-top">
+          <div class="footer-left">
+            <span class="badge"
+              ><img
+                src="logo_hero.webp"
+                alt="YXO"
+                width="72"
+                height="72"
+                loading="lazy"
+            /></span>
+            <p>Think 10× bigger.</p>
+          </div>
+          <div class="footer-right">
+            <h5>Questions? Get in touch</h5>
+            <div class="contact-name">Lily Safrani</div>
+            <a href="mailto:lily@exospeakers.com">lily@exospeakers.com</a>
+          </div>
+        </div>
+        <div class="footer-copy">
+          <span>© 2026 Young Extraordinary Odyssey. All rights reserved.</span>
+          <span>yxo.world</span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
