@@ -4,11 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
-      YXO Teen Workshop in Austin, TX · Oct 24, 2026 · Ages 13 to 17
+      AI and entrepreneurship workshops for teens · Austin and Miami | YXO
     </title>
     <meta
       name="description"
-      content="A full-day workshop in Austin, TX for teens 13 to 17: AI skills, entrepreneurial thinking and purpose discovery, led by Singularity University alumni. Saturday, October 24, 2026."
+      content="Full-day workshops for teens 13 to 17 on AI, entrepreneurship and purpose, led by Singularity University alumni. Austin, TX · Sat, Oct 24. Miami, FL · Starts Nov 7."
     />
     <link rel="canonical" href="https://yxo.world/" />
     <meta name="theme-color" content="#0C1140" />
@@ -55,42 +55,166 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
+    <!-- Structured data for search engines and AI tools. Keep it in step
+         with the visible page: the FAQ answers must match word for word.
+         The Austin event can be removed after Oct 24. -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "EducationEvent",
-        "name": "YXO Workshop: Think 10× bigger",
-        "description": "A full-day workshop for teens ages 13 to 17 to explore exponential thinking, AI, entrepreneurship and purpose discovery.",
-        "url": "https://yxo.world/",
-        "image": "https://yxo.world/og-image-yxo.jpg",
-        "startDate": "2026-10-24T10:00:00-05:00",
-        "endDate": "2026-10-24T16:00:00-05:00",
-        "eventStatus": "https://schema.org/EventScheduled",
-        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-        "typicalAgeRange": "13-17",
-        "location": {
-          "@type": "Place",
-          "name": "Austin, Texas",
-          "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Austin",
-            "addressRegion": "TX",
-            "addressCountry": "US"
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://yxo.world/#website",
+            "name": "YXO",
+            "alternateName": "Young Extraordinary Odyssey",
+            "url": "https://yxo.world/",
+            "publisher": { "@id": "https://yxo.world/#org" }
+          },
+          {
+            "@type": "EducationalOrganization",
+            "@id": "https://yxo.world/#org",
+            "name": "YXO",
+            "alternateName": "Young Extraordinary Odyssey",
+            "url": "https://yxo.world/",
+            "logo": "https://yxo.world/logo_hero.webp",
+            "description": "Full-day, in-person workshops that teach teens ages 13 to 17 to think bigger, use AI as a tool for their own ideas, and build a personal roadmap for an extraordinary life.",
+            "founder": { "@id": "https://yxo.world/#lily" },
+            "email": "lily@exospeakers.com",
+            "areaServed": ["Austin, TX", "Miami, FL"]
+          },
+          {
+            "@type": "Person",
+            "@id": "https://yxo.world/#lily",
+            "name": "Lily Safrani",
+            "jobTitle": "Founder of YXO",
+            "url": "https://yxo.world/team",
+            "worksFor": { "@id": "https://yxo.world/#org" }
+          },
+          {
+            "@type": "Person",
+            "@id": "https://yxo.world/#natasha",
+            "name": "Natasha Tsakos",
+            "jobTitle": "Workshop mentor",
+            "url": "https://yxo.world/team",
+            "description": "Award-winning director, performer, and producer pioneering the intersection of arts, technology, innovation, and space exploration. Founder of SPACE WONDERS.",
+            "subjectOf": {
+              "@type": "VideoObject",
+              "name": "Natasha Tsakos TEDx talk",
+              "url": "https://www.youtube.com/watch?v=nEmjcz5LS-o",
+              "thumbnailUrl": "https://i.ytimg.com/vi/nEmjcz5LS-o/maxresdefault.jpg"
+            }
+          },
+          {
+            "@type": "EducationEvent",
+            "@id": "https://yxo.world/#austin-2026-10-24",
+            "name": "YXO workshop for teens · Austin, TX",
+            "description": "A full-day workshop for teens ages 13 to 17 to explore exponential thinking, AI, entrepreneurship and purpose discovery.",
+            "url": "https://yxo.world/",
+            "image": "https://yxo.world/og-image-yxo.jpg",
+            "startDate": "2026-10-24T10:00:00-05:00",
+            "endDate": "2026-10-24T16:00:00-05:00",
+            "eventStatus": "https://schema.org/EventScheduled",
+            "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+            "typicalAgeRange": "13-17",
+            "location": {
+              "@type": "Place",
+              "name": "Austin, Texas",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Austin",
+                "addressRegion": "TX",
+                "addressCountry": "US"
+              }
+            },
+            "organizer": { "@id": "https://yxo.world/#org" },
+            "performer": { "@id": "https://yxo.world/#natasha" },
+            "offers": {
+              "@type": "Offer",
+              "price": "300",
+              "priceCurrency": "USD",
+              "availability": "https://schema.org/LimitedAvailability",
+              "url": "https://yxo.world/#register"
+            }
+          },
+          {
+            "@type": "EducationEvent",
+            "@id": "https://yxo.world/#miami-2026-11-07",
+            "name": "YXO Miami cohort for teens",
+            "description": "YXO's Miami cohort: AI, entrepreneurship and purpose discovery for teens. Starts Saturday, November 7, 2026.",
+            "url": "https://yxo.world/#register",
+            "image": "https://yxo.world/og-image-yxo.jpg",
+            "startDate": "2026-11-07",
+            "eventStatus": "https://schema.org/EventScheduled",
+            "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+            "location": {
+              "@type": "Place",
+              "name": "Miami, Florida",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Miami",
+                "addressRegion": "FL",
+                "addressCountry": "US"
+              }
+            },
+            "organizer": { "@id": "https://yxo.world/#org" },
+            "offers": [
+              {
+                "@type": "Offer",
+                "name": "1 student",
+                "price": "300",
+                "priceCurrency": "USD",
+                "availability": "https://schema.org/LimitedAvailability",
+                "url": "https://yxo.world/#register"
+              },
+              {
+                "@type": "Offer",
+                "name": "2 students",
+                "price": "500",
+                "priceCurrency": "USD",
+                "availability": "https://schema.org/LimitedAvailability",
+                "url": "https://yxo.world/#register"
+              }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "@id": "https://yxo.world/#faq",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What should my teen bring?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "A laptop and charger. Everything else is provided."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Is this right for all teens 13 to 17?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. The workshop is designed to engage teens across this age range, with activities that adapt to different maturity levels."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What if my teen is shy or introverted?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Our facilitators are experienced at creating a welcoming environment. Activities are designed to include everyone comfortably."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can parents attend?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "The workshop is teens only, so they can engage freely. Parents are welcome at the closing ceremony at 3:50 PM."
+                }
+              }
+            ]
           }
-        },
-        "organizer": {
-          "@type": "Organization",
-          "name": "Young Extraordinary Odyssey (YXO)",
-          "url": "https://yxo.world/"
-        },
-        "performer": { "@type": "Person", "name": "Natasha Tsakos" },
-        "offers": {
-          "@type": "Offer",
-          "price": "300",
-          "priceCurrency": "USD",
-          "availability": "https://schema.org/LimitedAvailability",
-          "url": "https://yxo.world/"
-        }
+        ]
       }
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -1592,12 +1716,13 @@
       <div class="band-inner">
         <div class="hero-grid">
           <div class="hero-left">
-            <div class="kicker">A full-day workshop for teens</div>
+            <p class="kicker">AI and entrepreneurship workshops for teens</p>
             <h1>Think 10<span class="x">×</span><br />bigger.</h1>
             <p class="subhead">
-              A full day for teens ages 13 to 17 to explore exponential
-              thinking, use AI as a tool for their own ideas, and start building
-              a personal roadmap for an extraordinary life.
+              Full-day workshops for teens ages 13 to 17 in Austin and Miami.
+              They explore exponential thinking, use AI as a tool for their own
+              ideas, and start building a personal roadmap for an extraordinary
+              life.
             </p>
             <div class="hero-facts">
               <div>
