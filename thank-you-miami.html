@@ -1,0 +1,588 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <meta name="theme-color" content="#0C1140" />
+    <title>You're registered · YXO Miami cohort</title>
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      /* Brand palette: see the YXO brand file, section 6. */
+      :root {
+        --ink: #0c1140;
+        --paper: #f6f2ea;
+        --teal: #14b8a9;
+        --deep-teal: #0e8f86;
+        --mint: #33e9a6;
+        --lime: #bdf542;
+        --yellow: #ffe84a;
+        --pink: #ff4fa0;
+
+        --ink-72: rgba(12, 17, 64, 0.72);
+        --ink-28: rgba(12, 17, 64, 0.28);
+        --paper-74: rgba(246, 242, 234, 0.74);
+        --paper-30: rgba(246, 242, 234, 0.3);
+        --paper-12: rgba(246, 242, 234, 0.12);
+
+        --gutter: 72px;
+        --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .5 0 0 0 0 .5 0 0 0 0 .5 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      }
+
+      body {
+        font-family: "Inter", system-ui, sans-serif;
+        color: var(--ink);
+        background: var(--paper);
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      .kicker {
+        font-size: 13px;
+        font-weight: 700;
+        line-height: 1.2;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--ink-72);
+        margin-bottom: 20px;
+      }
+
+      /* ── BUTTONS ── */
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        border: none;
+        border-radius: 6px;
+        padding: 14px 22px;
+        font-family: inherit;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 1.2;
+        text-decoration: none;
+        cursor: pointer;
+        transition:
+          transform 0.15s,
+          box-shadow 0.2s;
+      }
+      .btn:hover {
+        transform: translateY(-2px);
+      }
+      .btn:focus-visible {
+        outline: 3px solid var(--yellow);
+        outline-offset: 3px;
+      }
+      .btn-primary {
+        background: var(--ink);
+        color: var(--yellow);
+      }
+      .btn-primary:hover {
+        box-shadow: 0 10px 24px rgba(12, 17, 64, 0.28);
+      }
+      .btn-ghost {
+        background: transparent;
+        color: var(--paper);
+        box-shadow: inset 0 0 0 1.5px var(--paper-30);
+      }
+      .btn-ghost:hover {
+        box-shadow: inset 0 0 0 1.5px var(--paper);
+      }
+
+      /* ── BADGE (logo) ── */
+      .badge {
+        display: inline-block;
+        background: var(--paper);
+        border-radius: 50%;
+        line-height: 0;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+      }
+      .badge img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+
+      /* ── NAV ── */
+      nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        padding: 12px var(--gutter);
+        background: var(--ink);
+        border-bottom: 1px solid var(--paper-12);
+      }
+      .nav-logo .badge {
+        width: 52px;
+      }
+
+      /* ── CONFIRMATION HEADER (ink) ── */
+      .confirm-hero {
+        position: relative;
+        isolation: isolate;
+        overflow: hidden;
+        background-color: var(--ink);
+        background-image:
+          radial-gradient(
+            ellipse 26% 40% at 100% 100%,
+            rgba(255, 232, 74, 0.55),
+            transparent 70%
+          ),
+          radial-gradient(
+            ellipse 44% 60% at 100% 100%,
+            rgba(189, 245, 66, 0.4),
+            transparent 70%
+          ),
+          radial-gradient(
+            ellipse 80% 100% at 100% 100%,
+            rgba(14, 143, 134, 0.75),
+            transparent 72%
+          ),
+          radial-gradient(
+            ellipse 50% 60% at 0% 0%,
+            rgba(255, 79, 160, 0.3),
+            transparent 70%
+          );
+        color: var(--paper);
+        padding: 96px var(--gutter) 160px;
+      }
+      .confirm-hero::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: var(--grain);
+        mix-blend-mode: soft-light;
+        opacity: 0.16;
+        pointer-events: none;
+        z-index: -1;
+      }
+      .confirm-hero .kicker {
+        color: var(--mint);
+      }
+      .confirm-inner {
+        max-width: 760px;
+        margin: 0 auto;
+      }
+      .confirm-hero h1 {
+        font-size: clamp(56px, 9vw, 120px);
+        font-weight: 900;
+        line-height: 0.9;
+        letter-spacing: -0.05em;
+        margin-bottom: 24px;
+      }
+      .accent {
+        background: linear-gradient(
+          90deg,
+          var(--mint),
+          var(--lime) 55%,
+          var(--yellow)
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+      .confirm-hero p {
+        font-size: clamp(17px, 1.6vw, 20px);
+        line-height: 1.45;
+        max-width: 560px;
+        opacity: 0.9;
+      }
+
+      /* ── BOOKING CARD (sun) ── */
+      .booking-wrap {
+        padding: 0 var(--gutter);
+        margin-top: -96px;
+        margin-bottom: 80px;
+        position: relative;
+      }
+      .booking-card {
+        max-width: 760px;
+        margin: 0 auto;
+        border-radius: 14px;
+        padding: 40px;
+        background-color: var(--mint);
+        background-image:
+          radial-gradient(
+            ellipse 60% 55% at 0% 0%,
+            rgba(255, 232, 74, 0.85),
+            transparent 70%
+          ),
+          radial-gradient(
+            ellipse 60% 60% at 100% 100%,
+            rgba(14, 143, 134, 0.7),
+            transparent 70%
+          ),
+          linear-gradient(170deg, var(--lime), var(--mint) 48%, var(--teal));
+        box-shadow: 0 30px 70px rgba(12, 17, 64, 0.3);
+      }
+      .booking-title {
+        font-size: clamp(30px, 4vw, 44px);
+        font-weight: 900;
+        line-height: 0.95;
+        letter-spacing: -0.045em;
+        margin-bottom: 30px;
+      }
+      .booking-grid {
+        display: grid;
+        grid-template-columns: repeat(4, auto);
+        justify-content: start;
+        gap: 18px 40px;
+        padding-top: 24px;
+        border-top: 1.5px solid var(--ink-28);
+        margin-bottom: 32px;
+      }
+      .booking-item-label {
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--ink-72);
+        margin-bottom: 6px;
+      }
+      .booking-item-value {
+        font-size: 20px;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+      }
+
+      /* ── NEXT STEPS ── */
+      .next-section {
+        padding: 0 var(--gutter) 96px;
+      }
+      .next-inner {
+        max-width: 760px;
+        margin: 0 auto;
+      }
+      .next-heading {
+        font-size: clamp(36px, 4.4vw, 56px);
+        font-weight: 900;
+        line-height: 0.93;
+        letter-spacing: -0.045em;
+        margin-bottom: 28px;
+      }
+      .next-list {
+        list-style: none;
+        margin-bottom: 72px;
+      }
+      .next-list li {
+        display: grid;
+        grid-template-columns: 64px 1fr;
+        gap: 12px;
+        padding: 26px 0;
+        border-top: 1.5px solid var(--ink-28);
+      }
+      .next-num {
+        font-size: 44px;
+        font-weight: 900;
+        line-height: 0.9;
+        letter-spacing: -0.05em;
+      }
+      .next-list h4,
+      .callout h4 {
+        font-size: 21px;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        line-height: 1.2;
+        margin-bottom: 6px;
+      }
+      .next-list p,
+      .callout p {
+        font-size: 16px;
+        line-height: 1.55;
+        opacity: 0.82;
+      }
+      .callouts {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0 36px;
+      }
+      .callout {
+        padding-top: 24px;
+        border-top: 1.5px solid var(--ink-28);
+      }
+      .callout h4::before {
+        content: "× ";
+        font-weight: 900;
+      }
+
+      /* ── FOOTER ── */
+      footer {
+        background: var(--ink);
+        color: var(--paper);
+        padding: 56px var(--gutter) 28px;
+      }
+      .footer-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      .footer-top {
+        display: flex;
+        justify-content: space-between;
+        gap: 40px;
+        padding-bottom: 36px;
+        border-bottom: 1.5px solid var(--paper-12);
+        margin-bottom: 22px;
+      }
+      .footer-left .badge {
+        width: 72px;
+        margin-bottom: 18px;
+      }
+      .footer-left p {
+        font-size: 30px;
+        font-weight: 900;
+        letter-spacing: -0.045em;
+        line-height: 1;
+      }
+      .footer-right h5 {
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--mint);
+        margin-bottom: 14px;
+      }
+      .footer-right a {
+        display: block;
+        font-size: 15px;
+        color: var(--paper);
+        text-decoration: none;
+        border-bottom: 1px solid var(--paper-30);
+        width: fit-content;
+      }
+      .footer-right a:hover {
+        border-bottom-color: var(--paper);
+      }
+      .footer-right .contact-name {
+        font-weight: 700;
+        margin-bottom: 4px;
+        font-size: 15px;
+      }
+      .footer-copy {
+        font-size: 13px;
+        color: var(--paper-74);
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+
+      @media (max-width: 768px) {
+        :root {
+          --gutter: 20px;
+        }
+        nav .badge {
+          width: 42px;
+        }
+        nav .btn {
+          padding: 11px 14px;
+          font-size: 14px;
+        }
+        .confirm-hero {
+          padding: 56px var(--gutter) 128px;
+        }
+        .booking-card {
+          padding: 28px 22px;
+        }
+        .booking-grid {
+          grid-template-columns: repeat(2, auto);
+          gap: 16px 28px;
+        }
+        .booking-card .btn {
+          width: 100%;
+        }
+        .callouts {
+          grid-template-columns: 1fr;
+        }
+        .callout {
+          padding-bottom: 20px;
+        }
+        .footer-top {
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- NAV -->
+    <nav>
+      <a href="/" class="nav-logo">
+        <span class="badge"
+          ><img src="logo_hero.webp" alt="YXO" width="52" height="52"
+        /></span>
+      </a>
+      <a href="/" class="btn btn-ghost">← Back to yxo.world</a>
+    </nav>
+
+    <!-- CONFIRMATION -->
+    <header class="confirm-hero">
+      <div class="confirm-inner">
+        <div class="kicker">Starts Nov 7, 2026 · Miami, FL</div>
+        <h1>You're <span class="accent">registered.</span></h1>
+        <p>
+          Your spot in the YXO Miami cohort is confirmed. A receipt is on its
+          way to the email address you used at checkout.
+        </p>
+      </div>
+    </header>
+
+    <div class="booking-wrap">
+      <div class="booking-card">
+        <div class="kicker">Your registration</div>
+        <div class="booking-title">YXO Miami cohort.</div>
+        <div class="booking-grid">
+          <div>
+            <div class="booking-item-label">Starts</div>
+            <div class="booking-item-value">Sat, Nov 7</div>
+          </div>
+          <div>
+            <div class="booking-item-label">Where</div>
+            <div class="booking-item-value">Miami, FL</div>
+          </div>
+          <div>
+            <div class="booking-item-label">Schedule</div>
+            <div class="booking-item-value">Coming soon by email</div>
+          </div>
+        </div>
+        <button class="btn btn-primary" onclick="downloadInvite()">
+          Add Nov 7 to calendar →
+        </button>
+      </div>
+    </div>
+
+    <!-- NEXT STEPS -->
+    <div class="next-section">
+      <div class="next-inner">
+        <div class="kicker">What happens next</div>
+        <h2 class="next-heading">Three easy steps.</h2>
+        <ol class="next-list">
+          <li>
+            <div class="next-num">1</div>
+            <div>
+              <h4>Your receipt arrives by email</h4>
+              <p>
+                Stripe sends this automatically, usually within a few minutes.
+                The receipt and your card statement show Graceworks
+                International Inc., which handles payments for YXO Miami. If it
+                hasn't shown up, check your spam folder before getting in touch.
+              </p>
+            </div>
+          </li>
+          <li>
+            <div class="next-num">2</div>
+            <div>
+              <h4>We'll email you the schedule and venue</h4>
+              <p>
+                The YXO team will follow up with the full Miami schedule, the
+                exact address, and drop-off instructions before Nov 7.
+              </p>
+            </div>
+          </li>
+          <li>
+            <div class="next-num">3</div>
+            <div>
+              <h4>Your teen turns up ready to build</h4>
+              <p>
+                Everything they need to know for the first day will be in that
+                email.
+              </p>
+            </div>
+          </li>
+        </ol>
+
+        <div class="kicker">Good to know</div>
+        <div class="callouts">
+          <div class="callout">
+            <h4>Schedule coming soon</h4>
+            <p>
+              We're finalizing the Miami schedule, times included, and will
+              email it as soon as it's ready.
+            </p>
+          </div>
+          <div class="callout">
+            <h4>What to bring</h4>
+            <p>We'll include a short packing list with the schedule.</p>
+          </div>
+          <div class="callout">
+            <h4>Need to change something?</h4>
+            <p>
+              To transfer your spot or ask about the day, email us using the
+              contact below and we'll sort it out.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-top">
+          <div class="footer-left">
+            <span class="badge"
+              ><img src="logo_hero.webp" alt="YXO" width="72" height="72"
+            /></span>
+            <p>Think 10× bigger.</p>
+          </div>
+          <div class="footer-right">
+            <h5>Questions? Get in touch</h5>
+            <div class="contact-name">Lily Safrani</div>
+            <a href="mailto:lily@exospeakers.com">lily@exospeakers.com</a>
+          </div>
+        </div>
+        <div class="footer-copy">
+          <span>© 2026 Young Extraordinary Odyssey. All rights reserved.</span>
+          <span>yxo.world</span>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // The Miami schedule isn't final, so this is an all-day event on the
+      // start date. Once times are known, switch to DTSTART/DTEND in UTC
+      // (Nov 7 2026 in Miami is Eastern Standard Time, UTC-5).
+      function downloadInvite() {
+        var ics = [
+          "BEGIN:VCALENDAR",
+          "VERSION:2.0",
+          "PRODID:-//YXO World//Workshop//EN",
+          "BEGIN:VEVENT",
+          "UID:yxo-miami-2026-11-07@yxo.world",
+          "DTSTAMP:20261021T000000Z",
+          "DTSTART;VALUE=DATE:20261107",
+          "DTEND;VALUE=DATE:20261108",
+          "SUMMARY:YXO Miami cohort starts",
+          "LOCATION:Miami, Florida",
+          "DESCRIPTION:Your teen's YXO Miami cohort starts today. The full schedule and venue details will arrive by email.",
+          "URL:https://yxo.world",
+          "END:VEVENT",
+          "END:VCALENDAR",
+        ].join("\r\n");
+
+        var blob = new Blob([ics], { type: "text/calendar;charset=utf-8" });
+        var link = document.createElement("a");
+        link.href = URL.createObjectURL(blob);
+        link.download = "yxo-miami-cohort.ics";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        URL.revokeObjectURL(link.href);
+      }
+    </script>
+  </body>
+</html>

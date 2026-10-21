@@ -3,25 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>YXO Teen Workshop in Austin, TX – Oct 24, 2026 | Ages 13–17</title>
+    <title>
+      YXO Teen Workshop in Austin, TX · Oct 24, 2026 · Ages 13 to 17
+    </title>
     <meta
       name="description"
-      content="A full-day workshop in Austin, TX for teens 13–17: AI skills, entrepreneurial thinking and purpose discovery, led by Singularity University alumni. Saturday, October 24, 2026."
+      content="A full-day workshop in Austin, TX for teens 13 to 17: AI skills, entrepreneurial thinking and purpose discovery, led by Singularity University alumni. Saturday, October 24, 2026."
     />
     <link rel="canonical" href="https://yxo.world/" />
-    <meta name="theme-color" content="#1a1f4e" />
+    <meta name="theme-color" content="#0C1140" />
 
     <!-- Link previews (WhatsApp, iMessage, Facebook, LinkedIn, Slack) -->
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="YXO – Young Extraordinary Odyssey" />
+    <meta property="og:site_name" content="YXO · Young Extraordinary Odyssey" />
     <meta property="og:url" content="https://yxo.world/" />
     <meta
       property="og:title"
-      content="Unleash Young Extraordinary Potential – YXO Workshop, Austin"
+      content="Think 10× bigger. YXO teen workshop, Austin"
     />
     <meta
       property="og:description"
-      content="Full-day workshop for teens 13–17 on AI, entrepreneurship and purpose. Oct 24, 2026 · Austin, TX. Limited spots."
+      content="Full-day workshop for teens 13 to 17 on AI, entrepreneurship and purpose. Sat, Oct 24, 2026 · Austin, TX. Spots are limited."
     />
     <meta property="og:image" content="https://yxo.world/og-image.jpg" />
     <meta
@@ -33,17 +35,17 @@
     <meta property="og:image:height" content="630" />
     <meta
       property="og:image:alt"
-      content="YXO logo – Unleash Young Extraordinary Potential, Oct 24, 2026, Austin TX, ages 13–17"
+      content="YXO logo · Oct 24, 2026, Austin TX, ages 13 to 17"
     />
     <meta property="og:locale" content="en_US" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta
       name="twitter:title"
-      content="Unleash Young Extraordinary Potential – YXO Workshop, Austin"
+      content="Think 10× bigger. YXO teen workshop, Austin"
     />
     <meta
       name="twitter:description"
-      content="Full-day workshop for teens 13–17 on AI, entrepreneurship and purpose. Oct 24, 2026 · Austin, TX."
+      content="Full-day workshop for teens 13 to 17 on AI, entrepreneurship and purpose. Sat, Oct 24, 2026 · Austin, TX."
     />
     <meta name="twitter:image" content="https://yxo.world/og-image.jpg" />
 
@@ -55,8 +57,8 @@
       {
         "@context": "https://schema.org",
         "@type": "EducationEvent",
-        "name": "YXO Workshop: Unleash Young Extraordinary Potential",
-        "description": "A full-day workshop for teens ages 13–17 to explore exponential thinking, AI, entrepreneurship and purpose discovery.",
+        "name": "YXO Workshop: Think 10× bigger",
+        "description": "A full-day workshop for teens ages 13 to 17 to explore exponential thinking, AI, entrepreneurship and purpose discovery.",
         "url": "https://yxo.world/",
         "image": "https://yxo.world/og-image.jpg",
         "startDate": "2026-10-24T10:00:00-05:00",
@@ -92,7 +94,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
     <style>
@@ -104,19 +106,29 @@
         padding: 0;
       }
 
+      /* Brand palette: see the YXO brand file, section 6. */
       :root {
-        --navy: #1a1f4e;
-        --orange: #f97316;
-        --orange-dark: #ea6c0a;
-        --purple: #6366f1;
-        --purple-light: #818cf8;
-        --cream: #f8f7f4;
-        --white: #ffffff;
-        --gray-light: #f1f0ed;
-        --gray-mid: #e5e4e0;
-        --text-dark: #1a1f4e;
-        --text-mid: #4b5563;
-        --text-light: #9ca3af;
+        --ink: #0c1140;
+        --paper: #f6f2ea;
+        --teal: #14b8a9;
+        --deep-teal: #0e8f86;
+        --mint: #33e9a6;
+        --lime: #bdf542;
+        --yellow: #ffe84a;
+        --coral: #ff6f5a;
+        --pink: #ff4fa0;
+        --amber: #ffc34d;
+
+        --ink-72: rgba(12, 17, 64, 0.72);
+        --ink-28: rgba(12, 17, 64, 0.28);
+        --ink-12: rgba(12, 17, 64, 0.12);
+        --paper-74: rgba(246, 242, 234, 0.74);
+        --paper-30: rgba(246, 242, 234, 0.3);
+        --paper-12: rgba(246, 242, 234, 0.12);
+
+        --gutter: 72px;
+        --max: 1200px;
+        --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .5 0 0 0 0 .5 0 0 0 0 .5 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
       }
 
       html {
@@ -124,25 +136,357 @@
       }
 
       body {
-        font-family: "DM Sans", sans-serif;
-        color: var(--text-dark);
-        background: var(--white);
+        font-family: "Inter", system-ui, sans-serif;
+        color: var(--ink);
+        background: var(--paper);
         overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      /* ── TYPE ── */
+      .kicker {
+        font-size: 13px;
+        font-weight: 700;
+        line-height: 1.2;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--ink-72);
+        margin-bottom: 22px;
+      }
+      .headline {
+        font-weight: 900;
+        font-size: clamp(44px, 6.4vw, 92px);
+        line-height: 0.93;
+        letter-spacing: -0.045em;
+        margin-bottom: 28px;
+      }
+      .subhead {
+        font-size: clamp(17px, 1.6vw, 20px);
+        line-height: 1.45;
+        max-width: 560px;
+        opacity: 0.9;
+      }
+      /* The one highlighted key word on light pages */
+      /* inline-block keeps the box tight to the line so it doesn't paint
+         over the descenders of the line above. */
+      .hl {
+        display: inline-block;
+        line-height: 0.9;
+        background: var(--paper);
+        color: var(--ink);
+        border-radius: 6px;
+        padding: 0.02em 0.07em 0.08em;
+        margin: 0 -0.02em;
+      }
+      /* The accent word on dark pages */
+      .accent {
+        background: linear-gradient(
+          90deg,
+          var(--mint),
+          var(--lime) 55%,
+          var(--yellow)
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+      /* Inline × inside a headline */
+      .x {
+        font-size: 0.74em;
+        background: linear-gradient(135deg, var(--mint), var(--yellow));
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        margin: 0 0.04em 0 0.02em;
+      }
+
+      /* ── BACKGROUND FAMILIES ── */
+      .band {
+        position: relative;
+        overflow: hidden;
+        isolation: isolate;
+        padding: 120px var(--gutter);
+      }
+      .band::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: var(--grain);
+        mix-blend-mode: soft-light;
+        opacity: 0.16;
+        pointer-events: none;
+        z-index: -1;
+      }
+      .band-inner {
+        max-width: var(--max);
+        margin: 0 auto;
+      }
+
+      .bg-ink {
+        --ax: 100%;
+        --ay: 100%;
+        --px: 0%;
+        --py: 0%;
+        background-color: var(--ink);
+        background-image:
+          radial-gradient(
+            ellipse 26% 34% at var(--ax) var(--ay),
+            rgba(255, 232, 74, 0.55),
+            transparent 70%
+          ),
+          radial-gradient(
+            ellipse 44% 56% at var(--ax) var(--ay),
+            rgba(189, 245, 66, 0.4),
+            transparent 70%
+          ),
+          radial-gradient(
+            ellipse 80% 95% at var(--ax) var(--ay),
+            rgba(14, 143, 134, 0.75),
+            transparent 72%
+          ),
+          radial-gradient(
+            ellipse 50% 60% at var(--px) var(--py),
+            rgba(255, 79, 160, 0.3),
+            transparent 70%
+          );
+        color: var(--paper);
+      }
+      .bg-ink .kicker {
+        color: var(--mint);
+      }
+      .bg-ink .bg-sun .kicker {
+        color: var(--ink-72);
+      }
+      .aurora-tr {
+        --ax: 100%;
+        --ay: 0%;
+        --px: 0%;
+        --py: 100%;
+      }
+      .aurora-bl {
+        --ax: 0%;
+        --ay: 100%;
+        --px: 100%;
+        --py: 0%;
+      }
+
+      .bg-sun {
+        background-color: var(--mint);
+        background-image:
+          radial-gradient(
+            ellipse 60% 55% at 0% 0%,
+            rgba(255, 232, 74, 0.85),
+            transparent 70%
+          ),
+          radial-gradient(
+            ellipse 60% 60% at 100% 100%,
+            rgba(14, 143, 134, 0.7),
+            transparent 70%
+          ),
+          linear-gradient(170deg, var(--lime), var(--mint) 48%, var(--teal));
+        color: var(--ink);
+      }
+      .sun-flip {
+        background-image:
+          radial-gradient(
+            ellipse 60% 55% at 100% 100%,
+            rgba(255, 232, 74, 0.85),
+            transparent 70%
+          ),
+          radial-gradient(
+            ellipse 60% 60% at 0% 0%,
+            rgba(14, 143, 134, 0.6),
+            transparent 70%
+          ),
+          linear-gradient(10deg, var(--lime), var(--mint) 48%, var(--teal));
+      }
+
+      .bg-hot {
+        background-color: var(--coral);
+        background-image:
+          radial-gradient(
+            ellipse 55% 50% at 0% 0%,
+            rgba(255, 232, 74, 0.75),
+            transparent 70%
+          ),
+          radial-gradient(
+            ellipse 60% 60% at 100% 100%,
+            rgba(255, 79, 160, 0.85),
+            transparent 70%
+          ),
+          linear-gradient(160deg, var(--amber), var(--coral) 50%, var(--pink));
+        color: var(--ink);
+      }
+
+      .bg-paper {
+        background: var(--paper);
+        color: var(--ink);
+      }
+
+      /* ── THE BIG × ── */
+      .bigx {
+        position: absolute;
+        width: var(--size, 520px);
+        height: var(--size, 520px);
+        pointer-events: none;
+        z-index: -1;
+        color: var(--paper);
+      }
+      .bigx::before,
+      .bigx::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 41%;
+        width: 100%;
+        height: 18%;
+        background: currentColor;
+        transform: rotate(45deg);
+      }
+      .bigx::after {
+        transform: rotate(-45deg);
+      }
+      .bigx.coral::before,
+      .bigx.coral::after {
+        background: linear-gradient(
+          90deg,
+          var(--pink),
+          var(--coral) 45%,
+          var(--amber)
+        );
+      }
+      .bigx.aurora::before,
+      .bigx.aurora::after {
+        background: linear-gradient(
+          90deg,
+          var(--teal),
+          var(--mint) 50%,
+          var(--yellow)
+        );
+      }
+      .bigx.br {
+        right: calc(var(--size, 520px) * -0.38);
+        bottom: calc(var(--size, 520px) * -0.38);
+      }
+      .bigx.mr {
+        right: calc(var(--size, 520px) * -0.52);
+        top: 50%;
+        margin-top: calc(var(--size, 520px) * -0.5);
+      }
+
+      /* ── BULLET × ── */
+      .xlist {
+        list-style: none;
+      }
+      .xlist li {
+        position: relative;
+        padding-left: 1.3em;
+      }
+      .xlist li::before {
+        content: "×";
+        position: absolute;
+        left: 0;
+        top: 0.06em;
+        font-weight: 900;
+        font-size: 1.1em;
+        line-height: inherit;
+      }
+      .bg-ink .xlist li::before {
+        color: var(--mint);
+      }
+
+      /* ── BUTTONS (CTA pills) ── */
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        border: none;
+        border-radius: 6px;
+        padding: 14px 22px;
+        font-family: inherit;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 1.2;
+        text-decoration: none;
+        cursor: pointer;
+        transition:
+          transform 0.15s,
+          box-shadow 0.2s,
+          background 0.2s;
+      }
+      .btn:hover {
+        transform: translateY(-2px);
+      }
+      .btn:focus-visible {
+        outline: 3px solid var(--yellow);
+        outline-offset: 3px;
+      }
+      /* Light pages: ink pill, yellow text */
+      .btn-primary {
+        background: var(--ink);
+        color: var(--yellow);
+      }
+      .btn-primary:hover {
+        box-shadow: 0 10px 24px rgba(12, 17, 64, 0.28);
+      }
+      /* Dark pages: mint pill, ink text */
+      .btn-mint {
+        background: var(--mint);
+        color: var(--ink);
+      }
+      .btn-mint:hover {
+        box-shadow: 0 10px 28px rgba(51, 233, 166, 0.35);
+      }
+      .btn-secondary {
+        background: transparent;
+        color: var(--ink);
+        box-shadow: inset 0 0 0 1.5px var(--ink-28);
+      }
+      .btn-secondary:hover {
+        box-shadow: inset 0 0 0 1.5px var(--ink);
+      }
+      .btn-ghost {
+        background: transparent;
+        color: var(--paper);
+        box-shadow: inset 0 0 0 1.5px var(--paper-30);
+      }
+      .btn-ghost:hover {
+        box-shadow: inset 0 0 0 1.5px var(--paper);
+      }
+      .btn-lg {
+        padding: 18px 28px;
+        font-size: 17px;
+      }
+
+      /* ── BADGE (logo) ── */
+      .badge {
+        display: inline-block;
+        background: var(--paper);
+        border-radius: 50%;
+        line-height: 0;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+      }
+      .badge img {
+        display: block;
+        width: 100%;
+        height: auto;
       }
 
       /* ── ANNOUNCEMENT BAR ── */
       .announcement {
-        background: var(--navy);
-        color: var(--white);
+        background: var(--mint);
+        color: var(--ink);
         text-align: center;
         padding: 10px 20px;
-        font-size: 13px;
-        font-weight: 500;
-        letter-spacing: 0.01em;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        line-height: 1.6;
       }
       .announcement span {
-        color: var(--orange);
-        font-weight: 700;
+        display: block;
       }
 
       /* ── NAV ── */
@@ -150,9 +494,13 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 16px 48px;
-        background: var(--white);
-        border-bottom: 1px solid var(--gray-mid);
+        gap: 24px;
+        padding: 12px var(--gutter);
+        background: rgba(12, 17, 64, 0.94);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border-bottom: 1px solid var(--paper-12);
+        color: var(--paper);
         position: sticky;
         top: 0;
         z-index: 100;
@@ -160,170 +508,139 @@
       .nav-logo {
         display: flex;
         align-items: center;
-      }
-      .nav-logo img {
-        height: 44px;
-        width: auto;
-      }
-      .nav-meta {
-        display: flex;
-        gap: 28px;
-        align-items: center;
-        font-size: 14px;
-        color: var(--text-mid);
-      }
-      .nav-meta span {
-        display: flex;
-        align-items: center;
-        gap: 6px;
-      }
-      .nav-meta svg {
-        width: 14px;
-        height: 14px;
-        opacity: 0.6;
-      }
-      .btn-primary {
-        background: var(--orange);
-        color: var(--white);
-        border: none;
-        padding: 12px 24px;
-        border-radius: 100px;
-        font-family: "DM Sans", sans-serif;
-        font-size: 14px;
-        font-weight: 600;
-        cursor: pointer;
+        gap: 12px;
+        color: var(--paper);
         text-decoration: none;
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        transition:
-          background 0.2s,
-          transform 0.15s;
       }
-      .btn-primary:hover {
-        background: var(--orange-dark);
-        transform: translateY(-1px);
+      .nav-logo .badge {
+        width: 52px;
       }
-
+      .nav-logo-text {
+        font-size: 13px;
+        font-weight: 500;
+        line-height: 1.25;
+        color: var(--paper-74);
+      }
+      .nav-logo-text strong {
+        display: block;
+        color: var(--paper);
+        font-weight: 900;
+        font-size: 18px;
+        letter-spacing: -0.02em;
+      }
       /* ── HERO ── */
       .hero {
-        background: #f0effe;
-        padding: 72px 48px 64px;
-        display: grid;
-        grid-template-columns: minmax(0, 560px) 380px;
-        grid-template-areas:
-          "left logo"
-          "left quote";
-        gap: 24px 45px;
-        align-items: center;
-        min-height: 520px;
-        justify-content: center;
+        padding-top: 96px;
+        padding-bottom: 72px;
       }
-      .hero-badge {
-        display: inline-flex;
+      .hero-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.95fr);
+        gap: 64px;
         align-items: center;
-        gap: 6px;
-        background: var(--white);
-        border: 1.5px solid var(--purple-light);
-        border-radius: 100px;
-        padding: 6px 16px;
-        font-size: 13px;
-        font-weight: 600;
-        color: var(--purple);
-        margin-bottom: 24px;
       }
       .hero h1 {
-        font-family: "Syne", sans-serif;
-        font-size: clamp(40px, 5vw, 60px);
-        font-weight: 800;
-        line-height: 1.08;
-        color: var(--navy);
-        margin-bottom: 24px;
+        font-weight: 900;
+        font-size: clamp(64px, 10.5vw, 150px);
+        line-height: 0.9;
+        letter-spacing: -0.05em;
+        margin-bottom: 32px;
       }
-      .hero h1 .accent-purple {
-        color: var(--purple);
+      .hero .subhead {
+        margin-bottom: 40px;
       }
-      .hero h1 .accent-orange {
-        color: var(--orange);
-      }
-      .hero-desc {
-        font-size: 16px;
-        color: var(--text-mid);
-        line-height: 1.65;
-        max-width: 480px;
-        margin-bottom: 28px;
-      }
-      .hero-features {
+      .hero-facts {
         display: grid;
-        grid-template-columns: auto auto;
-        gap: 10px 40px;
-        margin-bottom: 36px;
+        grid-template-columns: repeat(4, auto);
         justify-content: start;
+        gap: 18px 44px;
+        margin-bottom: 32px;
       }
-      .hero-feature {
+      .fact-label {
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--mint);
+        margin-bottom: 6px;
+      }
+      .fact-value {
+        font-size: 22px;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+      }
+      .chips {
         display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      .chip {
+        display: inline-flex;
         align-items: center;
         gap: 8px;
+        padding: 9px 14px;
+        border-radius: 6px;
+        background: var(--paper-12);
+        box-shadow: inset 0 0 0 1px var(--paper-30);
+        font-size: 14px;
+        font-weight: 600;
+      }
+      .chip::before {
+        content: "×";
+        font-weight: 900;
+        color: var(--mint);
+      }
+      .foot {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        flex-wrap: wrap;
+        margin-top: 72px;
+        padding-top: 28px;
+        border-top: 1.5px solid var(--paper-30);
+      }
+      .foot-1 {
+        font-size: 17px;
+        font-weight: 700;
+        line-height: 1.35;
+      }
+      .foot-2 {
         font-size: 14px;
         font-weight: 500;
-        color: var(--text-dark);
-      }
-      .check-icon {
-        width: 20px;
-        height: 20px;
-        background: var(--purple);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-shrink: 0;
-      }
-      .check-icon svg {
-        width: 11px;
-        height: 11px;
-      }
-      .hero-left {
-        grid-area: left;
-      }
-      .hero-rocket {
-        grid-area: logo;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        filter: drop-shadow(0 20px 40px rgba(99, 102, 241, 0.2));
-        animation: float 4s ease-in-out infinite;
+        opacity: 0.74;
+        margin-top: 4px;
       }
 
-      /* ── TESTIMONIALS ── */
+      /* ── TESTIMONIALS (hero card) ── */
       .testimonials {
-        grid-area: quote;
-        background: var(--white);
-        border-radius: 20px;
-        padding: 22px 24px 16px;
-        box-shadow: 0 8px 28px rgba(99, 102, 241, 0.12);
         position: relative;
+        overflow: hidden;
+        isolation: isolate;
+        border-radius: 14px;
+        padding: 30px 30px 26px;
+        min-height: 440px;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 30px 70px rgba(0, 0, 0, 0.35);
       }
-      .testimonials::before {
-        content: "\201C";
+      .testimonials .kicker {
+        font-size: 11px;
+        margin-bottom: 30px;
+        padding-right: 80px;
+      }
+      .testimonials .badge {
         position: absolute;
-        top: -14px;
-        left: 20px;
-        width: 36px;
-        height: 36px;
-        border-radius: 50%;
-        background: linear-gradient(135deg, var(--purple), var(--orange));
-        color: var(--white);
-        font-family: "Syne", sans-serif;
-        font-size: 30px;
-        line-height: 48px;
-        text-align: center;
+        top: 22px;
+        right: 22px;
+        width: 64px;
       }
       .testimonial-track {
         display: grid;
+        flex: 1;
       }
       .testimonial {
         grid-area: 1 / 1;
-        align-self: center;
         opacity: 0;
         visibility: hidden;
         transition:
@@ -334,31 +651,56 @@
         opacity: 1;
         visibility: visible;
       }
-      .testimonial p {
-        font-size: 14px;
-        line-height: 1.6;
-        color: var(--text-dark);
-        font-style: italic;
-        margin-bottom: 8px;
+      .testimonial-quote {
+        font-size: clamp(34px, 3.4vw, 46px);
+        font-weight: 900;
+        line-height: 0.95;
+        letter-spacing: -0.045em;
+        margin-bottom: 18px;
+        max-width: 92%;
+      }
+      .testimonial-body {
+        font-size: 16px;
+        line-height: 1.4;
+        opacity: 0.9;
+        margin-bottom: 18px;
+        max-width: 80%;
       }
       .testimonial cite {
+        display: block;
         font-style: normal;
-        font-size: 13px;
+        font-size: 15px;
         font-weight: 700;
-        color: var(--purple);
+        line-height: 1.35;
+      }
+      .testimonial cite span {
+        display: block;
+        font-weight: 400;
+        opacity: 0.68;
+      }
+      .testimonial-link {
+        display: inline-block;
+        margin-top: 12px;
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--ink);
+        text-decoration: none;
+        border-bottom: 1.5px solid var(--ink-28);
+      }
+      .testimonial-link:hover {
+        border-bottom-color: var(--ink);
       }
       .testimonial-dots {
         display: flex;
-        justify-content: center;
         gap: 6px;
-        margin-top: 12px;
+        margin-top: 22px;
       }
       .testimonial-dots button {
         width: 8px;
         height: 8px;
-        border-radius: 50%;
+        border-radius: 4px;
         border: none;
-        background: var(--gray-mid);
+        background: var(--ink-28);
         cursor: pointer;
         padding: 0;
         transition:
@@ -366,355 +708,37 @@
           width 0.2s;
       }
       .testimonial-dots button.active {
-        background: var(--orange);
-        width: 20px;
-        border-radius: 100px;
+        background: var(--ink);
+        width: 24px;
       }
       @media (prefers-reduced-motion: reduce) {
         .testimonial {
           transition: none;
         }
       }
-      @keyframes float {
-        0%,
-        100% {
-          transform: translateY(0);
-        }
-        50% {
-          transform: translateY(-16px);
-        }
-      }
 
-      .testimonial-link {
-        display: inline-block;
-        margin-left: 10px;
-        font-size: 13px;
-        font-weight: 600;
-        color: var(--orange);
-        text-decoration: none;
+      /* ── SECTION HEAD ── */
+      .section-head {
+        max-width: 820px;
+        margin-bottom: 56px;
       }
-      .testimonial-link:hover {
-        text-decoration: underline;
-      }
-
-      /* ── FEATURED STORY ── */
-      .story-section {
-        background: var(--white);
-        padding: 72px 48px;
-        scroll-margin-top: 76px;
-      }
-      .story-inner {
-        max-width: 760px;
-        margin: 0 auto;
-      }
-      .story-headline {
-        font-family: "Syne", sans-serif;
-        font-size: clamp(28px, 4vw, 42px);
-        font-weight: 800;
-        line-height: 1.15;
-        color: var(--navy);
-        margin-bottom: 48px;
-      }
-      .story-headline .accent-orange {
-        color: var(--orange);
-      }
-      .story-card {
-        background: var(--cream);
-        border-radius: 24px;
-        padding: 40px 40px 32px;
-        text-align: left;
-        position: relative;
-      }
-      .story-card::before {
-        content: "\201C";
-        position: absolute;
-        top: -20px;
-        left: 32px;
-        width: 48px;
-        height: 48px;
-        border-radius: 50%;
-        background: linear-gradient(135deg, var(--purple), var(--orange));
-        color: var(--white);
-        font-family: "Syne", sans-serif;
-        font-size: 40px;
-        line-height: 64px;
-        text-align: center;
-      }
-      .story-card blockquote p {
-        font-size: 16px;
-        line-height: 1.75;
-        color: var(--text-mid);
-        margin-bottom: 16px;
-      }
-      .story-card blockquote p:first-child {
-        font-size: 18px;
-        font-weight: 600;
-        color: var(--text-dark);
-      }
-      .story-author {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        margin-top: 24px;
-        padding-top: 20px;
-        border-top: 1px solid var(--gray-mid);
-      }
-      .story-avatar {
-        width: 44px;
-        height: 44px;
-        flex: 0 0 44px;
-        border-radius: 50%;
-        background: linear-gradient(135deg, var(--purple), var(--orange));
-        color: var(--white);
-        font-family: "Syne", sans-serif;
-        font-size: 15px;
-        font-weight: 700;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      .story-name {
-        font-family: "Syne", sans-serif;
-        font-size: 15px;
-        font-weight: 700;
-        color: var(--navy);
-      }
-      .story-meta {
-        font-size: 13px;
-        color: var(--text-light);
-      }
-
-      /* ── TRUST STRIP ── */
-      .trust-strip {
-        border-top: 1px solid var(--gray-mid);
-        border-bottom: 1px solid var(--gray-mid);
-        padding: 24px 48px;
-        display: flex;
-        justify-content: center;
-        gap: 64px;
-        background: var(--white);
-      }
-      .trust-item {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        font-size: 14px;
-        font-weight: 600;
-        color: var(--text-dark);
-      }
-      .trust-item span.label {
-        color: var(--text-mid);
-        font-weight: 400;
-      }
-
-      /* ── INFO CARDS ── */
-      .info-cards {
-        display: flex;
-        justify-content: center;
-        gap: 16px;
-        padding: 48px 48px;
-        background: var(--cream);
-        flex-wrap: wrap;
-      }
-      .info-card {
-        background: var(--white);
-        border-radius: 16px;
-        padding: 24px 28px;
-        text-align: center;
-        min-width: 130px;
-        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
-      }
-      .info-card-icon {
-        width: 44px;
-        height: 44px;
-        background: linear-gradient(135deg, var(--purple), var(--orange));
-        border-radius: 12px;
-        margin: 0 auto 12px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 20px;
-      }
-      .info-card-label {
-        font-size: 10px;
-        text-transform: uppercase;
-        letter-spacing: 0.1em;
-        color: var(--text-light);
-        font-weight: 600;
-        margin-bottom: 6px;
-      }
-      .info-card-value {
-        font-family: "Syne", sans-serif;
-        font-size: 15px;
-        font-weight: 700;
-        color: var(--navy);
-      }
-
-      /* ── SECTION WRAPPER ── */
-      section {
-        padding: 80px 48px;
-      }
-      .section-tag {
-        display: inline-block;
-        background: var(--gray-light);
-        border-radius: 100px;
-        padding: 6px 18px;
-        font-size: 12px;
-        font-weight: 600;
-        color: var(--text-mid);
-        letter-spacing: 0.04em;
-        text-transform: uppercase;
-        margin-bottom: 16px;
-      }
-      .section-title {
-        font-family: "Syne", sans-serif;
-        font-size: clamp(28px, 4vw, 42px);
-        font-weight: 800;
-        color: var(--navy);
-        margin-bottom: 12px;
-      }
-      .section-sub {
-        font-size: 16px;
-        color: var(--text-mid);
-        line-height: 1.6;
-        max-width: 520px;
-        margin: 0 auto 48px;
-      }
-      .text-center {
-        text-align: center;
-      }
-
-      /* ── SCHEDULE ── */
-      .schedule-section {
-        background: var(--navy);
-        padding: 80px 48px;
-        color: var(--white);
-      }
-      .schedule-section .section-tag {
-        background: rgba(255, 255, 255, 0.1);
-        color: rgba(255, 255, 255, 0.7);
-      }
-      .schedule-section .section-title {
-        color: var(--white);
-      }
-      .schedule-section .section-sub {
-        color: rgba(255, 255, 255, 0.65);
-      }
-      .schedule-list {
-        max-width: 680px;
-        margin: 0 auto;
-      }
-      .schedule-item {
-        display: grid;
-        grid-template-columns: 80px 1fr;
-        gap: 20px;
-        padding: 24px 0;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        align-items: start;
-      }
-      .schedule-item:last-child {
-        border-bottom: none;
-      }
-      .schedule-time {
-        font-family: "Syne", sans-serif;
-        font-size: 13px;
-        font-weight: 700;
-        color: var(--orange);
-        padding-top: 3px;
-        letter-spacing: 0.02em;
-      }
-      .schedule-content h4 {
-        font-family: "Syne", sans-serif;
-        font-size: 16px;
-        font-weight: 700;
-        margin-bottom: 6px;
-        display: flex;
-        align-items: center;
-        gap: 8px;
-      }
-      .schedule-content p {
-        font-size: 14px;
-        color: rgba(255, 255, 255, 0.65);
-        line-height: 1.6;
-      }
-      .schedule-break {
-        background: rgba(249, 115, 22, 0.15);
-        border: 1px solid rgba(249, 115, 22, 0.3);
-        border-radius: 10px;
-        padding: 14px 20px;
-        text-align: center;
-        font-size: 14px;
-        font-weight: 600;
-        color: var(--orange);
-        margin: 8px 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
-      }
-
-      /* ── SKILLS GRID ── */
-      .skills-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 20px;
-        max-width: 900px;
-        margin: 0 auto;
-      }
-      .skill-card {
-        background: var(--gray-light);
-        border-radius: 16px;
-        padding: 28px 24px;
-        transition:
-          transform 0.2s,
-          box-shadow 0.2s;
-      }
-      .skill-card:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
-      }
-      .skill-icon {
-        width: 48px;
-        height: 48px;
-        background: var(--purple);
-        border-radius: 14px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 22px;
-        margin-bottom: 16px;
-      }
-      .skill-card h3 {
-        font-family: "Syne", sans-serif;
-        font-size: 16px;
-        font-weight: 700;
-        margin-bottom: 8px;
-        color: var(--navy);
-      }
-      .skill-card p {
-        font-size: 14px;
-        color: var(--text-mid);
-        line-height: 1.6;
+      .section-head .headline {
+        margin-bottom: 22px;
       }
 
       /* ── MENTOR ── */
-      .mentor-section {
-        background: var(--gray-light);
-      }
       .mentor-card {
-        max-width: 960px;
-        margin: 0 auto;
-        background: var(--white);
-        border-radius: 24px;
+        background: var(--paper);
+        border-radius: 14px;
         overflow: hidden;
-        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.07);
+        box-shadow: 0 30px 70px rgba(12, 17, 64, 0.22);
       }
       .mentor-video {
         display: block;
         width: 100%;
         padding: 0;
         border: 0;
-        background: #111;
+        background: var(--ink);
         aspect-ratio: 16/9;
         cursor: pointer;
         overflow: hidden;
@@ -738,8 +762,8 @@
         inset: 0;
         background: linear-gradient(
           to top,
-          rgba(0, 0, 0, 0.45),
-          rgba(0, 0, 0, 0) 45%
+          rgba(12, 17, 64, 0.7),
+          rgba(12, 17, 64, 0) 50%
         );
         pointer-events: none;
       }
@@ -758,14 +782,14 @@
         left: 50%;
         transform: translate(-50%, -50%);
         z-index: 1;
-        width: 84px;
-        height: 84px;
-        background: var(--orange);
+        width: 92px;
+        height: 92px;
+        background: var(--mint);
         border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
-        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+        box-shadow: 0 10px 36px rgba(12, 17, 64, 0.45);
         transition: transform 0.2s;
       }
       .mentor-video:hover .play-btn,
@@ -773,318 +797,391 @@
         transform: translate(-50%, -50%) scale(1.08);
       }
       .play-btn svg {
-        width: 30px;
-        height: 30px;
-        fill: var(--white);
+        width: 32px;
+        height: 32px;
+        fill: var(--ink);
         margin-left: 5px;
       }
       .ted-badge {
         position: absolute;
-        bottom: 20px;
-        left: 24px;
+        bottom: 22px;
+        left: 26px;
         z-index: 1;
-        color: var(--white);
-        font-size: 14px;
-        font-weight: 600;
+        color: var(--paper);
+        font-size: 15px;
+        font-weight: 700;
         text-align: left;
-        text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
       }
       .ted-badge strong {
         display: inline-block;
-        background: #e62b1e;
+        background: var(--paper);
+        color: var(--ink);
         font-size: 11px;
         font-weight: 800;
-        letter-spacing: 0.04em;
-        padding: 3px 8px;
+        letter-spacing: 0.12em;
+        padding: 4px 8px;
         border-radius: 4px;
-        margin-right: 8px;
-        text-shadow: none;
+        margin-right: 10px;
       }
       .mentor-info {
         display: grid;
-        grid-template-columns: 1fr 260px;
-        gap: 40px;
-        padding: 36px 40px 40px;
-        text-align: left;
+        grid-template-columns: 1fr 300px;
+        gap: 56px;
+        padding: 44px 48px 48px;
       }
       .mentor-info h3 {
-        font-family: "Syne", sans-serif;
-        font-size: 30px;
-        font-weight: 800;
-        color: var(--navy);
-        margin-bottom: 12px;
+        font-size: clamp(36px, 4vw, 52px);
+        font-weight: 900;
+        line-height: 0.93;
+        letter-spacing: -0.045em;
+        margin-bottom: 20px;
       }
       .mentor-info p {
-        font-size: 15px;
-        color: var(--text-mid);
-        line-height: 1.65;
+        font-size: 17px;
+        line-height: 1.5;
+        opacity: 0.88;
         margin-bottom: 12px;
+        max-width: 620px;
+      }
+      .mentor-info em {
+        font-style: normal;
+        font-weight: 700;
       }
       .mentor-tags {
         display: flex;
         flex-wrap: wrap;
         gap: 8px;
-        margin-bottom: 20px;
+        margin-bottom: 24px;
       }
       .mentor-tag {
-        border: 1.5px solid var(--gray-mid);
-        border-radius: 100px;
-        padding: 5px 14px;
-        font-size: 12px;
+        border-radius: 6px;
+        padding: 7px 12px;
+        font-size: 13px;
         font-weight: 600;
-        color: var(--text-mid);
-        display: flex;
-        align-items: center;
-        gap: 5px;
+        box-shadow: inset 0 0 0 1px var(--ink-28);
       }
       .mentor-actions {
         display: flex;
         flex-direction: column;
         gap: 10px;
       }
-      .mentor-actions > * {
+
+      /* ── FEATURED STORY ── */
+      .story-section {
+        scroll-margin-top: 80px;
+      }
+      .story-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+        gap: 72px;
+        align-items: start;
+      }
+      .story-headline {
+        font-size: clamp(48px, 6.6vw, 100px);
+      }
+      .story-intro {
+        position: sticky;
+        top: 120px;
+      }
+      .story-card {
+        background: var(--paper);
+        border-radius: 14px;
+        padding: 44px 44px 36px;
+        box-shadow: 0 30px 70px rgba(12, 17, 64, 0.2);
+      }
+      .story-card blockquote p {
+        font-size: 17px;
+        line-height: 1.6;
+        opacity: 0.88;
+        margin-bottom: 16px;
+      }
+      .story-card blockquote p:first-child {
+        font-size: clamp(26px, 2.6vw, 34px);
+        font-weight: 800;
+        line-height: 1.1;
+        letter-spacing: -0.03em;
+        opacity: 1;
+        margin-bottom: 22px;
+      }
+      .story-author {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        margin-top: 28px;
+        padding-top: 22px;
+        border-top: 1.5px solid var(--ink-28);
+      }
+      .story-avatar {
+        width: 48px;
+        height: 48px;
+        flex: 0 0 48px;
+        border-radius: 50%;
+        background: var(--ink);
+        color: var(--yellow);
+        font-size: 16px;
+        font-weight: 800;
+        display: flex;
+        align-items: center;
         justify-content: center;
       }
-      .btn-secondary {
-        background: transparent;
-        color: var(--navy);
-        border: 1.5px solid var(--gray-mid);
-        padding: 10px 20px;
-        border-radius: 100px;
-        font-family: "DM Sans", sans-serif;
-        font-size: 14px;
-        font-weight: 600;
-        cursor: pointer;
-        text-decoration: none;
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        transition:
-          border-color 0.2s,
-          background 0.2s;
+      .story-name {
+        font-size: 16px;
+        font-weight: 700;
       }
-      .btn-secondary:hover {
-        border-color: var(--purple);
-        background: #f5f4ff;
+      .story-meta {
+        font-size: 15px;
+        opacity: 0.68;
+      }
+
+      /* ── SCHEDULE ── */
+      .schedule-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+        gap: 72px;
+        align-items: start;
+      }
+      .schedule-intro {
+        position: sticky;
+        top: 120px;
+      }
+      .schedule-intro .foot {
+        margin-top: 48px;
+      }
+      .schedule-list {
+        border-top: 1.5px solid var(--paper-30);
+      }
+      .schedule-item {
+        display: grid;
+        grid-template-columns: 104px 1fr;
+        gap: 20px;
+        padding: 24px 0;
+        border-bottom: 1px solid var(--paper-12);
+        align-items: baseline;
+      }
+      .schedule-time {
+        font-size: 16px;
+        font-weight: 600;
+        color: var(--mint);
+        font-variant-numeric: tabular-nums;
+      }
+      .schedule-content h4 {
+        font-size: 21px;
+        font-weight: 700;
+        letter-spacing: -0.015em;
+        line-height: 1.2;
+        margin-bottom: 6px;
+      }
+      .schedule-content p {
+        font-size: 16px;
+        color: var(--paper-74);
+        line-height: 1.5;
+      }
+      .schedule-item.is-break {
+        padding: 16px 0;
+      }
+      .schedule-item.is-break .schedule-content {
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--paper-74);
+      }
+
+      /* ── SKILLS ── */
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0 48px;
+      }
+      .skill-card {
+        padding: 30px 0 36px;
+        border-top: 1.5px solid var(--ink-28);
+      }
+      .skill-card h3 {
+        font-size: 28px;
+        font-weight: 900;
+        letter-spacing: -0.04em;
+        line-height: 1;
+        margin-bottom: 12px;
+        padding-left: 1.05em;
+        position: relative;
+      }
+      .skill-card h3::before {
+        content: "×";
+        position: absolute;
+        left: 0;
+        top: 0.02em;
+        font-size: 0.85em;
+      }
+      .skill-card p {
+        font-size: 16px;
+        line-height: 1.5;
+        opacity: 0.86;
       }
 
       /* ── PRICING ── */
-      .pricing-section {
-        background: var(--orange);
-        text-align: center;
-        padding: 80px 48px;
-      }
-      .pricing-section .section-title {
-        color: var(--white);
-      }
-      .pricing-section .section-sub {
-        color: rgba(255, 255, 255, 0.85);
-        max-width: 540px;
+      .pricing-cards {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 460px));
+        gap: 28px;
       }
       .pricing-card {
-        background: var(--white);
-        border-radius: 24px;
+        background: var(--paper);
+        border-radius: 14px;
         padding: 40px;
-        max-width: 400px;
-        margin: 0 auto;
-        text-align: left;
-        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        box-shadow: 0 30px 70px rgba(12, 17, 64, 0.22);
+        display: flex;
+        flex-direction: column;
       }
-      .pricing-label {
-        font-size: 11px;
-        text-transform: uppercase;
-        letter-spacing: 0.12em;
-        color: var(--text-light);
-        font-weight: 700;
-        margin-bottom: 8px;
+      .pricing-card .kicker {
+        margin-bottom: 10px;
+      }
+      .pricing-date {
+        font-size: clamp(80px, 9vw, 120px);
+        font-weight: 900;
+        line-height: 0.85;
+        letter-spacing: -0.055em;
+        margin-bottom: 10px;
+      }
+      .pricing-title {
+        font-size: 22px;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        margin-bottom: 28px;
+      }
+      .pricing-row {
+        display: flex;
+        align-items: baseline;
+        gap: 10px;
+        padding-top: 22px;
+        border-top: 1.5px solid var(--ink-28);
       }
       .pricing-amount {
-        font-family: "Syne", sans-serif;
-        font-size: 64px;
-        font-weight: 800;
-        color: var(--navy);
+        font-size: 56px;
+        font-weight: 900;
+        letter-spacing: -0.05em;
         line-height: 1;
-        margin-bottom: 4px;
       }
-      .pricing-currency {
-        font-size: 22px;
-        font-weight: 700;
-        color: var(--text-light);
-        letter-spacing: 0.04em;
+      .pricing-label {
+        font-size: 15px;
+        font-weight: 500;
+        opacity: 0.72;
       }
       .pricing-note {
-        font-size: 13px;
-        color: var(--text-light);
-        margin-bottom: 28px;
+        font-size: 15px;
+        font-weight: 600;
+        margin: 8px 0 24px;
       }
       .pricing-features {
-        list-style: none;
-        margin-bottom: 28px;
+        font-size: 16px;
+        margin-bottom: 30px;
       }
       .pricing-features li {
+        padding-top: 6px;
+        padding-bottom: 6px;
+      }
+      .btn-group .pricing-note {
+        margin: 0 0 4px;
+        opacity: 0.72;
+      }
+      .btn-group {
+        margin-top: auto;
         display: flex;
-        align-items: center;
+        flex-direction: column;
         gap: 10px;
-        font-size: 14px;
-        color: var(--text-dark);
-        padding: 10px 0;
-        border-bottom: 1px solid var(--gray-light);
-      }
-      .pricing-features li:last-child {
-        border-bottom: none;
-      }
-      .pricing-features .green-check {
-        width: 20px;
-        height: 20px;
-        background: #22c55e;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-shrink: 0;
-      }
-      .pricing-features .green-check svg {
-        width: 11px;
-        height: 11px;
-      }
-      .pricing-cta {
-        width: 100%;
-        text-align: center;
-        justify-content: center;
-        font-size: 16px;
-        padding: 16px;
-      }
-      .limited-note {
-        text-align: center;
-        margin-top: 14px;
-        font-size: 13px;
-        color: rgba(255, 255, 255, 0.75);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 6px;
       }
 
       /* ── FAQ ── */
       .faq-grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 16px;
-        max-width: 860px;
-        margin: 0 auto;
+        gap: 0 56px;
       }
       .faq-card {
-        background: var(--white);
-        border: 1.5px solid var(--gray-mid);
-        border-radius: 16px;
-        padding: 24px;
-        transition: border-color 0.2s;
-      }
-      .faq-card:hover {
-        border-color: var(--purple-light);
+        padding: 30px 0 34px;
+        border-top: 1.5px solid var(--ink-28);
       }
       .faq-card h4 {
-        font-family: "Syne", sans-serif;
-        font-size: 15px;
-        font-weight: 700;
+        font-size: 22px;
+        font-weight: 800;
+        letter-spacing: -0.025em;
+        line-height: 1.15;
         margin-bottom: 10px;
-        color: var(--navy);
       }
       .faq-card p {
-        font-size: 14px;
-        color: var(--text-mid);
-        line-height: 1.65;
+        font-size: 16px;
+        line-height: 1.55;
+        opacity: 0.82;
+      }
+
+      /* ── CTA SECTION ── */
+      .cta-buttons {
+        display: flex;
+        gap: 14px;
+        flex-wrap: wrap;
+        margin-top: 40px;
       }
 
       /* ── FOOTER ── */
       footer {
-        background: var(--navy);
-        color: var(--white);
-        padding: 48px 48px 24px;
+        background: var(--ink);
+        color: var(--paper);
+        padding: 56px var(--gutter) 28px;
+        border-top: 1.5px solid var(--paper-12);
       }
       .footer-inner {
+        max-width: var(--max);
+        margin: 0 auto;
+      }
+      .footer-top {
         display: flex;
         justify-content: space-between;
         gap: 40px;
-        padding-bottom: 32px;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        margin-bottom: 24px;
+        padding-bottom: 36px;
+        border-bottom: 1.5px solid var(--paper-12);
+        margin-bottom: 22px;
+      }
+      .footer-left .badge {
+        width: 72px;
+        margin-bottom: 18px;
       }
       .footer-left p {
-        font-size: 14px;
-        color: rgba(255, 255, 255, 0.55);
-        margin-top: 10px;
-        max-width: 260px;
-        line-height: 1.6;
+        font-size: 30px;
+        font-weight: 900;
+        letter-spacing: -0.045em;
+        line-height: 1;
       }
       .footer-right h5 {
-        font-family: "Syne", sans-serif;
-        font-size: 14px;
+        font-size: 12px;
         font-weight: 700;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--mint);
         margin-bottom: 14px;
       }
       .footer-right a {
         display: block;
-        font-size: 14px;
-        color: var(--orange);
+        font-size: 15px;
+        color: var(--paper);
         text-decoration: none;
-        margin-bottom: 6px;
+        border-bottom: 1px solid var(--paper-30);
+        width: fit-content;
       }
       .footer-right a:hover {
-        text-decoration: underline;
+        border-bottom-color: var(--paper);
       }
       .footer-right .contact-name {
-        color: rgba(255, 255, 255, 0.8);
-        font-weight: 500;
-        margin-bottom: 2px;
-        font-size: 14px;
+        font-weight: 700;
+        margin-bottom: 4px;
+        font-size: 15px;
       }
       .footer-copy {
-        text-align: center;
-        font-size: 12px;
-        color: rgba(255, 255, 255, 0.35);
-      }
-
-      /* ── CTA SECTION ── */
-      .cta-section {
-        background: var(--cream);
-        text-align: center;
-        padding: 80px 48px;
-      }
-      .cta-buttons {
+        font-size: 13px;
+        color: var(--paper-74);
         display: flex;
-        justify-content: center;
-        gap: 20px;
+        justify-content: space-between;
+        gap: 16px;
         flex-wrap: wrap;
-        margin-top: 32px;
-      }
-      .btn-cta-large {
-        padding: 18px 36px;
-        border-radius: 100px;
-        font-family: "DM Sans", sans-serif;
-        font-size: 16px;
-        font-weight: 700;
-        cursor: pointer;
-        text-decoration: none;
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        transition:
-          transform 0.15s,
-          box-shadow 0.2s;
-        border: none;
-      }
-      .btn-cta-large:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-      }
-      .btn-cta-workshop {
-        background: var(--purple);
-        color: var(--white);
-      }
-      .btn-cta-waitlist {
-        background: var(--navy);
-        color: var(--white);
       }
 
       /* ── MODAL ── */
@@ -1092,7 +1189,9 @@
         display: none;
         position: fixed;
         inset: 0;
-        background: rgba(0, 0, 0, 0.5);
+        background: rgba(12, 17, 64, 0.72);
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
         z-index: 1000;
         align-items: center;
         justify-content: center;
@@ -1102,90 +1201,78 @@
         display: flex;
       }
       .modal {
-        background: var(--white);
-        border-radius: 24px;
+        background: var(--paper);
+        color: var(--ink);
+        border-radius: 14px;
         padding: 40px;
-        max-width: 500px;
+        max-width: 520px;
         width: 100%;
         position: relative;
         max-height: 90vh;
         overflow-y: auto;
-        box-shadow: 0 24px 64px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+      }
+      .modal .kicker {
+        margin-bottom: 14px;
       }
       .modal-close {
         position: absolute;
         top: 16px;
         right: 16px;
-        width: 36px;
-        height: 36px;
-        border-radius: 50%;
-        border: 1.5px solid var(--gray-mid);
-        background: var(--white);
+        width: 38px;
+        height: 38px;
+        border-radius: 6px;
+        border: none;
+        box-shadow: inset 0 0 0 1.5px var(--ink-28);
+        background: transparent;
         cursor: pointer;
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 18px;
-        color: var(--text-mid);
-        transition: border-color 0.2s;
+        font-family: inherit;
+        font-size: 22px;
+        font-weight: 700;
+        color: var(--ink);
+        transition: box-shadow 0.2s;
       }
       .modal-close:hover {
-        border-color: var(--navy);
+        box-shadow: inset 0 0 0 1.5px var(--ink);
       }
       .modal h3 {
-        font-family: "Syne", sans-serif;
-        font-size: 24px;
-        font-weight: 800;
-        color: var(--navy);
-        margin-bottom: 8px;
+        font-size: 36px;
+        font-weight: 900;
+        line-height: 0.95;
+        letter-spacing: -0.045em;
+        margin-bottom: 12px;
+        padding-right: 40px;
       }
       .modal p.modal-desc {
-        font-size: 14px;
-        color: var(--text-mid);
-        line-height: 1.6;
-        margin-bottom: 24px;
+        font-size: 16px;
+        line-height: 1.5;
+        opacity: 0.82;
+        margin-bottom: 26px;
       }
 
       /* ── REGISTER CONFIRMATION MODAL ── */
       .reg-summary {
-        background: var(--cream);
-        border-radius: 16px;
-        padding: 20px;
-        margin-bottom: 22px;
+        border-radius: 10px;
+        padding: 22px 24px;
+        margin: 18px 0 22px;
       }
       .reg-summary-title {
-        font-family: "Syne", sans-serif;
-        font-size: 15px;
-        font-weight: 800;
-        color: var(--navy);
-        letter-spacing: 0.03em;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.2em;
         text-transform: uppercase;
+        color: var(--mint);
         margin-bottom: 14px;
       }
       .reg-summary-list {
-        list-style: none;
+        font-size: 16px;
+        font-weight: 600;
       }
-      .reg-summary-list li {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        font-size: 14px;
-        color: var(--text-mid);
-        margin-bottom: 9px;
-      }
-      .reg-summary-list li:last-child {
-        margin-bottom: 0;
-      }
-      .reg-ico {
-        width: 26px;
-        height: 26px;
-        flex: 0 0 26px;
-        background: linear-gradient(135deg, var(--purple), var(--orange));
-        border-radius: 8px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 13px;
+      .reg-summary-list li + li {
+        margin-top: 8px;
       }
       .reg-options {
         margin-bottom: 18px;
@@ -1194,27 +1281,27 @@
         display: flex;
         align-items: center;
         gap: 12px;
-        border: 1.5px solid var(--gray-mid);
-        border-radius: 12px;
-        padding: 14px 16px;
+        border-radius: 8px;
+        box-shadow: inset 0 0 0 1.5px var(--ink-28);
+        padding: 16px 18px;
         margin-bottom: 10px;
         cursor: pointer;
         transition:
-          border-color 0.2s,
+          box-shadow 0.2s,
           background 0.2s;
       }
       .reg-option:hover {
-        border-color: var(--purple-light);
+        box-shadow: inset 0 0 0 1.5px var(--ink-72);
       }
       .reg-option.selected {
-        border-color: var(--purple);
-        background: #f5f4ff;
+        box-shadow: inset 0 0 0 2px var(--ink);
+        background: rgba(51, 233, 166, 0.22);
       }
       .reg-option input {
         width: 18px;
         height: 18px;
         flex: 0 0 18px;
-        accent-color: var(--purple);
+        accent-color: var(--ink);
         cursor: pointer;
       }
       .reg-option-text {
@@ -1222,212 +1309,189 @@
       }
       .reg-option-label {
         display: block;
-        font-size: 14px;
-        font-weight: 600;
-        color: var(--text-dark);
+        font-size: 16px;
+        font-weight: 700;
       }
       .reg-option-sub {
         display: block;
-        font-size: 12px;
-        color: var(--text-light);
+        font-size: 14px;
+        opacity: 0.7;
         margin-top: 2px;
       }
       .reg-option-price {
         margin-left: auto;
-        font-family: "Syne", sans-serif;
-        font-size: 18px;
-        font-weight: 800;
-        color: var(--navy);
+        font-size: 26px;
+        font-weight: 900;
+        letter-spacing: -0.04em;
       }
       .reg-note {
-        font-size: 12px;
-        color: var(--text-light);
+        font-size: 13px;
+        opacity: 0.7;
         text-align: center;
-        line-height: 1.6;
-        margin-top: 12px;
+        line-height: 1.5;
+        margin-top: 14px;
       }
       .form-group {
         margin-bottom: 16px;
       }
       .form-group label {
         display: block;
-        font-size: 13px;
-        font-weight: 600;
-        color: var(--text-dark);
+        font-size: 14px;
+        font-weight: 700;
         margin-bottom: 6px;
       }
       .form-group input,
       .form-group select {
         width: 100%;
-        padding: 12px 16px;
-        border: 1.5px solid var(--gray-mid);
-        border-radius: 12px;
-        font-family: "DM Sans", sans-serif;
-        font-size: 14px;
-        color: var(--text-dark);
-        background: var(--white);
-        transition: border-color 0.2s;
+        padding: 13px 14px;
+        border: none;
+        box-shadow: inset 0 0 0 1.5px var(--ink-28);
+        border-radius: 6px;
+        font-family: inherit;
+        font-size: 16px;
+        color: var(--ink);
+        background: rgba(255, 255, 255, 0.45);
+        transition: box-shadow 0.2s;
         outline: none;
       }
       .form-group input:focus,
       .form-group select:focus {
-        border-color: var(--purple);
+        box-shadow:
+          inset 0 0 0 2px var(--deep-teal),
+          0 0 0 4px rgba(51, 233, 166, 0.35);
       }
       .form-group input::placeholder {
-        color: var(--text-light);
+        color: var(--ink);
+        opacity: 0.45;
       }
       .form-submit {
         width: 100%;
         margin-top: 8px;
-        text-align: center;
-        justify-content: center;
-        font-size: 15px;
-        padding: 14px;
+        padding: 16px;
       }
       .form-success {
         display: none;
-        text-align: center;
-        padding: 20px 0;
+        padding: 12px 0 4px;
       }
       .form-success .success-icon {
         width: 64px;
         height: 64px;
-        background: #22c55e;
+        background: var(--mint);
+        color: var(--ink);
         border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
-        margin: 0 auto 16px;
-        font-size: 28px;
+        margin-bottom: 20px;
+        font-size: 30px;
+        font-weight: 900;
       }
       .form-success h4 {
-        font-family: "Syne", sans-serif;
-        font-size: 20px;
-        font-weight: 700;
-        color: var(--navy);
-        margin-bottom: 8px;
+        font-size: 34px;
+        font-weight: 900;
+        line-height: 0.95;
+        letter-spacing: -0.045em;
+        margin-bottom: 12px;
       }
       .form-success p {
-        font-size: 14px;
-        color: var(--text-mid);
-        line-height: 1.6;
+        font-size: 16px;
+        line-height: 1.5;
+        opacity: 0.82;
       }
 
       /* ── RESPONSIVE ── */
-      @media (max-width: 768px) {
-        .announcement {
-          font-size: 12px;
-          padding: 8px 16px;
+      @media (max-width: 1024px) {
+        :root {
+          --gutter: 40px;
         }
-        nav {
-          padding: 12px 16px;
-        }
-        .nav-logo img {
-          height: 36px;
-        }
-        .nav-meta {
-          display: none;
-        }
-        nav .btn-primary {
-          padding: 10px 18px;
-          font-size: 13px;
-        }
-        .hero {
+        .hero-grid,
+        .story-grid,
+        .schedule-grid {
           grid-template-columns: 1fr;
-          grid-template-areas:
-            "logo"
-            "left"
-            "quote";
-          padding: 32px 20px 40px;
-          gap: 24px;
-          min-height: auto;
+          gap: 48px;
         }
-        .hero-rocket {
-          max-width: 140px;
-          margin: 0 auto;
+        .story-intro,
+        .schedule-intro {
+          position: static;
         }
-        .hero-rocket img {
-          max-width: 140px !important;
+        .hero-facts {
+          grid-template-columns: repeat(2, auto);
         }
-        .hero-badge {
-          font-size: 12px;
-          padding: 5px 12px;
-          margin-bottom: 16px;
-        }
-        .hero h1 {
-          font-size: 32px;
-          margin-bottom: 16px;
-        }
-        .hero-desc {
-          font-size: 14px;
-          margin-bottom: 20px;
-        }
-        .hero-features {
-          grid-template-columns: 1fr;
-          gap: 8px;
-          margin-bottom: 24px;
-        }
-        .hero-feature {
-          font-size: 13px;
-        }
-        .story-section {
-          padding: 56px 20px;
-        }
-        .story-headline {
-          margin-bottom: 40px;
-        }
-        .story-card {
-          padding: 36px 22px 24px;
-        }
-        .story-card::before {
-          left: 22px;
-        }
-        .story-card blockquote p {
-          font-size: 15px;
-        }
-        .story-card blockquote p:first-child {
-          font-size: 16px;
-        }
-        .trust-strip {
-          padding: 16px 20px;
-          gap: 12px 24px;
-          flex-wrap: wrap;
-          justify-content: center;
-        }
-        .trust-item {
-          font-size: 12px;
-        }
-        .info-cards {
-          padding: 32px 20px;
-          gap: 10px;
-        }
-        .info-card {
-          padding: 16px 14px;
-          min-width: 100px;
-        }
-        section {
-          padding: 60px 20px;
-        }
-        .schedule-section {
-          padding: 60px 20px;
-        }
-        .skills-grid {
-          grid-template-columns: 1fr;
-        }
-        .mentor-card {
-          border-radius: 18px;
+        .testimonials {
+          max-width: 560px;
         }
         .mentor-info {
           grid-template-columns: 1fr;
-          padding: 24px;
           gap: 8px;
         }
-        .mentor-info h3 {
-          font-size: 24px;
+        .skills-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width: 768px) {
+        :root {
+          --gutter: 20px;
+        }
+        .band {
+          padding-top: 72px;
+          padding-bottom: 72px;
+        }
+        .hero {
+          padding-top: 56px;
+          padding-bottom: 48px;
+        }
+        .announcement {
+          font-size: 11px;
+          letter-spacing: 0.05em;
+          padding: 8px 16px;
+        }
+        nav {
+          padding: 10px var(--gutter);
+        }
+        .nav-logo .badge {
+          width: 42px;
+        }
+        .nav-logo-text {
+          display: none;
+        }
+        nav .btn {
+          padding: 11px 16px;
+          font-size: 15px;
+        }
+        .hero h1 {
+          font-size: clamp(60px, 18vw, 96px);
+        }
+        .hero-facts {
+          gap: 16px 28px;
+        }
+        .fact-value {
+          font-size: 19px;
+        }
+        .foot {
+          margin-top: 48px;
+        }
+        .foot .btn {
+          width: 100%;
+        }
+        .testimonials {
+          min-height: 0;
+          padding: 26px 22px 22px;
+        }
+        .testimonials .badge {
+          width: 54px;
+          top: 18px;
+          right: 18px;
+        }
+        .section-head {
+          margin-bottom: 40px;
+        }
+        .mentor-info {
+          padding: 28px 22px 26px;
         }
         .play-btn {
-          width: 64px;
-          height: 64px;
+          width: 68px;
+          height: 68px;
         }
         .play-btn svg {
           width: 24px;
@@ -1437,45 +1501,44 @@
         .ted-badge {
           bottom: 12px;
           left: 14px;
-          font-size: 12px;
+          font-size: 13px;
         }
-        .faq-grid {
+        .story-card {
+          padding: 30px 22px 24px;
+        }
+        .story-card blockquote p {
+          font-size: 16px;
+        }
+        .schedule-item {
+          grid-template-columns: 1fr;
+          gap: 4px;
+          padding: 20px 0;
+        }
+        .schedule-content h4 {
+          font-size: 19px;
+        }
+        .skills-grid,
+        .faq-grid,
+        .pricing-cards {
           grid-template-columns: 1fr;
         }
-        .footer-inner {
-          flex-direction: column;
-        }
-        .pricing-section {
-          padding: 60px 20px;
-        }
         .pricing-card {
-          padding: 28px;
+          padding: 28px 22px;
         }
-        .pricing-amount {
-          font-size: 48px;
+        .cta-buttons .btn {
+          width: 100%;
         }
-        .cta-section {
-          padding: 60px 20px;
-        }
-        .cta-buttons {
+        .footer-top {
           flex-direction: column;
-          align-items: center;
         }
         .modal {
-          padding: 24px;
-          border-radius: 18px;
+          padding: 28px 22px;
         }
-      }
-
-      @media (max-width: 380px) {
-        .hero h1 {
-          font-size: 28px;
+        .modal h3 {
+          font-size: 30px;
         }
-        .hero-rocket {
-          max-width: 110px;
-        }
-        .hero-rocket img {
-          max-width: 110px !important;
+        .bigx {
+          --size: 300px !important;
         }
       }
     </style>
@@ -1483,253 +1546,213 @@
   <body>
     <!-- ANNOUNCEMENT -->
     <div class="announcement">
-      <span>Limited spots available</span> — Secure your teen's seat before
-      registration closes
+      <span>Up next: Sat, Oct 24 · Austin, TX · 10 AM to 4 PM</span>
+      <span>Coming up: Sat, Nov 7 · Miami, FL</span>
     </div>
 
     <!-- NAV -->
     <nav>
-      <div class="nav-logo">
-        <img src="logo_nav.png" alt="YXO" width="70" height="44" />
-      </div>
-      <div class="nav-meta">
-        <span>
-          <svg
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
-            <rect x="3" y="4" width="18" height="18" rx="2" />
-            <line x1="16" y1="2" x2="16" y2="6" />
-            <line x1="8" y1="2" x2="8" y2="6" />
-            <line x1="3" y1="10" x2="21" y2="10" />
-          </svg>
-          October 24, 2026
-        </span>
-        <span>
-          <svg
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
-            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-            <circle cx="12" cy="10" r="3" />
-          </svg>
-          Austin, Texas
-        </span>
-        <span>
-          <svg
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
-            <circle cx="12" cy="12" r="10" />
-            <polyline points="12 6 12 12 16 14" />
-          </svg>
-          10 AM – 4 PM
-        </span>
-      </div>
-      <button class="btn-primary" onclick="openRegisterModal('1')">
-        Register Here →
+      <a class="nav-logo" href="/">
+        <span class="badge"
+          ><img src="logo_hero.webp" alt="YXO" width="52" height="52"
+        /></span>
+        <span class="nav-logo-text"
+          ><strong>YXO</strong>Young Extraordinary Odyssey</span
+        >
+      </a>
+      <button class="btn btn-mint" onclick="openRegisterModal('1')">
+        Register →
       </button>
     </nav>
 
     <!-- HERO -->
-    <div class="hero">
-      <div class="hero-left">
-        <div class="hero-badge">⚡ Full Day Workshop for Ages 13–17</div>
-        <h1>
-          Unleash Young<br /><span class="accent-purple">Extraordinary</span
-          ><br /><span class="accent-orange">Potential</span>
-        </h1>
-        <p class="hero-desc">
-          A full-day workshop for young minds (ages 13–17) to explore
-          exponential thinking, discover their purpose, and learn how to shape
-          the future.
-        </p>
-        <div class="hero-features">
-          <div class="hero-feature">
-            <div class="check-icon">
-              <svg viewBox="0 0 12 12" fill="none">
-                <polyline
-                  points="2,6 5,9 10,3"
-                  stroke="white"
-                  stroke-width="1.8"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
+    <header class="band bg-ink hero">
+      <div class="band-inner">
+        <div class="hero-grid">
+          <div class="hero-left">
+            <div class="kicker">A full-day workshop for teens</div>
+            <h1>Think 10<span class="x">×</span><br />bigger.</h1>
+            <p class="subhead">
+              A full day for teens ages 13 to 17 to explore exponential
+              thinking, use AI as a tool for their own ideas, and start building
+              a personal roadmap for an extraordinary life.
+            </p>
+            <div class="hero-facts">
+              <div>
+                <div class="fact-label">Date</div>
+                <div class="fact-value">Sat, Oct 24</div>
+              </div>
+              <div>
+                <div class="fact-label">Time</div>
+                <div class="fact-value">10 AM to 4 PM</div>
+              </div>
+              <div>
+                <div class="fact-label">Where</div>
+                <div class="fact-value">Austin, TX</div>
+              </div>
+              <div>
+                <div class="fact-label">Ages</div>
+                <div class="fact-value">13 to 17</div>
+              </div>
             </div>
-            AI & Technology Mastery
+            <div class="chips">
+              <span class="chip">AI fluency</span>
+              <span class="chip">Entrepreneurial mindset</span>
+              <span class="chip">A personal roadmap</span>
+              <span class="chip">Certificate of completion</span>
+            </div>
           </div>
-          <div class="hero-feature">
-            <div class="check-icon">
-              <svg viewBox="0 0 12 12" fill="none">
-                <polyline
-                  points="2,6 5,9 10,3"
-                  stroke="white"
-                  stroke-width="1.8"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
+
+          <div
+            class="testimonials bg-sun"
+            role="region"
+            aria-roledescription="carousel"
+            aria-label="What parents are saying"
+          >
+            <span
+              class="bigx coral br"
+              style="--size: 300px"
+              aria-hidden="true"
+            ></span>
+            <div class="kicker">From a YXO parent</div>
+            <span class="badge"
+              ><img src="logo_hero.webp" alt="" width="64" height="64"
+            /></span>
+            <div class="testimonial-track">
+              <blockquote class="testimonial active">
+                <p class="testimonial-quote">
+                  YXO was <span class="hl">transformative</span> for our son.
+                </p>
+                <p class="testimonial-body">
+                  Ben walked in knowing a little about AI and walked out
+                  inspired. It helped Ben discover a passion.
+                </p>
+                <cite>John Gleber<span>Ben's dad · YXO NYC</span></cite>
+                <a class="testimonial-link" href="#bens-story"
+                  >Read Ben's story ↓</a
+                >
+              </blockquote>
+              <blockquote class="testimonial">
+                <p class="testimonial-quote">
+                  Incredible day of <span class="hl">learning.</span>
+                </p>
+                <p class="testimonial-body">
+                  And wow, what a privilege. Truly grateful.
+                </p>
+                <cite>Julie<span>YXO parent</span></cite>
+              </blockquote>
+              <blockquote class="testimonial">
+                <p class="testimonial-quote">
+                  A <span class="hl">wonderful</span> opportunity for our teens.
+                </p>
+                <p class="testimonial-body">
+                  Very engaging, and the sense of community around it was
+                  rewarding.
+                </p>
+                <cite>Shuchi<span>Rayhan's mom · YXO NJ</span></cite>
+              </blockquote>
             </div>
-            Entrepreneurial Thinking
-          </div>
-          <div class="hero-feature">
-            <div class="check-icon">
-              <svg viewBox="0 0 12 12" fill="none">
-                <polyline
-                  points="2,6 5,9 10,3"
-                  stroke="white"
-                  stroke-width="1.8"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-            </div>
-            Purpose Discovery Workshop
-          </div>
-          <div class="hero-feature">
-            <div class="check-icon">
-              <svg viewBox="0 0 12 12" fill="none">
-                <polyline
-                  points="2,6 5,9 10,3"
-                  stroke="white"
-                  stroke-width="1.8"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-            </div>
-            Expert-Led Sessions
+            <div class="testimonial-dots"></div>
           </div>
         </div>
-        <button
-          class="btn-primary"
-          onclick="openRegisterModal('1')"
-          style="font-size: 15px; padding: 16px 28px"
-        >
-          Register Now →
-        </button>
-      </div>
-      <div class="hero-rocket">
-        <img
-          src="logo_hero.webp"
-          alt="YXO – Young Extraordinary Odyssey logo"
-          width="320"
-          height="320"
-          fetchpriority="high"
-          style="max-width: 320px; width: 100%; height: auto"
-        />
-      </div>
-      <div
-        class="testimonials"
-        role="region"
-        aria-roledescription="carousel"
-        aria-label="What parents are saying"
-      >
-        <div class="testimonial-track">
-          <blockquote class="testimonial active">
-            <p>
-              He walked into the program knowing a little about AI and walked
-              out completely inspired by it. … It helped Ben discover a passion.
-            </p>
-            <cite>— John Gleber, YxO NYC</cite>
-            <a class="testimonial-link" href="#bens-story"
-              >Read Ben's story ↓</a
-            >
-          </blockquote>
-          <blockquote class="testimonial">
-            <p>
-              Incredible day of learning for the kids — and wow, what a
-              privilege! Truly grateful and appreciative.
-            </p>
-            <cite>— Julie</cite>
-          </blockquote>
-          <blockquote class="testimonial">
-            <p>
-              Thanks for creating such a wonderful opportunity for our teens.
-              Not only was it very engaging, the sense of community around it
-              was rewarding. Looking forward to more insights as we continue to
-              explore this new era.
-            </p>
-            <cite>— Shuchi</cite>
-          </blockquote>
+
+        <div class="foot">
+          <div>
+            <div class="foot-1">
+              $300 per student · $250 each for two or more
+            </div>
+            <div class="foot-2">
+              Led by Singularity University alumni · Small group experience
+            </div>
+          </div>
+          <button class="btn btn-mint btn-lg" onclick="openRegisterModal('1')">
+            Save your spot →
+          </button>
         </div>
-        <div class="testimonial-dots"></div>
       </div>
-    </div>
+    </header>
 
     <!-- MENTOR -->
-    <section class="mentor-section text-center" id="mentor">
-      <div class="section-tag">Expert Guidance</div>
-      <h2 class="section-title">Meet Your Workshop Mentor</h2>
-      <div class="mentor-card">
-        <button
-          type="button"
-          class="mentor-video"
-          data-video-id="nEmjcz5LS-o"
-          aria-label="Play Natasha Tsakos's TEDx talk"
-        >
-          <img
-            src="https://i.ytimg.com/vi/nEmjcz5LS-o/maxresdefault.jpg"
-            alt=""
-            width="1280"
-            height="720"
-            loading="lazy"
-          />
-          <span class="play-btn" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="M6 4l15 8-15 8z" /></svg>
-          </span>
-          <span class="ted-badge"
-            ><strong>TEDx</strong>Watch Natasha's talk</span
+    <section class="band bg-sun" id="mentor">
+      <span
+        class="bigx coral br"
+        style="--size: 620px"
+        aria-hidden="true"
+      ></span>
+      <div class="band-inner">
+        <div class="section-head">
+          <div class="kicker">Meet your workshop mentor</div>
+          <h2 class="headline">
+            Led by someone who <span class="hl">performs</span> the future.
+          </h2>
+        </div>
+        <div class="mentor-card">
+          <button
+            type="button"
+            class="mentor-video"
+            data-video-id="nEmjcz5LS-o"
+            aria-label="Play Natasha Tsakos's TEDx talk"
           >
-        </button>
-        <div class="mentor-info">
-          <div>
-            <h3>Natasha Tsakos</h3>
-            <p>
-              Award-winning director, performer, and producer pioneering the
-              intersection of arts, technology, innovation, and space
-              exploration.
-            </p>
-            <p>
-              Founder of SPACE WONDERS, the first theatrical company for space.
-              Her production <em>Paraboles</em> is the first performance in
-              microgravity.
-            </p>
-            <p>
-              Natasha has inspired students worldwide, including 300 young women
-              at Space Center Houston about the future of space experiences.
-            </p>
-          </div>
-          <div>
-            <div class="mentor-tags">
-              <div class="mentor-tag">🎓 Singularity University</div>
-              <div class="mentor-tag">🏆 Google/NASA Winner</div>
-              <div class="mentor-tag">🚀 NASA Certified</div>
-              <div class="mentor-tag">🔬 MIT Program</div>
+            <img
+              src="https://i.ytimg.com/vi/nEmjcz5LS-o/maxresdefault.jpg"
+              alt=""
+              width="1280"
+              height="720"
+              loading="lazy"
+            />
+            <span class="play-btn" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M6 4l15 8-15 8z" /></svg>
+            </span>
+            <span class="ted-badge"
+              ><strong>TEDx</strong>Watch Natasha's talk</span
+            >
+          </button>
+          <div class="mentor-info">
+            <div>
+              <h3>Natasha Tsakos.</h3>
+              <p>
+                Award-winning director, performer, and producer pioneering the
+                intersection of arts, technology, innovation, and space
+                exploration.
+              </p>
+              <p>
+                Founder of SPACE WONDERS, the first theatrical company for
+                space. Her production <em>Paraboles</em> is the first
+                performance in microgravity.
+              </p>
+              <p>
+                Natasha has inspired students worldwide, including 300 young
+                women at Space Center Houston, about the future of space
+                experiences.
+              </p>
             </div>
-            <div class="mentor-actions">
-              <button class="btn-primary" onclick="openRegisterModal('1')">
-                🎟️ Register Now
-              </button>
-              <a
-                href="https://openexo.com/yxo-team"
-                target="_blank"
-                class="btn-secondary"
-                >👥 Full Team</a
-              >
-              <a
-                href="https://www.youtube.com/watch?v=nEmjcz5LS-o"
-                target="_blank"
-                class="btn-secondary"
-                >▶ Watch on YouTube</a
-              >
+            <div>
+              <div class="mentor-tags">
+                <div class="mentor-tag">Singularity University</div>
+                <div class="mentor-tag">Google/NASA winner</div>
+                <div class="mentor-tag">NASA certified</div>
+                <div class="mentor-tag">MIT program</div>
+              </div>
+              <div class="mentor-actions">
+                <button
+                  class="btn btn-primary"
+                  onclick="openRegisterModal('1')"
+                >
+                  Register →
+                </button>
+                <a
+                  href="https://openexo.com/yxo-team"
+                  target="_blank"
+                  class="btn btn-secondary"
+                  >Meet the full team →</a
+                >
+                <a
+                  href="https://www.youtube.com/watch?v=nEmjcz5LS-o"
+                  target="_blank"
+                  class="btn btn-secondary"
+                  >Watch on YouTube →</a
+                >
+              </div>
             </div>
           </div>
         </div>
@@ -1737,13 +1760,15 @@
     </section>
 
     <!-- FEATURED STORY -->
-    <section class="story-section text-center" id="bens-story">
-      <div class="story-inner">
-        <div class="section-tag">A Parent's Story</div>
-        <h2 class="story-headline">
-          “It helped Ben
-          <span class="accent-orange">discover a passion.</span>”
-        </h2>
+    <section class="band bg-hot story-section" id="bens-story">
+      <span class="bigx mr" style="--size: 560px" aria-hidden="true"></span>
+      <div class="band-inner story-grid">
+        <div class="story-intro">
+          <div class="kicker">A parent's story</div>
+          <h2 class="headline story-headline">
+            It helped Ben <span class="hl">discover</span> a passion.
+          </h2>
+        </div>
         <figure class="story-card">
           <blockquote>
             <p>YXO was genuinely transformative for our son, Ben.</p>
@@ -1770,357 +1795,358 @@
             <div class="story-avatar" aria-hidden="true">JG</div>
             <div>
               <div class="story-name">John Gleber</div>
-              <div class="story-meta">Ben’s dad · YxO NYC</div>
+              <div class="story-meta">Ben’s dad · YXO NYC</div>
             </div>
           </figcaption>
         </figure>
       </div>
     </section>
 
-    <!-- TRUST STRIP -->
-    <div class="trust-strip">
-      <div class="trust-item">
-        🎓 Led by
-        <strong style="margin-left: 4px">Singularity University</strong
-        >&nbsp;<span class="label">Alumni</span>
-      </div>
-      <div class="trust-item">
-        👥 <strong>Small Group</strong>&nbsp;<span class="label"
-          >Experience</span
-        >
-      </div>
-    </div>
-
-    <!-- INFO CARDS -->
-    <div class="info-cards">
-      <div class="info-card">
-        <div class="info-card-icon">📅</div>
-        <div class="info-card-label">Date</div>
-        <div class="info-card-value">October 24, 2026</div>
-      </div>
-      <div class="info-card">
-        <div class="info-card-icon">👥</div>
-        <div class="info-card-label">Ages</div>
-        <div class="info-card-value">13–17 Years</div>
-      </div>
-      <div class="info-card">
-        <div class="info-card-icon">⏰</div>
-        <div class="info-card-label">Time</div>
-        <div class="info-card-value">10 AM – 4 PM</div>
-      </div>
-      <div class="info-card">
-        <div class="info-card-icon">📍</div>
-        <div class="info-card-label">Location</div>
-        <div class="info-card-value">Austin, TX</div>
-      </div>
-    </div>
-
     <!-- SCHEDULE -->
-    <div class="schedule-section">
-      <div class="text-center">
-        <div class="section-tag">The Day's Journey</div>
-        <h2 class="section-title" style="color: white">
-          Your Day of Discovery
-        </h2>
-        <p class="section-sub">
-          Six hours of hands-on learning, collaboration, and discovery
-        </p>
+    <section class="band bg-ink aurora-tr">
+      <div class="band-inner schedule-grid">
+        <div class="schedule-intro">
+          <div class="kicker">Sat, Oct 24 · Austin, TX</div>
+          <h2 class="headline">
+            Your day of <span class="accent">discovery.</span>
+          </h2>
+          <p class="subhead">
+            Six hours of hands-on learning, collaboration, and discovery.
+          </p>
+          <div class="foot">
+            <div>
+              <div class="foot-1">Bring a laptop and charger</div>
+              <div class="foot-2">
+                Parents welcome at 3:50 PM for the closing ceremony
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="schedule-list">
+          <div class="schedule-item">
+            <div class="schedule-time">10:00 AM</div>
+            <div class="schedule-content">
+              <h4>Welcome and icebreaker: your extraordinary future</h4>
+              <p>
+                Build rapport, set expectations, create a safe learning
+                environment.
+              </p>
+            </div>
+          </div>
+          <div class="schedule-item">
+            <div class="schedule-time">10:30 AM</div>
+            <div class="schedule-content">
+              <h4>Mindset shifts and resilience lab</h4>
+              <p>
+                45 minutes on key mindset shifts, followed by a 15-minute
+                resilience lab.
+              </p>
+            </div>
+          </div>
+          <div class="schedule-item is-break">
+            <div class="schedule-time">11:15 AM</div>
+            <div class="schedule-content">Body check · Stretch break</div>
+          </div>
+          <div class="schedule-item">
+            <div class="schedule-time">11:30 AM</div>
+            <div class="schedule-content">
+              <h4>Crazy ideas brainstorm</h4>
+              <p>
+                A free-flowing brainstorm session to loosen up creative
+                thinking.
+              </p>
+            </div>
+          </div>
+          <div class="schedule-item">
+            <div class="schedule-time">12:00 PM</div>
+            <div class="schedule-content">
+              <h4>AI is a superpower you can master</h4>
+              <p>
+                Live examples of AI in action, and prompts that boost creativity
+                and productivity.
+              </p>
+            </div>
+          </div>
+          <div class="schedule-item">
+            <div class="schedule-time">12:45 PM</div>
+            <div class="schedule-content">
+              <h4>Understanding world problems</h4>
+              <p>
+                Developing a problem-solving mindset in their own city and
+                community.
+              </p>
+            </div>
+          </div>
+          <div class="schedule-item is-break">
+            <div class="schedule-time">1:00 PM</div>
+            <div class="schedule-content">Lunch break</div>
+          </div>
+          <div class="schedule-item">
+            <div class="schedule-time">2:00 PM</div>
+            <div class="schedule-content">
+              <h4>The device as your tool</h4>
+              <p>Using technology as a tool for creation, not distraction.</p>
+            </div>
+          </div>
+          <div class="schedule-item">
+            <div class="schedule-time">2:15 PM</div>
+            <div class="schedule-content">
+              <h4>Start a company or work for others?</h4>
+              <p>
+                Entrepreneur vs. employee mindset, and how teens can start a
+                real business for almost $0.
+              </p>
+            </div>
+          </div>
+          <div class="schedule-item">
+            <div class="schedule-time">3:30 PM</div>
+            <div class="schedule-content">
+              <h4>Extraordinary Life Workshop</h4>
+              <p>
+                Explore personal strengths and discover a Massive Transformative
+                Purpose (MTP).
+              </p>
+            </div>
+          </div>
+          <div class="schedule-item">
+            <div class="schedule-time">3:50 PM</div>
+            <div class="schedule-content">
+              <h4>Closing ceremony and certificates</h4>
+              <p>Parents are welcome to join for the closing ceremony.</p>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="schedule-list">
-        <div class="schedule-item">
-          <div class="schedule-time">10:00 AM</div>
-          <div class="schedule-content">
-            <h4>🎯 Welcome & Icebreaker: Your Extraordinary Future</h4>
-            <p>
-              Build rapport, set expectations, create a safe learning
-              environment.
-            </p>
-          </div>
-        </div>
-        <div class="schedule-item">
-          <div class="schedule-time">10:30 AM</div>
-          <div class="schedule-content">
-            <h4>🌍 Key Mindset Changes + Resilience Lab</h4>
-            <p>
-              45 minutes on key mindset shifts, followed by a 15-minute
-              resilience lab.
-            </p>
-          </div>
-        </div>
-        <div class="schedule-break">
-          ⚡ 11:15 AM — Body Check: Stretch Break
-        </div>
-        <div class="schedule-item">
-          <div class="schedule-time">11:30 AM</div>
-          <div class="schedule-content">
-            <h4>💭 Crazy Ideas Brainstorm</h4>
-            <p>
-              A free-flowing brainstorm session to loosen up creative thinking.
-            </p>
-          </div>
-        </div>
-        <div class="schedule-item">
-          <div class="schedule-time">12:00 PM</div>
-          <div class="schedule-content">
-            <h4>🤖 AI Is a Superpower You Can Master</h4>
-            <p>
-              Live examples of AI in action, and prompts that boost creativity
-              and productivity.
-            </p>
-          </div>
-        </div>
-        <div class="schedule-item">
-          <div class="schedule-time">12:45 PM</div>
-          <div class="schedule-content">
-            <h4>🔍 Understanding World Problems</h4>
-            <p>
-              Developing a problem-solving mindset in their own city and
-              community.
-            </p>
-          </div>
-        </div>
-        <div class="schedule-break">🍽️ 1:00 PM — Lunch Break</div>
-        <div class="schedule-item">
-          <div class="schedule-time">2:00 PM</div>
-          <div class="schedule-content">
-            <h4>📱 The Device as Your Tool</h4>
-            <p>Using technology as a tool for creation, not distraction.</p>
-          </div>
-        </div>
-        <div class="schedule-item">
-          <div class="schedule-time">2:15 PM</div>
-          <div class="schedule-content">
-            <h4>🚀 Start Your Own Company vs. Work for Others</h4>
-            <p>
-              Entrepreneur vs. employee mindset; how teens can start a real
-              business for almost $0.
-            </p>
-          </div>
-        </div>
-        <div class="schedule-item">
-          <div class="schedule-time">3:30 PM</div>
-          <div class="schedule-content">
-            <h4>💡 Extraordinary Life Workshop</h4>
-            <p>
-              Explore personal strengths and discover a Massive Transformative
-              Purpose (MTP).
-            </p>
-          </div>
-        </div>
-        <div class="schedule-item">
-          <div class="schedule-time">3:50 PM</div>
-          <div class="schedule-content">
-            <h4>🎓 Closing Ceremony & Certificates</h4>
-            <p>Parents are welcome to join for the closing ceremony.</p>
-          </div>
-        </div>
-      </div>
-    </div>
+    </section>
 
     <!-- SKILLS -->
-    <section class="text-center">
-      <div class="section-tag">What They'll Walk Away With</div>
-      <h2 class="section-title">Skills That Last a Lifetime</h2>
-      <p class="section-sub">
-        By the end of this workshop, your teen will have tangible skills and a
-        new perspective on their potential
-      </p>
-      <div class="skills-grid">
-        <div class="skill-card">
-          <div class="skill-icon">🧠</div>
-          <h3>Exponential Thinking</h3>
-          <p>
-            Understanding how to think 10x bigger and leverage accelerating
-            change instead of being disrupted by it
+    <section class="band bg-sun sun-flip">
+      <div class="band-inner">
+        <div class="section-head">
+          <div class="kicker">What they walk away with</div>
+          <h2 class="headline">
+            Skills that last a <span class="hl">lifetime.</span>
+          </h2>
+          <p class="subhead">
+            By the end of the day, your teen has tangible skills and a new
+            perspective on their potential.
           </p>
         </div>
-        <div class="skill-card">
-          <div class="skill-icon">🤖</div>
-          <h3>AI Fluency</h3>
-          <p>
-            Practical skills to use AI tools for school projects, creative work,
-            and problem-solving
-          </p>
-        </div>
-        <div class="skill-card">
-          <div class="skill-icon">💡</div>
-          <h3>Entrepreneurial Mindset</h3>
-          <p>
-            The confidence to identify problems, create solutions, and
-            understand how businesses work
-          </p>
-        </div>
-        <div class="skill-card">
-          <div class="skill-icon">🧭</div>
-          <h3>Personal Roadmap</h3>
-          <p>
-            A clear sense of their strengths, interests, and a vision for their
-            extraordinary future
-          </p>
-        </div>
-        <div class="skill-card">
-          <div class="skill-icon">👥</div>
-          <h3>Collaboration Skills</h3>
-          <p>
-            Experience working in teams on real challenges using design thinking
-            methodology
-          </p>
-        </div>
-        <div class="skill-card">
-          <div class="skill-icon">🏆</div>
-          <h3>Certificate of Completion</h3>
-          <p>
-            Recognition of their achievement to add to college applications and
-            portfolios
-          </p>
+        <div class="skills-grid">
+          <div class="skill-card">
+            <h3>Exponential thinking</h3>
+            <p>
+              Learning to think 10× bigger and to ride accelerating change
+              instead of fearing it.
+            </p>
+          </div>
+          <div class="skill-card">
+            <h3>AI fluency</h3>
+            <p>
+              Practical skills to use AI tools for school projects, creative
+              work, and problem-solving.
+            </p>
+          </div>
+          <div class="skill-card">
+            <h3>Entrepreneurial mindset</h3>
+            <p>
+              The confidence to identify problems, create solutions, and
+              understand how businesses work.
+            </p>
+          </div>
+          <div class="skill-card">
+            <h3>Personal roadmap</h3>
+            <p>
+              A clear sense of their strengths, interests, and a vision for
+              their extraordinary future.
+            </p>
+          </div>
+          <div class="skill-card">
+            <h3>Collaboration</h3>
+            <p>
+              Experience working in teams on real challenges using design
+              thinking.
+            </p>
+          </div>
+          <div class="skill-card">
+            <h3>Certificate of completion</h3>
+            <p>
+              Recognition of their achievement to add to college applications
+              and portfolios.
+            </p>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- PRICING -->
-    <div class="pricing-section">
-      <h2 class="section-title">Give Your Teen an Unforgettable Day</h2>
-      <p class="section-sub" style="margin: 0 auto 40px">
-        An investment in skills, mindset, and confidence that will pay dividends
-        for years to come
-      </p>
-      <div class="pricing-card">
-        <div class="pricing-label">Per Student</div>
-        <div class="pricing-amount">
-          $300 <span class="pricing-currency">USD</span>
+    <section class="band bg-hot" id="register">
+      <div class="band-inner">
+        <div class="section-head">
+          <div class="kicker">Register now</div>
+          <h2 class="headline">
+            Give your teen an <span class="hl">unforgettable</span> day.
+          </h2>
+          <p class="subhead">
+            An investment in skills, mindset, and confidence that pays off for
+            years to come. Spots are limited.
+          </p>
         </div>
-        <div class="pricing-note">
-          $250 USD per student when you register 2 or more students
+        <div class="pricing-cards">
+          <div class="pricing-card">
+            <div class="kicker">Saturday · 10 AM to 4 PM</div>
+            <div class="pricing-date">10.24</div>
+            <div class="pricing-title">Austin, TX</div>
+            <div class="pricing-row">
+              <div class="pricing-amount">$300</div>
+              <div class="pricing-label">per student</div>
+            </div>
+            <div class="pricing-note">$250 each for two or more</div>
+            <ul class="pricing-features xlist">
+              <li>Full 6-hour workshop</li>
+              <li>All materials and workbooks</li>
+              <li>Certificate of completion</li>
+            </ul>
+            <div class="btn-group">
+              <button
+                class="btn btn-primary btn-lg"
+                onclick="openRegisterModal('1', 'austin')"
+              >
+                Register 1 student · $300 →
+              </button>
+              <button
+                class="btn btn-secondary btn-lg"
+                onclick="openRegisterModal('2', 'austin')"
+              >
+                Register 2 students · $500 →
+              </button>
+            </div>
+          </div>
+          <div class="pricing-card">
+            <div class="kicker">Miami cohort</div>
+            <div class="pricing-date">11.07</div>
+            <div class="pricing-title">Miami, FL</div>
+            <div class="pricing-row">
+              <div class="pricing-amount">$300</div>
+              <div class="pricing-label">per student</div>
+            </div>
+            <div class="pricing-note">Two students: $500 · Save $100</div>
+            <ul class="pricing-features xlist">
+              <li>Full 6-hour workshop</li>
+              <li>All materials and workbooks</li>
+              <li>Certificate of completion</li>
+            </ul>
+            <!-- Miami's live Stripe Payment Links (Graceworks account).
+                 Prices are set in Stripe; keep these labels in sync.
+                 Sandbox versions for testing:
+                 1: https://buy.stripe.com/test_3cI7sK89efyS5jTfLe8Zq00
+                 2: https://buy.stripe.com/test_8x2bJ04X2gCWh2B8iM8Zq01 -->
+            <div class="btn-group">
+              <div class="pricing-note">Starts Nov 7, 2026 · Miami</div>
+              <a
+                class="btn btn-primary btn-lg"
+                href="https://buy.stripe.com/14AdR84O29U39ST2t99AA00"
+              >
+                Register 1 student · $300 →
+              </a>
+              <a
+                class="btn btn-secondary btn-lg"
+                href="https://buy.stripe.com/28EaEW4O20jt1mnaZF9AA01"
+              >
+                Register 2 students · $500 →
+              </a>
+            </div>
+          </div>
         </div>
-        <ul class="pricing-features">
-          <li>
-            <div class="green-check">
-              <svg viewBox="0 0 12 12" fill="none">
-                <polyline
-                  points="2,6 5,9 10,3"
-                  stroke="white"
-                  stroke-width="1.8"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-            </div>
-            Full 6-hour workshop experience
-          </li>
-          <li>
-            <div class="green-check">
-              <svg viewBox="0 0 12 12" fill="none">
-                <polyline
-                  points="2,6 5,9 10,3"
-                  stroke="white"
-                  stroke-width="1.8"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-            </div>
-            All materials and workbooks
-          </li>
-          <li>
-            <div class="green-check">
-              <svg viewBox="0 0 12 12" fill="none">
-                <polyline
-                  points="2,6 5,9 10,3"
-                  stroke="white"
-                  stroke-width="1.8"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-            </div>
-            Certificate of completion
-          </li>
-        </ul>
-        <button
-          class="btn-primary pricing-cta"
-          onclick="openRegisterModal('1')"
-        >
-          Register 1 Student — $300 →
-        </button>
-        <button
-          class="btn-secondary pricing-cta"
-          onclick="openRegisterModal('2')"
-          style="margin-top: 10px"
-        >
-          Register 2 Students — $500 →
-        </button>
       </div>
-      <p class="limited-note">⚠️ Limited spots available</p>
-    </div>
+    </section>
 
     <!-- FAQ -->
-    <section class="text-center" style="background: var(--gray-light)">
-      <div class="section-tag">Questions?</div>
-      <h2 class="section-title">Frequently Asked Questions</h2>
-      <div class="faq-grid" style="margin-top: 40px">
-        <div class="faq-card">
-          <h4>What should my teen bring?</h4>
-          <p>Bring a laptop & Charger.</p>
+    <section class="band bg-paper">
+      <div class="band-inner">
+        <div class="section-head">
+          <div class="kicker">Questions?</div>
+          <h2 class="headline">Good to know.</h2>
         </div>
-        <div class="faq-card">
-          <h4>Is this appropriate for all teens 13–17?</h4>
-          <p>
-            Yes, our curriculum is designed to engage teens across this age
-            range with activities that adapt to different maturity levels.
-          </p>
-        </div>
-        <div class="faq-card">
-          <h4>What if my teen is shy or introverted?</h4>
-          <p>
-            Our facilitators are experienced at creating a welcoming
-            environment. Activities are designed to include everyone
-            comfortably.
-          </p>
-        </div>
-        <div class="faq-card">
-          <h4>Can parents attend?</h4>
-          <p>
-            This is a teen-only experience to allow them to engage freely.
-            Parents are welcome at the closing ceremony at 3:50 PM.
-          </p>
+        <div class="faq-grid">
+          <div class="faq-card">
+            <h4>What should my teen bring?</h4>
+            <p>A laptop and charger. Everything else is provided.</p>
+          </div>
+          <div class="faq-card">
+            <h4>Is this right for all teens 13 to 17?</h4>
+            <p>
+              Yes. The workshop is designed to engage teens across this age
+              range, with activities that adapt to different maturity levels.
+            </p>
+          </div>
+          <div class="faq-card">
+            <h4>What if my teen is shy or introverted?</h4>
+            <p>
+              Our facilitators are experienced at creating a welcoming
+              environment. Activities are designed to include everyone
+              comfortably.
+            </p>
+          </div>
+          <div class="faq-card">
+            <h4>Can parents attend?</h4>
+            <p>
+              The workshop is teens only, so they can engage freely. Parents are
+              welcome at the closing ceremony at 3:50 PM.
+            </p>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- CTA: REQUEST & WAITLIST -->
-    <section class="cta-section">
-      <div class="section-tag">Get Involved</div>
-      <h2 class="section-title">Bring YXO to Your Community</h2>
-      <p class="section-sub" style="margin: 0 auto">
-        Want a workshop in your city? Or just want to stay in the loop? We'd
-        love to hear from you.
-      </p>
-      <div class="cta-buttons">
-        <button
-          class="btn-cta-large btn-cta-workshop"
-          onclick="openModal('workshopModal')"
-        >
-          📍 Request a Workshop in Your City
-        </button>
-        <button
-          class="btn-cta-large btn-cta-waitlist"
-          onclick="openModal('waitlistModal')"
-        >
-          📬 Join the Waitlist to Stay Informed
-        </button>
+    <section class="band bg-ink aurora-bl">
+      <span
+        class="bigx aurora br"
+        style="--size: 640px"
+        aria-hidden="true"
+      ></span>
+      <div class="band-inner">
+        <div class="section-head" style="margin-bottom: 0">
+          <div class="kicker">Get involved</div>
+          <h2 class="headline">Bring YXO to your city.</h2>
+          <p class="subhead">
+            Want a workshop in your city? Or just want to stay in the loop? We'd
+            love to hear from you.
+          </p>
+          <div class="cta-buttons">
+            <button
+              class="btn btn-mint btn-lg"
+              onclick="openModal('workshopModal')"
+            >
+              Request a workshop →
+            </button>
+            <button
+              class="btn btn-ghost btn-lg"
+              onclick="openModal('waitlistModal')"
+            >
+              Join the waitlist →
+            </button>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- WORKSHOP REQUEST MODAL -->
     <div class="modal-overlay" id="workshopModal">
       <div class="modal">
-        <button class="modal-close" onclick="closeModal('workshopModal')">
-          ✕
+        <button
+          class="modal-close"
+          onclick="closeModal('workshopModal')"
+          aria-label="Close"
+        >
+          ×
         </button>
         <div id="workshopForm">
-          <h3>Request a Workshop</h3>
+          <div class="kicker">Bring YXO to your city</div>
+          <h3>Request a workshop.</h3>
           <p class="modal-desc">
-            Tell us about your city and we'll work to bring a YXO Workshop to
+            Tell us about your city and we'll work to bring a YXO workshop to
             you.
           </p>
           <form onsubmit="submitWorkshop(event)">
@@ -2134,7 +2160,7 @@
               />
             </div>
             <div class="form-group">
-              <label for="ws-email">Email Address</label>
+              <label for="ws-email">Email address</label>
               <input
                 type="email"
                 id="ws-email"
@@ -2143,7 +2169,7 @@
               />
             </div>
             <div class="form-group">
-              <label for="ws-city">Your City</label>
+              <label for="ws-city">Your city</label>
               <input
                 type="text"
                 id="ws-city"
@@ -2152,23 +2178,23 @@
               />
             </div>
             <div class="form-group">
-              <label for="ws-students">Anticipated Number of Students</label>
+              <label for="ws-students">Anticipated number of students</label>
               <select id="ws-students" required>
                 <option value="" disabled selected>Select a range</option>
-                <option value="8-12">8–12 students</option>
-                <option value="13-20">13–20 students</option>
-                <option value="21-30">21–30 students</option>
+                <option value="8-12">8 to 12 students</option>
+                <option value="13-20">13 to 20 students</option>
+                <option value="21-30">21 to 30 students</option>
                 <option value="30+">30+ students</option>
               </select>
             </div>
             <div class="form-group">
-              <label for="ws-age">Age Range of Students</label>
+              <label for="ws-age">Age range of students</label>
               <select id="ws-age" required>
                 <option value="" disabled selected>Select age range</option>
-                <option value="10-12">10–12 years</option>
-                <option value="13-15">13–15 years</option>
-                <option value="16-17">16–17 years</option>
-                <option value="mixed">Mixed ages (10–17)</option>
+                <option value="10-12">10 to 12 years</option>
+                <option value="13-15">13 to 15 years</option>
+                <option value="16-17">16 to 17 years</option>
+                <option value="mixed">Mixed ages (10 to 17)</option>
               </select>
             </div>
             <div class="form-group">
@@ -2189,14 +2215,14 @@
                 </option>
               </select>
             </div>
-            <button type="submit" class="btn-primary form-submit">
-              Submit Request →
+            <button type="submit" class="btn btn-primary form-submit">
+              Submit request →
             </button>
           </form>
         </div>
         <div class="form-success" id="workshopSuccess">
           <div class="success-icon">✓</div>
-          <h4>Request Submitted!</h4>
+          <h4>Request submitted.</h4>
           <p>
             Thank you for your interest in bringing YXO to your city. We'll be
             in touch soon.
@@ -2208,18 +2234,23 @@
     <!-- WAITLIST MODAL -->
     <div class="modal-overlay" id="waitlistModal">
       <div class="modal">
-        <button class="modal-close" onclick="closeModal('waitlistModal')">
-          ✕
+        <button
+          class="modal-close"
+          onclick="closeModal('waitlistModal')"
+          aria-label="Close"
+        >
+          ×
         </button>
         <div id="waitlistForm">
-          <h3>Join the Waitlist</h3>
+          <div class="kicker">Stay in the loop</div>
+          <h3>Join the waitlist.</h3>
           <p class="modal-desc">
-            Stay informed about upcoming YXO Workshops, new cities, and early
-            registration access.
+            Hear first about upcoming YXO workshops, new cities, and early
+            registration.
           </p>
           <form onsubmit="submitWaitlist(event)">
             <div class="form-group">
-              <label for="wl-name">Your Name</label>
+              <label for="wl-name">Your name</label>
               <input
                 type="text"
                 id="wl-name"
@@ -2229,7 +2260,7 @@
               />
             </div>
             <div class="form-group">
-              <label for="wl-email">Email Address</label>
+              <label for="wl-email">Email address</label>
               <input
                 type="email"
                 id="wl-email"
@@ -2279,14 +2310,14 @@
                 hidden
               />
             </div>
-            <button type="submit" class="btn-primary form-submit">
-              Join Waitlist →
+            <button type="submit" class="btn btn-primary form-submit">
+              Join the waitlist →
             </button>
           </form>
         </div>
         <div class="form-success" id="waitlistSuccess">
           <div class="success-icon">✓</div>
-          <h4>You're on the List!</h4>
+          <h4>You're on the list.</h4>
           <p>We'll keep you updated on upcoming workshops and events.</p>
         </div>
       </div>
@@ -2295,17 +2326,24 @@
     <!-- REGISTRATION CONFIRMATION MODAL -->
     <div class="modal-overlay" id="registerModal">
       <div class="modal">
-        <button class="modal-close" onclick="closeModal('registerModal')">
-          ✕
+        <button
+          class="modal-close"
+          onclick="closeModal('registerModal')"
+          aria-label="Close"
+        >
+          ×
         </button>
-        <h3>You're registering for:</h3>
-        <div class="reg-summary">
-          <div class="reg-summary-title">YXO Workshop — Austin, TX</div>
-          <ul class="reg-summary-list">
-            <li><span class="reg-ico">📅</span> Saturday, October 24, 2026</li>
-            <li><span class="reg-ico">⏰</span> 10:00 AM – 4:00 PM</li>
-            <li><span class="reg-ico">📍</span> Austin, Texas</li>
-            <li><span class="reg-ico">👥</span> Ages 13–17</li>
+        <div class="kicker">Almost there</div>
+        <h3>You're registering for.</h3>
+        <div class="reg-summary bg-ink">
+          <div class="reg-summary-title" id="reg-title">
+            YXO workshop · Austin, TX
+          </div>
+          <ul class="reg-summary-list xlist">
+            <li id="reg-date">Saturday, October 24, 2026</li>
+            <li>10 AM to 4 PM</li>
+            <li id="reg-place">Austin, Texas</li>
+            <li>Ages 13 to 17</li>
           </ul>
         </div>
         <div class="reg-options">
@@ -2314,7 +2352,7 @@
             <span class="reg-option-text">
               <span class="reg-option-label">1 student</span>
               <span class="reg-option-sub"
-                >Full-day workshop, materials &amp; certificate</span
+                >Full-day workshop, materials and certificate</span
               >
             </span>
             <span class="reg-option-price">$300</span>
@@ -2323,13 +2361,16 @@
             <input type="radio" name="regQty" value="2" />
             <span class="reg-option-text">
               <span class="reg-option-label">2 students</span>
-              <span class="reg-option-sub">$250 each — save $100</span>
+              <span class="reg-option-sub">$250 each · save $100</span>
             </span>
             <span class="reg-option-price">$500</span>
           </label>
         </div>
-        <button class="btn-primary form-submit" onclick="continueToPayment()">
-          Continue to Payment →
+        <button
+          class="btn btn-primary form-submit"
+          onclick="continueToPayment()"
+        >
+          Continue to payment →
         </button>
         <p class="reg-note">
           Secure checkout is handled by Stripe. You'll confirm your details on
@@ -2443,7 +2484,8 @@
       });
 
       // ── REGISTRATION ──
-      // Both Stripe payment links live here and nowhere else.
+      // Austin's Stripe payment links, used by the registration popup.
+      // Miami links straight to its own Stripe links from its pricing card.
       var STRIPE_LINKS = {
         1: "https://buy.stripe.com/bJe28r2ym9SBcfAbMicV20F",
         2: "https://buy.stripe.com/9B63cvdd03ud2F0cQmcV20G",
@@ -2472,7 +2514,21 @@
           input.addEventListener("change", syncRegOptions);
         });
 
-      function openRegisterModal(qty) {
+      // Workshop dates shown in the registration popup, keyed by the
+      // second argument to openRegisterModal.
+      var EVENTS = {
+        austin: {
+          title: "YXO workshop · Austin, TX",
+          date: "Saturday, October 24, 2026",
+          place: "Austin, Texas",
+        },
+      };
+
+      function openRegisterModal(qty, eventKey) {
+        var ev = EVENTS[eventKey] || EVENTS.austin;
+        document.getElementById("reg-title").textContent = ev.title;
+        document.getElementById("reg-date").textContent = ev.date;
+        document.getElementById("reg-place").textContent = ev.place;
         var radio = document.querySelector(
           '#registerModal input[name="regQty"][value="' + (qty || "1") + '"]',
         );
@@ -2521,13 +2577,13 @@
             } else {
               alert("Something went wrong. Please try again.");
               submitBtn.disabled = false;
-              submitBtn.textContent = "Submit Request";
+              submitBtn.textContent = "Submit request →";
             }
           })
           .catch(function () {
             alert("Network error. Please check your connection and try again.");
             submitBtn.disabled = false;
-            submitBtn.textContent = "Submit Request";
+            submitBtn.textContent = "Submit request →";
           });
       }
 
@@ -2574,13 +2630,13 @@
             } else {
               alert("Something went wrong. Please try again.");
               submitBtn.disabled = false;
-              submitBtn.textContent = "Join Waitlist";
+              submitBtn.textContent = "Join the waitlist →";
             }
           })
           .catch(function () {
             alert("Network error. Please check your connection and try again.");
             submitBtn.disabled = false;
-            submitBtn.textContent = "Join Waitlist";
+            submitBtn.textContent = "Join the waitlist →";
           });
       }
     </script>
@@ -2588,26 +2644,28 @@
     <!-- FOOTER -->
     <footer>
       <div class="footer-inner">
-        <div class="footer-left">
-          <div class="nav-logo">
-            <img
-              src="logo_nav.png"
-              alt="YXO"
-              width="70"
-              height="44"
-              loading="lazy"
-            />
+        <div class="footer-top">
+          <div class="footer-left">
+            <span class="badge"
+              ><img
+                src="logo_hero.webp"
+                alt="YXO"
+                width="72"
+                height="72"
+                loading="lazy"
+            /></span>
+            <p>Think 10× bigger.</p>
           </div>
-          <p>Empowering the next generation of innovators</p>
+          <div class="footer-right">
+            <h5>Questions? Get in touch</h5>
+            <div class="contact-name">Lily Safrani</div>
+            <a href="mailto:lily@exospeakers.com">lily@exospeakers.com</a>
+          </div>
         </div>
-        <div class="footer-right">
-          <h5>Questions? Get in touch</h5>
-          <div class="contact-name">Lily Safrani</div>
-          <a href="mailto:lily@exospeakers.com">lily@exospeakers.com</a>
+        <div class="footer-copy">
+          <span>© 2026 Young Extraordinary Odyssey. All rights reserved.</span>
+          <span>yxo.world</span>
         </div>
-      </div>
-      <div class="footer-copy">
-        © 2026 Young Extraordinary Odyssey. All rights reserved.
       </div>
     </footer>
   </body>
