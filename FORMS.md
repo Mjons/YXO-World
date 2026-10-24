@@ -1,11 +1,21 @@
 # Website forms: where they go and how to change them
 
-The site has two forms. Both send their answers to **Formspree** (formspree.io), a free service that emails each submission to you and keeps a copy online.
+The site has three forms. All send their answers to **Formspree** (formspree.io), a service that emails each submission to you and keeps a copy online.
 
-| Form             | Button on the site                      | What it asks                                                    | Formspree form ID |
-| ---------------- | --------------------------------------- | --------------------------------------------------------------- | ----------------- |
-| Waitlist         | "📬 Join the Waitlist to Stay Informed" | Name, email, city, state/country, how they heard about YXO      | `mzedjjql`        |
-| Workshop request | "📍 Request a Workshop in Your City"    | Name, email, city, number of students, age range, hosting space | `mvkzwwjk`        |
+| Form               | Where it is on the site                                   | What it asks                                                                                    | Formspree form ID |
+| ------------------ | --------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------- |
+| Waitlist           | "Join the waitlist →" button                              | Name, email, city, state/country, how they heard about YXO                                      | `mzedjjql`        |
+| Workshop request   | "Request a workshop →" button                             | Name, email, city, number of students, age range, hosting space                                 | `mvkzwwjk`        |
+| Miami registration | `register-miami.html`, opened by the Miami card's buttons | Teen's name, date of birth, grade, school, food allergies and details, how they heard about YXO | `xqppezva`        |
+
+## How Miami registration works
+
+1. A parent clicks "Register 1 student" or "Register 2 students" on the Miami card. That opens `register-miami.html`.
+2. They fill in the form once per teen. Each submission goes to the Miami registration form in Formspree.
+3. After the last teen, the page sends them to Miami's Stripe checkout ($300 or $500) to pay. Stripe collects the parent's name, email and phone.
+4. Every family gets a **reference code** like `yxo-mia-7k2p9q`. It appears in each Formspree submission (`reference`) and on the Stripe payment (as `client_reference_id`, also in the Stripe CSV export). Match the two to see which forms were paid for. A form with no matching payment means the parent didn't finish checkout.
+
+The Stripe links and the Formspree address for this form are at the top of the script in `register-miami.html` (`STRIPE_LINKS` and `FORM_ENDPOINT`).
 
 **The website code does not decide whose inbox gets the emails.** That is set inside the Formspree account that created the form. Both forms are now in our own Formspree account. (They used to be in Oliver's, under the IDs `mbdzoqln` and `xeergvol`; older submissions are still stored there.)
 

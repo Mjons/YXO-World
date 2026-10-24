@@ -1,0 +1,1012 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <meta name="theme-color" content="#0C1140" />
+    <title>Register your teen · YXO Miami cohort</title>
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      /* Brand palette: see the YXO brand file, section 6. */
+      :root {
+        --ink: #0c1140;
+        --paper: #f6f2ea;
+        --teal: #14b8a9;
+        --deep-teal: #0e8f86;
+        --mint: #33e9a6;
+        --lime: #bdf542;
+        --yellow: #ffe84a;
+        --coral: #ff6f5a;
+        --pink: #ff4fa0;
+
+        --ink-72: rgba(12, 17, 64, 0.72);
+        --ink-28: rgba(12, 17, 64, 0.28);
+        --ink-12: rgba(12, 17, 64, 0.12);
+        --paper-74: rgba(246, 242, 234, 0.74);
+        --paper-30: rgba(246, 242, 234, 0.3);
+        --paper-12: rgba(246, 242, 234, 0.12);
+
+        --gutter: 72px;
+        --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .5 0 0 0 0 .5 0 0 0 0 .5 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Inter", system-ui, sans-serif;
+        color: var(--ink);
+        background: var(--paper);
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      .kicker {
+        font-size: 13px;
+        font-weight: 700;
+        line-height: 1.2;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--ink-72);
+        margin-bottom: 20px;
+      }
+
+      /* ── BUTTONS ── */
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        border: none;
+        border-radius: 6px;
+        padding: 14px 22px;
+        font-family: inherit;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 1.2;
+        text-decoration: none;
+        cursor: pointer;
+        transition:
+          transform 0.15s,
+          box-shadow 0.2s;
+      }
+      .btn:hover {
+        transform: translateY(-2px);
+      }
+      .btn:focus-visible {
+        outline: 3px solid var(--yellow);
+        outline-offset: 3px;
+      }
+      .btn:disabled {
+        opacity: 0.6;
+        cursor: wait;
+        transform: none;
+      }
+      .btn-primary {
+        background: var(--ink);
+        color: var(--yellow);
+      }
+      .btn-primary:hover {
+        box-shadow: 0 10px 24px rgba(12, 17, 64, 0.28);
+      }
+      .btn-ghost {
+        background: transparent;
+        color: var(--paper);
+        box-shadow: inset 0 0 0 1.5px var(--paper-30);
+      }
+      .btn-ghost:hover {
+        box-shadow: inset 0 0 0 1.5px var(--paper);
+      }
+
+      /* ── BADGE (logo) ── */
+      .badge {
+        display: inline-block;
+        background: var(--paper);
+        border-radius: 50%;
+        line-height: 0;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+      }
+      .badge img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+
+      /* ── NAV ── */
+      nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        padding: 12px var(--gutter);
+        background: var(--ink);
+        border-bottom: 1px solid var(--paper-12);
+      }
+      .nav-logo .badge {
+        width: 52px;
+      }
+
+      /* ── HEADER (ink) ── */
+      .reg-hero {
+        position: relative;
+        isolation: isolate;
+        overflow: hidden;
+        background-color: var(--ink);
+        background-image:
+          radial-gradient(
+            ellipse 26% 40% at 100% 100%,
+            rgba(255, 232, 74, 0.55),
+            transparent 70%
+          ),
+          radial-gradient(
+            ellipse 44% 60% at 100% 100%,
+            rgba(189, 245, 66, 0.4),
+            transparent 70%
+          ),
+          radial-gradient(
+            ellipse 80% 100% at 100% 100%,
+            rgba(14, 143, 134, 0.75),
+            transparent 72%
+          ),
+          radial-gradient(
+            ellipse 50% 60% at 0% 0%,
+            rgba(255, 79, 160, 0.3),
+            transparent 70%
+          );
+        color: var(--paper);
+        padding: 88px var(--gutter) 160px;
+      }
+      .reg-hero::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: var(--grain);
+        mix-blend-mode: soft-light;
+        opacity: 0.16;
+        pointer-events: none;
+        z-index: -1;
+      }
+      .reg-hero .kicker {
+        color: var(--mint);
+      }
+      .reg-inner {
+        max-width: 760px;
+        margin: 0 auto;
+      }
+      .reg-hero h1 {
+        font-size: clamp(52px, 8vw, 104px);
+        font-weight: 900;
+        line-height: 0.9;
+        letter-spacing: -0.05em;
+        margin-bottom: 24px;
+      }
+      .accent {
+        background: linear-gradient(
+          90deg,
+          var(--mint),
+          var(--lime) 55%,
+          var(--yellow)
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+      .reg-hero p {
+        font-size: clamp(17px, 1.6vw, 20px);
+        line-height: 1.45;
+        max-width: 560px;
+        opacity: 0.9;
+      }
+
+      /* ── FORM CARD ── */
+      .form-wrap {
+        padding: 0 var(--gutter);
+        margin-top: -104px;
+        margin-bottom: 96px;
+        position: relative;
+      }
+      .form-card {
+        max-width: 760px;
+        margin: 0 auto;
+        background: var(--paper);
+        border-radius: 14px;
+        padding: 44px 48px 40px;
+        box-shadow: 0 30px 70px rgba(12, 17, 64, 0.22);
+        scroll-margin-top: 24px;
+      }
+      .step {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 16px;
+        flex-wrap: wrap;
+        margin-bottom: 8px;
+      }
+      .step .kicker {
+        margin-bottom: 0;
+      }
+      .step-price {
+        font-size: 15px;
+        font-weight: 700;
+      }
+      .form-title {
+        font-size: clamp(32px, 4vw, 46px);
+        font-weight: 900;
+        line-height: 0.95;
+        letter-spacing: -0.045em;
+        margin-bottom: 30px;
+      }
+
+      fieldset {
+        border: none;
+        padding-top: 26px;
+        margin-top: 26px;
+        border-top: 1.5px solid var(--ink-28);
+      }
+      fieldset:first-of-type {
+        margin-top: 0;
+      }
+      legend {
+        float: left;
+        width: 100%;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--ink-72);
+        margin-bottom: 18px;
+      }
+      legend + * {
+        clear: both;
+      }
+
+      .row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0 18px;
+      }
+      .form-group {
+        margin-bottom: 18px;
+      }
+      .form-group > label,
+      .question {
+        display: block;
+        font-size: 15px;
+        font-weight: 700;
+        margin-bottom: 7px;
+      }
+      .req {
+        color: var(--coral);
+        margin-left: 2px;
+      }
+      .helper {
+        font-size: 14px;
+        opacity: 0.72;
+        margin-top: 6px;
+      }
+      .form-group input[type="text"],
+      .form-group input[type="date"],
+      .form-group select,
+      .form-group textarea {
+        width: 100%;
+        padding: 13px 14px;
+        border: none;
+        box-shadow: inset 0 0 0 1.5px var(--ink-28);
+        border-radius: 6px;
+        font-family: inherit;
+        font-size: 16px;
+        color: var(--ink);
+        background: rgba(255, 255, 255, 0.45);
+        transition: box-shadow 0.2s;
+        outline: none;
+      }
+      .form-group textarea {
+        min-height: 92px;
+        resize: vertical;
+        line-height: 1.45;
+      }
+      .form-group input:focus,
+      .form-group select:focus,
+      .form-group textarea:focus {
+        box-shadow:
+          inset 0 0 0 2px var(--deep-teal),
+          0 0 0 4px rgba(51, 233, 166, 0.35);
+      }
+      .form-group input::placeholder,
+      .form-group textarea::placeholder {
+        color: var(--ink);
+        opacity: 0.45;
+      }
+
+      /* Pill-style radio choices */
+      .choices {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      .choice {
+        position: relative;
+      }
+      .choice input {
+        position: absolute;
+        opacity: 0;
+        width: 1px;
+        height: 1px;
+      }
+      .choice span {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 12px 16px;
+        border-radius: 6px;
+        box-shadow: inset 0 0 0 1.5px var(--ink-28);
+        font-size: 15px;
+        font-weight: 600;
+        cursor: pointer;
+        transition:
+          box-shadow 0.2s,
+          background 0.2s;
+      }
+      .choice span:hover {
+        box-shadow: inset 0 0 0 1.5px var(--ink-72);
+      }
+      .choice input:checked + span {
+        box-shadow: inset 0 0 0 2px var(--ink);
+        background: rgba(51, 233, 166, 0.28);
+      }
+      .choice input:checked + span::before {
+        content: "×";
+        font-weight: 900;
+      }
+      .choice input:focus-visible + span {
+        outline: 3px solid var(--deep-teal);
+        outline-offset: 2px;
+      }
+      .choices.stack {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .choices.stack .choice span {
+        width: 100%;
+      }
+      .reveal {
+        margin-top: 12px;
+      }
+
+      .form-error {
+        display: none;
+        margin-top: 18px;
+        padding: 14px 16px;
+        border-radius: 6px;
+        background: rgba(255, 111, 90, 0.16);
+        box-shadow: inset 0 0 0 1.5px var(--coral);
+        font-size: 15px;
+        line-height: 1.45;
+      }
+      .form-error.show {
+        display: block;
+      }
+      .form-error a {
+        color: var(--ink);
+        font-weight: 700;
+      }
+      .submit-row {
+        margin-top: 30px;
+        padding-top: 26px;
+        border-top: 1.5px solid var(--ink-28);
+      }
+      .submit-row .btn {
+        width: 100%;
+        padding: 18px;
+        font-size: 17px;
+      }
+      .submit-note {
+        font-size: 14px;
+        opacity: 0.72;
+        text-align: center;
+        line-height: 1.5;
+        margin-top: 14px;
+      }
+      .saved {
+        display: none;
+        margin-bottom: 22px;
+        padding: 14px 16px;
+        border-radius: 6px;
+        background: rgba(51, 233, 166, 0.28);
+        font-size: 15px;
+        font-weight: 600;
+      }
+      .saved.show {
+        display: block;
+      }
+
+      /* ── FOOTER ── */
+      footer {
+        background: var(--ink);
+        color: var(--paper);
+        padding: 56px var(--gutter) 28px;
+      }
+      .footer-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      .footer-top {
+        display: flex;
+        justify-content: space-between;
+        gap: 40px;
+        padding-bottom: 36px;
+        border-bottom: 1.5px solid var(--paper-12);
+        margin-bottom: 22px;
+      }
+      .footer-left .badge {
+        width: 72px;
+        margin-bottom: 18px;
+      }
+      .footer-left p {
+        font-size: 30px;
+        font-weight: 900;
+        letter-spacing: -0.045em;
+        line-height: 1;
+      }
+      .footer-right h5 {
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--mint);
+        margin-bottom: 14px;
+      }
+      .footer-right a {
+        display: block;
+        font-size: 15px;
+        color: var(--paper);
+        text-decoration: none;
+        border-bottom: 1px solid var(--paper-30);
+        width: fit-content;
+      }
+      .footer-right a:hover {
+        border-bottom-color: var(--paper);
+      }
+      .footer-right .contact-name {
+        font-weight: 700;
+        margin-bottom: 4px;
+        font-size: 15px;
+      }
+      .footer-copy {
+        font-size: 13px;
+        color: var(--paper-74);
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+
+      @media (max-width: 768px) {
+        :root {
+          --gutter: 20px;
+        }
+        nav .badge {
+          width: 42px;
+        }
+        nav .btn {
+          padding: 11px 14px;
+          font-size: 14px;
+        }
+        .reg-hero {
+          padding: 56px var(--gutter) 136px;
+        }
+        .form-card {
+          padding: 28px 20px 26px;
+        }
+        .row {
+          grid-template-columns: 1fr;
+        }
+        .footer-top {
+          flex-direction: column;
+        }
+      }
+    </style>
+
+    <!-- Privacy-friendly analytics by Plausible -->
+    <script
+      async
+      src="https://plausible.io/js/pa-qHOjqUWF-Thbw-s6U85u-.js"
+    ></script>
+    <script>
+      ((window.plausible =
+        window.plausible ||
+        function () {
+          (plausible.q = plausible.q || []).push(arguments);
+        }),
+        (plausible.init =
+          plausible.init ||
+          function (i) {
+            plausible.o = i || {};
+          }));
+      plausible.init();
+    </script>
+  </head>
+  <body>
+    <!-- NAV -->
+    <nav>
+      <a href="/" class="nav-logo">
+        <span class="badge"
+          ><img src="logo_hero.webp" alt="YXO" width="52" height="52"
+        /></span>
+      </a>
+      <a href="/" class="btn btn-ghost">← Back to yxo.world</a>
+    </nav>
+
+    <!-- HEADER -->
+    <header class="reg-hero">
+      <div class="reg-inner">
+        <div class="kicker">Miami cohort · Starts Sat, Nov 7</div>
+        <h1>Register your <span class="accent">teen.</span></h1>
+        <p>
+          Tell us about your teen, then pay securely with Stripe. It takes about
+          two minutes.
+        </p>
+      </div>
+    </header>
+
+    <!-- FORM -->
+    <div class="form-wrap">
+      <div class="form-card" id="formCard">
+        <div class="step">
+          <div class="kicker" id="stepLabel">Miami registration</div>
+          <div class="step-price" id="stepPrice">1 student · $300</div>
+        </div>
+        <h2 class="form-title" id="formTitle">About your teen.</h2>
+
+        <div class="saved" id="savedNote" role="status">
+          × Saved. Now tell us about your second teen.
+        </div>
+
+        <form id="regForm" novalidate>
+          <fieldset id="seatsSet">
+            <legend>How many teens?</legend>
+            <div class="choices">
+              <label class="choice"
+                ><input type="radio" name="seats" value="1" checked /><span
+                  >1 student · $300</span
+                ></label
+              >
+              <label class="choice"
+                ><input type="radio" name="seats" value="2" /><span
+                  >2 students · $500</span
+                ></label
+              >
+            </div>
+            <p class="helper">
+              Registering two? You'll fill this in once for each teen.
+            </p>
+          </fieldset>
+
+          <fieldset>
+            <legend>Your teen</legend>
+            <div class="row">
+              <div class="form-group">
+                <label for="rf-first"
+                  >First name<span class="req">*</span></label
+                >
+                <input type="text" id="rf-first" autocomplete="off" required />
+              </div>
+              <div class="form-group">
+                <label for="rf-last">Last name<span class="req">*</span></label>
+                <input type="text" id="rf-last" autocomplete="off" required />
+              </div>
+            </div>
+            <div class="row">
+              <div class="form-group">
+                <label for="rf-dob"
+                  >Date of birth<span class="req">*</span></label
+                >
+                <input type="date" id="rf-dob" required />
+                <p class="helper">YXO is for ages 13 to 17.</p>
+              </div>
+              <div class="form-group">
+                <label for="rf-grade">Grade<span class="req">*</span></label>
+                <select id="rf-grade" required>
+                  <option value="" disabled selected>Select grade</option>
+                  <option>7th grade</option>
+                  <option>8th grade</option>
+                  <option>9th grade</option>
+                  <option>10th grade</option>
+                  <option>11th grade</option>
+                  <option>12th grade</option>
+                  <option>Other</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="rf-school">School</label>
+              <input type="text" id="rf-school" autocomplete="off" />
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Allergies and dietary needs</legend>
+            <div
+              class="form-group"
+              role="radiogroup"
+              aria-labelledby="q-allergy"
+            >
+              <span class="question" id="q-allergy"
+                >Does your teen have any food allergies?<span class="req"
+                  >*</span
+                ></span
+              >
+              <div class="choices">
+                <label class="choice"
+                  ><input
+                    type="radio"
+                    name="allergies"
+                    value="Yes"
+                    required
+                  /><span>Yes</span></label
+                >
+                <label class="choice"
+                  ><input type="radio" name="allergies" value="No" /><span
+                    >No</span
+                  ></label
+                >
+              </div>
+              <div class="reveal" id="allergyWrap" hidden>
+                <label class="question" for="rf-allergy-details"
+                  >Tell us about the allergies and any dietary needs<span
+                    class="req"
+                    >*</span
+                  ></label
+                >
+                <textarea
+                  id="rf-allergy-details"
+                  placeholder="e.g. Tree nuts. Carries an EpiPen."
+                ></textarea>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset id="sourceSet">
+            <legend>One last thing</legend>
+            <div
+              class="form-group"
+              role="radiogroup"
+              aria-labelledby="q-source"
+            >
+              <span class="question" id="q-source"
+                >How did you hear about YXO?<span class="req">*</span></span
+              >
+              <div class="choices stack">
+                <label class="choice"
+                  ><input
+                    type="radio"
+                    name="source"
+                    value="Instagram"
+                    required
+                  /><span>Instagram</span></label
+                >
+                <label class="choice"
+                  ><input
+                    type="radio"
+                    name="source"
+                    value="A friend or family member"
+                  /><span>A friend or family member</span></label
+                >
+                <label class="choice"
+                  ><input
+                    type="radio"
+                    name="source"
+                    value="My teen's school"
+                  /><span>My teen's school</span></label
+                >
+                <label class="choice"
+                  ><input type="radio" name="source" value="Moonshots" /><span
+                    >Moonshots</span
+                  ></label
+                >
+                <label class="choice"
+                  ><input type="radio" name="source" value="Other" /><span
+                    >Other</span
+                  ></label
+                >
+              </div>
+              <div class="reveal" id="sourceOtherWrap" hidden>
+                <label class="question" for="rf-source-other"
+                  >Where did you hear about us?<span class="req">*</span></label
+                >
+                <input type="text" id="rf-source-other" autocomplete="off" />
+              </div>
+            </div>
+          </fieldset>
+
+          <div class="form-error" id="formError" role="alert"></div>
+
+          <div class="submit-row">
+            <button type="submit" class="btn btn-primary" id="submitBtn">
+              Continue to payment →
+            </button>
+            <p class="submit-note">
+              Next you'll pay on Stripe's secure checkout, where you'll also
+              enter your own contact details.
+            </p>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-top">
+          <div class="footer-left">
+            <span class="badge"
+              ><img src="logo_hero.webp" alt="YXO" width="72" height="72"
+            /></span>
+            <p>Think 10× bigger.</p>
+          </div>
+          <div class="footer-right">
+            <h5>Questions? Get in touch</h5>
+            <div class="contact-name">Lily Safrani</div>
+            <a href="mailto:lily@exospeakers.com">lily@exospeakers.com</a>
+          </div>
+        </div>
+        <div class="footer-copy">
+          <span>© 2026 Young Extraordinary Odyssey. All rights reserved.</span>
+          <span>yxo.world</span>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // ── MIAMI REGISTRATION ──
+      // Parents fill this in once per teen, then go to Stripe to pay. Each
+      // family gets one reference code: it's sent with every form here and
+      // passed to Stripe as client_reference_id, so payments and forms can
+      // be matched in the Stripe export. See FORMS.md.
+      var FORM_ENDPOINT = "https://formspree.io/f/xqppezva";
+
+      // Miami's live Stripe Payment Links, keyed by number of students.
+      // Same links as the Miami card on the home page.
+      var STRIPE_LINKS = {
+        1: "https://buy.stripe.com/14AdR84O29U39ST2t99AA00",
+        2: "https://buy.stripe.com/28EaEW4O20jt1mnaZF9AA01",
+      };
+      var COHORT = "Miami · starts Nov 7, 2026";
+
+      var form = document.getElementById("regForm");
+      var submitBtn = document.getElementById("submitBtn");
+      var errorBox = document.getElementById("formError");
+      var teen = 1; // which teen this form is for
+      var heardFrom = ""; // asked once per family
+      var reference = makeReference();
+
+      // Letters, numbers and dashes only: what Stripe accepts.
+      function makeReference() {
+        var chars = "abcdefghijkmnpqrstuvwxyz23456789";
+        var bytes = new Uint8Array(6);
+        crypto.getRandomValues(bytes);
+        var code = "";
+        for (var i = 0; i < bytes.length; i++) {
+          code += chars[bytes[i] % chars.length];
+        }
+        return "yxo-mia-" + code;
+      }
+
+      function seats() {
+        return form.querySelector('input[name="seats"]:checked').value;
+      }
+
+      function radioValue(name) {
+        var picked = form.querySelector('input[name="' + name + '"]:checked');
+        return picked ? picked.value : "";
+      }
+
+      // Start on the package picked on the home page (?seats=2).
+      var wanted = new URLSearchParams(location.search).get("seats");
+      if (wanted === "2") {
+        form.querySelector('input[name="seats"][value="2"]').checked = true;
+      }
+
+      function updateHeader() {
+        var two = seats() === "2";
+        document.getElementById("stepPrice").textContent = two
+          ? "2 students · $500"
+          : "1 student · $300";
+        document.getElementById("stepLabel").textContent = two
+          ? "Teen " + teen + " of 2"
+          : "Miami registration";
+        document.getElementById("formTitle").textContent =
+          teen === 2 ? "About your second teen." : "About your teen.";
+        submitBtn.textContent =
+          two && teen === 1
+            ? "Next: your second teen →"
+            : "Continue to payment →";
+      }
+
+      form.querySelectorAll('input[name="seats"]').forEach(function (input) {
+        input.addEventListener("change", updateHeader);
+      });
+
+      // Show the details box only for "Yes" / "Other".
+      function toggle(name, showValue, wrapId, fieldId) {
+        form
+          .querySelectorAll('input[name="' + name + '"]')
+          .forEach(function (input) {
+            input.addEventListener("change", function () {
+              var show = radioValue(name) === showValue;
+              document.getElementById(wrapId).hidden = !show;
+              document.getElementById(fieldId).required = show;
+              if (show) document.getElementById(fieldId).focus();
+            });
+          });
+      }
+      toggle("allergies", "Yes", "allergyWrap", "rf-allergy-details");
+      toggle("source", "Other", "sourceOtherWrap", "rf-source-other");
+
+      function showError(html) {
+        errorBox.innerHTML = html;
+        errorBox.classList.add("show");
+      }
+
+      function firstInvalid() {
+        var required = [
+          "rf-first",
+          "rf-last",
+          "rf-dob",
+          "rf-grade",
+          "rf-allergy-details",
+          "rf-source-other",
+        ];
+        for (var i = 0; i < required.length; i++) {
+          var el = document.getElementById(required[i]);
+          if (el.required && !el.value.trim()) return el;
+        }
+        if (!radioValue("allergies")) {
+          return form.querySelector('input[name="allergies"]');
+        }
+        if (teen === 1 && !radioValue("source")) {
+          return form.querySelector('input[name="source"]');
+        }
+        return null;
+      }
+
+      // Send the parent to Stripe once the last teen is saved. The
+      // "Register click" event is the goal the analytics dashboard counts.
+      function goToCheckout() {
+        var url =
+          STRIPE_LINKS[seats()] +
+          "?client_reference_id=" +
+          encodeURIComponent(reference);
+        var gone = false;
+        function go() {
+          if (gone) return;
+          gone = true;
+          location.href = url;
+        }
+        plausible("Register click", {
+          props: { seats: seats() },
+          callback: go,
+        });
+        setTimeout(go, 800);
+      }
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        errorBox.classList.remove("show");
+
+        var missing = firstInvalid();
+        if (missing) {
+          showError("Please fill in the questions marked with a star.");
+          missing.focus();
+          return;
+        }
+
+        if (teen === 1) {
+          heardFrom = radioValue("source");
+          if (heardFrom === "Other") {
+            heardFrom =
+              "Other: " +
+              document.getElementById("rf-source-other").value.trim();
+          }
+        }
+
+        var first = document.getElementById("rf-first").value.trim();
+        var last = document.getElementById("rf-last").value.trim();
+        var two = seats() === "2";
+        var data = {
+          firstName: first,
+          lastName: last,
+          dateOfBirth: document.getElementById("rf-dob").value,
+          grade: document.getElementById("rf-grade").value,
+          school: document.getElementById("rf-school").value.trim(),
+          foodAllergies: radioValue("allergies"),
+          allergyDetails: document
+            .getElementById("rf-allergy-details")
+            .value.trim(),
+          heardFrom: heardFrom,
+          package: two ? "2 students" : "1 student",
+          teen: two ? teen + " of 2" : "1 of 1",
+          cohort: COHORT,
+          reference: reference,
+          _subject: "New YXO Miami registration: " + first + " " + last,
+        };
+
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Saving...";
+
+        fetch(FORM_ENDPOINT, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify(data),
+        })
+          .then(function (response) {
+            if (!response.ok) throw new Error("Formspree " + response.status);
+            if (two && teen === 1) {
+              startSecondTeen();
+            } else {
+              submitBtn.textContent = "Taking you to checkout...";
+              goToCheckout();
+            }
+          })
+          .catch(function () {
+            submitBtn.disabled = false;
+            updateHeader();
+            showError(
+              "We couldn't save the form. Please check your connection and try again, or email " +
+                '<a href="mailto:lily@exospeakers.com">lily@exospeakers.com</a>.',
+            );
+          });
+      });
+
+      // Clear the teen's answers for the second form. The package and
+      // "how did you hear" were answered once for the family.
+      function startSecondTeen() {
+        teen = 2;
+        [
+          "rf-first",
+          "rf-last",
+          "rf-dob",
+          "rf-grade",
+          "rf-school",
+          "rf-allergy-details",
+        ].forEach(function (id) {
+          document.getElementById(id).value = "";
+        });
+        form.querySelectorAll('input[name="allergies"]').forEach(function (r) {
+          r.checked = false;
+        });
+        document.getElementById("allergyWrap").hidden = true;
+        document.getElementById("rf-allergy-details").required = false;
+        document.getElementById("seatsSet").hidden = true;
+        document.getElementById("sourceSet").hidden = true;
+        document.getElementById("savedNote").classList.add("show");
+        submitBtn.disabled = false;
+        updateHeader();
+        document.getElementById("formCard").scrollIntoView();
+        document.getElementById("rf-first").focus({ preventScroll: true });
+      }
+
+      updateHeader();
+    </script>
+  </body>
+</html>

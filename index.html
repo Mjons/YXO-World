@@ -1572,6 +1572,25 @@
         }
       }
     </style>
+
+    <!-- Privacy-friendly analytics by Plausible -->
+    <script
+      async
+      src="https://plausible.io/js/pa-qHOjqUWF-Thbw-s6U85u-.js"
+    ></script>
+    <script>
+      ((window.plausible =
+        window.plausible ||
+        function () {
+          (plausible.q = plausible.q || []).push(arguments);
+        }),
+        (plausible.init =
+          plausible.init ||
+          function (i) {
+            plausible.o = i || {};
+          }));
+      plausible.init();
+    </script>
   </head>
   <body>
     <!-- ANNOUNCEMENT -->
@@ -2022,7 +2041,9 @@
               <li>All materials and workbooks</li>
               <li>Certificate of completion</li>
             </ul>
-            <!-- Miami's live Stripe Payment Links (Graceworks account).
+            <!-- These go to the Miami registration form, which then sends
+                 parents to Miami's live Stripe Payment Links (Graceworks
+                 account). The links themselves live in register-miami.html.
                  Prices are set in Stripe; keep these labels in sync.
                  Sandbox versions for testing:
                  1: https://buy.stripe.com/test_3cI7sK89efyS5jTfLe8Zq00
@@ -2031,13 +2052,13 @@
               <div class="pricing-note">Starts Nov 7, 2026 · Miami</div>
               <a
                 class="btn btn-primary btn-lg"
-                href="https://buy.stripe.com/14AdR84O29U39ST2t99AA00"
+                href="register-miami.html?seats=1"
               >
                 Register 1 student · $300 →
               </a>
               <a
                 class="btn btn-secondary btn-lg"
-                href="https://buy.stripe.com/28EaEW4O20jt1mnaZF9AA01"
+                href="register-miami.html?seats=2"
               >
                 Register 2 students · $500 →
               </a>
@@ -2310,6 +2331,19 @@
     </div>
 
     <script>
+      // Count Stripe checkout clicks as the "Register click" goal the
+      // dashboard reads (dashboard/config.json). The Miami card now goes
+      // through register-miami.html, which fires this same goal when it
+      // sends the parent on to Stripe; this catches any direct links.
+      document
+        .querySelectorAll('a[href^="https://buy.stripe.com/"]')
+        .forEach(function (link) {
+          link.addEventListener("click", function () {
+            plausible("Register click", {
+              props: { seats: link.textContent.match(/\d/)[0] },
+            });
+          });
+        });
       function openModal(id) {
         document.getElementById(id).classList.add("active");
         document.body.style.overflow = "hidden";
