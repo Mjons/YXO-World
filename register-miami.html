@@ -302,6 +302,8 @@
         margin-top: 6px;
       }
       .form-group input[type="text"],
+      .form-group input[type="email"],
+      .form-group input[type="tel"],
       .form-group input[type="date"],
       .form-group select,
       .form-group textarea {
@@ -388,6 +390,42 @@
       }
       .reveal {
         margin-top: 12px;
+      }
+
+      /* Agreement checkbox */
+      .agree {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        padding: 14px 16px;
+        border-radius: 6px;
+        box-shadow: inset 0 0 0 1.5px var(--ink-28);
+        font-size: 15px;
+        font-weight: 600;
+        line-height: 1.45;
+        cursor: pointer;
+        transition:
+          box-shadow 0.2s,
+          background 0.2s;
+      }
+      .agree:hover {
+        box-shadow: inset 0 0 0 1.5px var(--ink-72);
+      }
+      .agree:has(input:checked) {
+        box-shadow: inset 0 0 0 2px var(--ink);
+        background: rgba(51, 233, 166, 0.28);
+      }
+      .agree input {
+        flex: none;
+        width: 20px;
+        height: 20px;
+        margin-top: 1px;
+        accent-color: var(--ink);
+        cursor: pointer;
+      }
+      .agree input:focus-visible {
+        outline: 3px solid var(--deep-teal);
+        outline-offset: 2px;
       }
 
       .form-error {
@@ -641,8 +679,47 @@
             </div>
           </fieldset>
 
+          <fieldset id="parentSet">
+            <legend>You, the parent</legend>
+            <div class="form-group">
+              <label for="rf-parent-name"
+                >Your name<span class="req">*</span></label
+              >
+              <input
+                type="text"
+                id="rf-parent-name"
+                autocomplete="name"
+                required
+              />
+            </div>
+            <div class="row">
+              <div class="form-group">
+                <label for="rf-parent-email"
+                  >Email<span class="req">*</span></label
+                >
+                <input
+                  type="email"
+                  id="rf-parent-email"
+                  autocomplete="email"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="rf-parent-phone"
+                  >Phone<span class="req">*</span></label
+                >
+                <input
+                  type="tel"
+                  id="rf-parent-phone"
+                  autocomplete="tel"
+                  required
+                />
+              </div>
+            </div>
+          </fieldset>
+
           <fieldset>
-            <legend>Allergies and dietary needs</legend>
+            <legend>Food allergies</legend>
             <div
               class="form-group"
               role="radiogroup"
@@ -670,8 +747,7 @@
               </div>
               <div class="reveal" id="allergyWrap" hidden>
                 <label class="question" for="rf-allergy-details"
-                  >Tell us about the allergies and any dietary needs<span
-                    class="req"
+                  >What is your teen allergic to?<span class="req"
                     >*</span
                   ></label
                 >
@@ -736,6 +812,21 @@
             </div>
           </fieldset>
 
+          <fieldset>
+            <legend>The day</legend>
+            <div class="form-group">
+              <label class="agree" for="rf-commit">
+                <input type="checkbox" id="rf-commit" required />
+                <span
+                  >I confirm my teen is coming willingly and will stay engaged
+                  and phone-free from 10 AM to 4 PM.<span class="req"
+                    >*</span
+                  ></span
+                >
+              </label>
+            </div>
+          </fieldset>
+
           <div class="form-error" id="formError" role="alert"></div>
 
           <div class="submit-row">
@@ -743,8 +834,7 @@
               Continue to payment →
             </button>
             <p class="submit-note">
-              Next you'll pay on Stripe's secure checkout, where you'll also
-              enter your own contact details.
+              Next you'll pay on Stripe's secure checkout.
             </p>
           </div>
         </form>
@@ -795,6 +885,7 @@
       var errorBox = document.getElementById("formError");
       var teen = 1; // which teen this form is for
       var heardFrom = ""; // asked once per family
+      var parent = {}; // asked once per family
       var reference = makeReference();
 
       // Letters, numbers and dashes only: what Stripe accepts.
@@ -878,12 +969,25 @@
           var el = document.getElementById(required[i]);
           if (el.required && !el.value.trim()) return el;
         }
+        if (teen === 1) {
+          var parentFields = [
+            "rf-parent-name",
+            "rf-parent-email",
+            "rf-parent-phone",
+          ];
+          for (var j = 0; j < parentFields.length; j++) {
+            var field = document.getElementById(parentFields[j]);
+            if (!field.value.trim()) return field;
+          }
+        }
         if (!radioValue("allergies")) {
           return form.querySelector('input[name="allergies"]');
         }
         if (teen === 1 && !radioValue("source")) {
           return form.querySelector('input[name="source"]');
         }
+        var commit = document.getElementById("rf-commit");
+        if (!commit.checked) return commit;
         return null;
       }
 
@@ -893,7 +997,9 @@
         var url =
           STRIPE_LINKS[seats()] +
           "?client_reference_id=" +
-          encodeURIComponent(reference);
+          encodeURIComponent(reference) +
+          "&prefilled_email=" +
+          encodeURIComponent(parent.email);
         var gone = false;
         function go() {
           if (gone) return;
@@ -919,6 +1025,17 @@
         }
 
         if (teen === 1) {
+          var email = document.getElementById("rf-parent-email");
+          if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim())) {
+            showError("Please check your email address.");
+            email.focus();
+            return;
+          }
+          parent = {
+            name: document.getElementById("rf-parent-name").value.trim(),
+            email: email.value.trim(),
+            phone: document.getElementById("rf-parent-phone").value.trim(),
+          };
           heardFrom = radioValue("source");
           if (heardFrom === "Other") {
             heardFrom =
@@ -936,15 +1053,20 @@
           dateOfBirth: document.getElementById("rf-dob").value,
           grade: document.getElementById("rf-grade").value,
           school: document.getElementById("rf-school").value.trim(),
+          parentName: parent.name,
+          parentEmail: parent.email,
+          parentPhone: parent.phone,
           foodAllergies: radioValue("allergies"),
           allergyDetails: document
             .getElementById("rf-allergy-details")
             .value.trim(),
           heardFrom: heardFrom,
+          confirmedPhoneFreeDay: "Yes",
           package: two ? "2 students" : "1 student",
           teen: two ? teen + " of 2" : "1 of 1",
           cohort: COHORT,
           reference: reference,
+          _replyto: parent.email,
           _subject: "New YXO Miami registration: " + first + " " + last,
         };
 
@@ -978,8 +1100,8 @@
           });
       });
 
-      // Clear the teen's answers for the second form. The package and
-      // "how did you hear" were answered once for the family.
+      // Clear the teen's answers for the second form. The package, the
+      // parent and "how did you hear" were answered once for the family.
       function startSecondTeen() {
         teen = 2;
         [
@@ -997,7 +1119,9 @@
         });
         document.getElementById("allergyWrap").hidden = true;
         document.getElementById("rf-allergy-details").required = false;
+        document.getElementById("rf-commit").checked = false;
         document.getElementById("seatsSet").hidden = true;
+        document.getElementById("parentSet").hidden = true;
         document.getElementById("sourceSet").hidden = true;
         document.getElementById("savedNote").classList.add("show");
         submitBtn.disabled = false;

@@ -2,17 +2,17 @@
 
 The site has three forms. All send their answers to **Formspree** (formspree.io), a service that emails each submission to you and keeps a copy online.
 
-| Form               | Where it is on the site                                   | What it asks                                                                                    | Formspree form ID |
-| ------------------ | --------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------- |
-| Waitlist           | "Join the waitlist →" button                              | Name, email, city, state/country, how they heard about YXO                                      | `mzedjjql`        |
-| Workshop request   | "Request a workshop →" button                             | Name, email, city, number of students, age range, hosting space                                 | `mvkzwwjk`        |
-| Miami registration | `register-miami.html`, opened by the Miami card's buttons | Teen's name, date of birth, grade, school, food allergies and details, how they heard about YXO | `xqppezva`        |
+| Form               | Where it is on the site                                   | What it asks                                                                                                                                              | Formspree form ID |
+| ------------------ | --------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------- |
+| Waitlist           | "Join the waitlist →" button                              | Name, email, city, state/country, how they heard about YXO                                                                                                | `mzedjjql`        |
+| Workshop request   | "Request a workshop →" button                             | Name, email, city, number of students, age range, hosting space                                                                                           | `mvkzwwjk`        |
+| Miami registration | `register-miami.html`, opened by the Miami card's buttons | Teen's name, date of birth, grade, school; parent's name, email, phone; food allergies and details; how they heard about YXO; the phone-free-day checkbox | `xqppezva`        |
 
 ## How Miami registration works
 
 1. A parent clicks "Register 1 student" or "Register 2 students" on the Miami card. That opens `register-miami.html`.
-2. They fill in the form once per teen. Each submission goes to the Miami registration form in Formspree.
-3. After the last teen, the page sends them to Miami's Stripe checkout ($300 or $500) to pay. Stripe collects the parent's name, email and phone.
+2. They fill in the form once per teen. The parent's details and "how did you hear" are asked only on the first teen, but are included in every submission. Each submission goes to the Miami registration form in Formspree.
+3. After the last teen, the page sends them to Miami's Stripe checkout ($300 or $500) to pay, with the parent's email already filled in.
 4. Every family gets a **reference code** like `yxo-mia-7k2p9q`. It appears in each Formspree submission (`reference`) and on the Stripe payment (as `client_reference_id`, also in the Stripe CSV export). Match the two to see which forms were paid for. A form with no matching payment means the parent didn't finish checkout.
 
 The Stripe links and the Formspree address for this form are at the top of the script in `register-miami.html` (`STRIPE_LINKS` and `FORM_ENDPOINT`).
