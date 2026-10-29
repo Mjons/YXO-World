@@ -427,6 +427,22 @@
         outline: 3px solid var(--deep-teal);
         outline-offset: 2px;
       }
+      .agree a {
+        color: var(--ink);
+        font-weight: 700;
+        text-decoration: underline;
+        text-decoration-thickness: 1.5px;
+        text-underline-offset: 3px;
+      }
+      .agree .optional {
+        display: block;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--ink-72);
+        margin-bottom: 4px;
+      }
 
       .form-error {
         display: none;
@@ -461,6 +477,12 @@
         text-align: center;
         line-height: 1.5;
         margin-top: 14px;
+      }
+      .submit-note a {
+        color: inherit;
+        font-weight: 700;
+        text-decoration: underline;
+        text-underline-offset: 2px;
       }
       .saved {
         display: none;
@@ -534,6 +556,15 @@
         justify-content: space-between;
         gap: 16px;
         flex-wrap: wrap;
+      }
+      .footer-copy a {
+        color: inherit;
+        text-decoration: none;
+        border-bottom: 1px solid var(--paper-30);
+      }
+      .footer-copy a:hover {
+        color: var(--paper);
+        border-bottom-color: var(--paper);
       }
 
       @media (max-width: 768px) {
@@ -652,6 +683,14 @@
 
         <div class="saved" id="savedNote" role="status">
           × Saved. Now tell us about your second teen.
+        </div>
+        <div class="saved" id="promoNote" role="status">
+          Discount code <strong id="promoCodeText"></strong> will be applied on
+          the payment page.
+          <span id="promoOneStudent" hidden
+            >It covers one student. Registering two teens? Fill this in and pay
+            once for each.</span
+          >
         </div>
 
         <form id="regForm" novalidate>
@@ -862,6 +901,33 @@
                 >
               </label>
             </div>
+            <div class="form-group">
+              <label class="agree" for="rf-photo">
+                <input type="checkbox" id="rf-photo" />
+                <span
+                  ><span class="optional">Optional</span>YXO may use photos and
+                  video from the day in which my teen can be identified. YXO
+                  never posts a teen's full name or school with their image, and
+                  I can withdraw this any time by email.</span
+                >
+              </label>
+            </div>
+          </fieldset>
+
+          <fieldset id="termsSet">
+            <legend>The terms</legend>
+            <div class="form-group">
+              <label class="agree" for="rf-terms">
+                <input type="checkbox" id="rf-terms" required />
+                <span
+                  >I'm the parent or legal guardian, I'm 18 or over, and I've
+                  read and agree to the YXO
+                  <a href="terms.html" target="_blank" rel="noopener"
+                    >Terms and Conditions</a
+                  >.<span class="req">*</span></span
+                >
+              </label>
+            </div>
           </fieldset>
 
           <div class="form-error" id="formError" role="alert"></div>
@@ -871,7 +937,11 @@
               Continue to payment →
             </button>
             <p class="submit-note">
-              Next you'll pay on Stripe's secure checkout.
+              Next you'll pay on Stripe's secure checkout. How we look after
+              your details:
+              <a href="privacy.html" target="_blank" rel="noopener"
+                >Privacy policy</a
+              >.
             </p>
           </div>
         </form>
@@ -891,12 +961,15 @@
           <div class="footer-right">
             <h5>Questions? Get in touch</h5>
             <div class="contact-name">Lily Safrani</div>
-            <a href="mailto:lily@exospeakers.com">lily@exospeakers.com</a>
+            <a href="mailto:yxoworld@gmail.com">yxoworld@gmail.com</a>
           </div>
         </div>
         <div class="footer-copy">
           <span>© 2026 Young Extraordinary Odyssey. All rights reserved.</span>
-          <span>yxo.world</span>
+          <span
+            >yxo.world · <a href="terms.html">Terms</a> ·
+            <a href="privacy.html">Privacy</a></span
+          >
         </div>
       </div>
     </footer>
@@ -916,6 +989,17 @@
         2: "https://buy.stripe.com/28EaEW4O20jt1mnaZF9AA01",
       };
       var COHORT = "Miami · starts Nov 7, 2026";
+
+      // The "Last updated" date on terms.html. Recorded with each
+      // registration so we know which version the parent agreed to. Update
+      // it whenever the terms change.
+      var TERMS_VERSION = "October 29, 2026";
+
+      // Miami's discount codes (MIAMI75, MIAMI200) are set in Stripe to work
+      // on the 1-student link only, so a parent arriving with a code is
+      // shown just that option. Set to false if a future code should work on
+      // both packages. See FORMS.md.
+      var CODES_ONE_STUDENT_ONLY = true;
 
       var form = document.getElementById("regForm");
       var submitBtn = document.getElementById("submitBtn");
@@ -947,9 +1031,27 @@
       }
 
       // Start on the package picked on the home page (?seats=2).
-      var wanted = new URLSearchParams(location.search).get("seats");
-      if (wanted === "2") {
+      var params = new URLSearchParams(location.search);
+      if (params.get("seats") === "2") {
         form.querySelector('input[name="seats"][value="2"]').checked = true;
+      }
+
+      // A discount code in the link (?code=MIAMI75) is handed to Stripe,
+      // which applies it on the payment page. The code itself is created
+      // in Stripe (see FORMS.md); here it's only passed along. Letters,
+      // numbers, dashes and underscores only, so nothing odd reaches Stripe.
+      var promoCode = (params.get("code") || "")
+        .replace(/[^A-Za-z0-9_-]/g, "")
+        .slice(0, 40)
+        .toUpperCase();
+      if (promoCode) {
+        document.getElementById("promoCodeText").textContent = promoCode;
+        document.getElementById("promoNote").classList.add("show");
+        if (CODES_ONE_STUDENT_ONLY) {
+          form.querySelector('input[name="seats"][value="1"]').checked = true;
+          document.getElementById("seatsSet").hidden = true;
+          document.getElementById("promoOneStudent").hidden = false;
+        }
       }
 
       function updateHeader() {
@@ -1025,6 +1127,10 @@
         }
         var commit = document.getElementById("rf-commit");
         if (!commit.checked) return commit;
+        if (teen === 1) {
+          var terms = document.getElementById("rf-terms");
+          if (!terms.checked) return terms;
+        }
         return null;
       }
 
@@ -1037,6 +1143,9 @@
           encodeURIComponent(reference) +
           "&prefilled_email=" +
           encodeURIComponent(parent.email);
+        if (promoCode) {
+          url += "&prefilled_promo_code=" + encodeURIComponent(promoCode);
+        }
         var gone = false;
         function go() {
           if (gone) return;
@@ -1110,10 +1219,15 @@
             .value.trim(),
           heardFrom: heardFrom,
           confirmedPhoneFreeDay: "Yes",
+          photoConsent: document.getElementById("rf-photo").checked
+            ? "Yes"
+            : "No",
+          agreedToTerms: "Yes, terms dated " + TERMS_VERSION,
           package: two ? "2 students" : "1 student",
           teen: two ? teen + " of 2" : "1 of 1",
           cohort: COHORT,
           reference: reference,
+          discountCode: promoCode || "none",
           _replyto: parent.email,
           _subject: "New YXO Miami registration: " + first + " " + last,
         };
@@ -1143,13 +1257,14 @@
             updateHeader();
             showError(
               "We couldn't save the form. Please check your connection and try again, or email " +
-                '<a href="mailto:lily@exospeakers.com">lily@exospeakers.com</a>.',
+                '<a href="mailto:yxoworld@gmail.com">yxoworld@gmail.com</a>.',
             );
           });
       });
 
       // Clear the teen's answers for the second form. The package, the
-      // parent and "how did you hear" were answered once for the family.
+      // parent, "how did you hear" and the terms were answered once for the
+      // family. Photo consent is asked again, since it's per teen.
       function startSecondTeen() {
         teen = 2;
         [
@@ -1168,9 +1283,11 @@
         document.getElementById("allergyWrap").hidden = true;
         document.getElementById("rf-allergy-details").required = false;
         document.getElementById("rf-commit").checked = false;
+        document.getElementById("rf-photo").checked = false;
         document.getElementById("seatsSet").hidden = true;
         document.getElementById("parentSet").hidden = true;
         document.getElementById("sourceSet").hidden = true;
+        document.getElementById("termsSet").hidden = true;
         document.getElementById("savedNote").classList.add("show");
         submitBtn.disabled = false;
         updateHeader();

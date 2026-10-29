@@ -1,0 +1,1249 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Privacy Policy · YXO Young Extraordinary Odyssey</title>
+    <meta
+      name="description"
+      content="How YXO collects, uses and protects the information parents share when they register a teen, join the waitlist or visit yxo.world."
+    />
+    <link rel="canonical" href="https://yxo.world/privacy" />
+    <meta name="theme-color" content="#0C1140" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="YXO · Young Extraordinary Odyssey" />
+    <meta property="og:url" content="https://yxo.world/privacy" />
+    <meta property="og:title" content="YXO Privacy Policy" />
+    <meta
+      property="og:description"
+      content="What YXO collects, why, who it is shared with, and the choices you have."
+    />
+    <meta property="og:image" content="https://yxo.world/og-image-miami.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://yxo.world/og-image-miami.jpg" />
+
+    <!--
+      Still to confirm before this page goes live (see FORMS.md, "Privacy policy"):
+      - The mailing address in section 1 is a placeholder. Search for "todo".
+      - The retention periods in section 7 are the proposals from the Oct 25 draft.
+      - Section 6 says we send Meta nothing typed into our forms. That is true only
+        while Automatic Advanced Matching is switched off for pixel 1791620218654307
+        in Meta Events Manager.
+    -->
+
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      /* Brand palette: see the YXO brand file, section 6. */
+      :root {
+        --ink: #0c1140;
+        --paper: #f6f2ea;
+        --teal: #14b8a9;
+        --deep-teal: #0e8f86;
+        --mint: #33e9a6;
+        --lime: #bdf542;
+        --yellow: #ffe84a;
+        --coral: #ff6f5a;
+        --pink: #ff4fa0;
+
+        --ink-72: rgba(12, 17, 64, 0.72);
+        --ink-28: rgba(12, 17, 64, 0.28);
+        --ink-12: rgba(12, 17, 64, 0.12);
+        --paper-74: rgba(246, 242, 234, 0.74);
+        --paper-30: rgba(246, 242, 234, 0.3);
+        --paper-12: rgba(246, 242, 234, 0.12);
+
+        --gutter: 72px;
+        --max: 1200px;
+        --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .5 0 0 0 0 .5 0 0 0 0 .5 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Inter", system-ui, sans-serif;
+        color: var(--ink);
+        background: var(--paper);
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      /* ── TYPE ── */
+      .kicker {
+        font-size: 13px;
+        font-weight: 700;
+        line-height: 1.2;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--ink-72);
+        margin-bottom: 22px;
+      }
+      .subhead {
+        font-size: clamp(17px, 1.6vw, 20px);
+        line-height: 1.45;
+        max-width: 560px;
+        opacity: 0.9;
+      }
+      .accent {
+        background: linear-gradient(
+          90deg,
+          var(--mint),
+          var(--lime) 55%,
+          var(--yellow)
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+
+      /* ── BACKGROUND FAMILIES ── */
+      .band {
+        position: relative;
+        overflow: hidden;
+        isolation: isolate;
+        padding: 120px var(--gutter);
+      }
+      .band::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: var(--grain);
+        mix-blend-mode: soft-light;
+        opacity: 0.16;
+        pointer-events: none;
+        z-index: -1;
+      }
+      .band-inner {
+        max-width: var(--max);
+        margin: 0 auto;
+      }
+      .bg-ink {
+        background-color: var(--ink);
+        background-image:
+          radial-gradient(
+            ellipse 26% 34% at 100% 100%,
+            rgba(255, 232, 74, 0.55),
+            transparent 70%
+          ),
+          radial-gradient(
+            ellipse 44% 56% at 100% 100%,
+            rgba(189, 245, 66, 0.4),
+            transparent 70%
+          ),
+          radial-gradient(
+            ellipse 80% 95% at 100% 100%,
+            rgba(14, 143, 134, 0.75),
+            transparent 72%
+          ),
+          radial-gradient(
+            ellipse 50% 60% at 0% 0%,
+            rgba(255, 79, 160, 0.3),
+            transparent 70%
+          );
+        color: var(--paper);
+      }
+      .bg-ink .kicker {
+        color: var(--mint);
+      }
+
+      /* ── THE BIG × ── */
+      .bigx {
+        position: absolute;
+        width: var(--size, 520px);
+        height: var(--size, 520px);
+        pointer-events: none;
+        z-index: -1;
+        color: var(--paper);
+      }
+      .bigx::before,
+      .bigx::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 41%;
+        width: 100%;
+        height: 18%;
+        background: linear-gradient(
+          90deg,
+          var(--teal),
+          var(--mint) 50%,
+          var(--yellow)
+        );
+        transform: rotate(45deg);
+      }
+      .bigx::after {
+        transform: rotate(-45deg);
+      }
+      .bigx.br {
+        right: calc(var(--size, 520px) * -0.38);
+        bottom: calc(var(--size, 520px) * -0.38);
+      }
+
+      /* ── BUTTONS ── */
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        border: none;
+        border-radius: 6px;
+        padding: 14px 22px;
+        font-family: inherit;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 1.2;
+        text-decoration: none;
+        cursor: pointer;
+        transition:
+          transform 0.15s,
+          box-shadow 0.2s;
+      }
+      .btn:hover {
+        transform: translateY(-2px);
+      }
+      .btn:focus-visible {
+        outline: 3px solid var(--yellow);
+        outline-offset: 3px;
+      }
+      .btn-mint {
+        background: var(--mint);
+        color: var(--ink);
+      }
+      .btn-mint:hover {
+        box-shadow: 0 10px 28px rgba(51, 233, 166, 0.35);
+      }
+
+      /* ── BADGE (logo) ── */
+      .badge {
+        display: inline-block;
+        background: var(--paper);
+        border-radius: 50%;
+        line-height: 0;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+      }
+      .badge img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+
+      /* ── NAV ── */
+      nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        padding: 12px var(--gutter);
+        background: rgba(12, 17, 64, 0.94);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border-bottom: 1px solid var(--paper-12);
+        color: var(--paper);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+      .nav-logo {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        color: var(--paper);
+        text-decoration: none;
+      }
+      .nav-logo .badge {
+        width: 52px;
+      }
+      .nav-logo-text {
+        font-size: 13px;
+        font-weight: 500;
+        line-height: 1.25;
+        color: var(--paper-74);
+      }
+      .nav-logo-text strong {
+        display: block;
+        color: var(--paper);
+        font-weight: 900;
+        font-size: 18px;
+        letter-spacing: -0.02em;
+      }
+      .nav-right {
+        display: flex;
+        align-items: center;
+        gap: 22px;
+      }
+      .nav-link {
+        font-size: 14px;
+        font-weight: 600;
+        color: var(--paper-74);
+        text-decoration: none;
+        white-space: nowrap;
+        transition: color 0.2s;
+      }
+      .nav-link:hover {
+        color: var(--paper);
+      }
+
+      /* ── HERO ── */
+      .hero {
+        padding-top: 96px;
+        padding-bottom: 96px;
+      }
+      .hero h1 {
+        font-weight: 900;
+        font-size: clamp(48px, 7.5vw, 112px);
+        line-height: 0.9;
+        letter-spacing: -0.05em;
+        margin-bottom: 28px;
+      }
+      .hero-meta {
+        margin-top: 32px;
+        font-size: 14px;
+        font-weight: 600;
+        color: var(--paper-74);
+      }
+      .hero-meta strong {
+        color: var(--paper);
+        font-weight: 700;
+      }
+
+      /* ── POLICY ── */
+      .legal {
+        padding: 80px var(--gutter) 104px;
+      }
+      .legal-inner {
+        max-width: var(--max);
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 220px minmax(0, 720px);
+        gap: 72px;
+        align-items: start;
+      }
+
+      /* On this page */
+      .toc {
+        position: sticky;
+        top: 96px;
+      }
+      .toc .kicker {
+        margin-bottom: 14px;
+      }
+      .toc ol {
+        list-style: none;
+        counter-reset: toc;
+      }
+      .toc li {
+        counter-increment: toc;
+      }
+      .toc a {
+        display: flex;
+        gap: 10px;
+        padding: 7px 0;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 1.3;
+        color: var(--ink-72);
+        text-decoration: none;
+        border-top: 1px solid var(--ink-12);
+        transition: color 0.2s;
+      }
+      .toc a::before {
+        content: counter(toc);
+        flex: none;
+        width: 18px;
+        font-weight: 800;
+        color: var(--ink);
+      }
+      .toc li:last-child a {
+        border-bottom: 1px solid var(--ink-12);
+      }
+      .toc a:hover {
+        color: var(--ink);
+      }
+
+      /* The policy itself */
+      .article h2 {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        font-size: clamp(24px, 2.4vw, 30px);
+        font-weight: 800;
+        line-height: 1.1;
+        letter-spacing: -0.03em;
+        margin: 48px 0 16px;
+        scroll-margin-top: 96px;
+      }
+      .article h2:first-child {
+        margin-top: 0;
+      }
+      .num {
+        flex: none;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 34px;
+        height: 34px;
+        border-radius: 6px;
+        background: var(--ink);
+        color: var(--yellow);
+        font-size: 15px;
+        font-weight: 800;
+        letter-spacing: 0;
+      }
+      .article p {
+        font-size: 17px;
+        line-height: 1.6;
+        opacity: 0.88;
+        margin-bottom: 14px;
+      }
+      .article p strong {
+        font-weight: 800;
+        opacity: 1;
+      }
+      .article a {
+        color: var(--ink);
+        font-weight: 700;
+        text-decoration: underline;
+        text-decoration-color: var(--ink-28);
+        text-decoration-thickness: 1.5px;
+        text-underline-offset: 3px;
+        transition: text-decoration-color 0.2s;
+      }
+      .article a:hover {
+        text-decoration-color: var(--ink);
+      }
+      .article ul {
+        margin: 0 0 18px 22px;
+      }
+      .article li {
+        font-size: 17px;
+        line-height: 1.55;
+        opacity: 0.88;
+        margin-bottom: 8px;
+        padding-left: 4px;
+      }
+      .article li::marker {
+        color: var(--deep-teal);
+      }
+      .article table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 6px 0 24px;
+        font-size: 15.5px;
+        line-height: 1.5;
+      }
+      .article th,
+      .article td {
+        text-align: left;
+        vertical-align: top;
+        padding: 12px 16px 12px 0;
+        border-top: 1px solid var(--ink-12);
+      }
+      .article th {
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--ink-72);
+        border-top: none;
+        padding-top: 0;
+      }
+      .article td {
+        opacity: 0.88;
+      }
+      .article td:first-child {
+        font-weight: 700;
+        width: 32%;
+        opacity: 1;
+      }
+      .article td:last-child {
+        padding-right: 0;
+      }
+      .article tbody tr:last-child td {
+        border-bottom: 1px solid var(--ink-12);
+      }
+      .article td:last-child a {
+        white-space: nowrap;
+      }
+      .intro {
+        font-size: clamp(19px, 1.8vw, 22px);
+        font-weight: 600;
+        line-height: 1.45;
+        opacity: 1;
+        margin-bottom: 40px;
+        padding-bottom: 36px;
+        border-bottom: 1.5px solid var(--ink-28);
+      }
+      .article .intro {
+        opacity: 1;
+      }
+      /* Something still to fill in before publishing. */
+      .todo {
+        background: var(--yellow);
+        color: var(--ink);
+        padding: 0 5px;
+        border-radius: 3px;
+      }
+      .contact-box {
+        margin-top: 56px;
+        padding: 28px 30px;
+        border-radius: 10px;
+        background: rgba(51, 233, 166, 0.22);
+        box-shadow: inset 0 0 0 1.5px var(--ink-28);
+      }
+      .contact-box h3 {
+        font-size: 20px;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        margin-bottom: 8px;
+      }
+      .contact-box h3::before {
+        content: "× ";
+        font-weight: 900;
+      }
+      .article .contact-box p {
+        margin: 0;
+        font-size: 16px;
+      }
+
+      /* ── FOOTER ── */
+      footer {
+        background: var(--ink);
+        color: var(--paper);
+        padding: 56px var(--gutter) 28px;
+        border-top: 1.5px solid var(--paper-12);
+      }
+      .footer-inner {
+        max-width: var(--max);
+        margin: 0 auto;
+      }
+      .footer-top {
+        display: flex;
+        justify-content: space-between;
+        gap: 40px;
+        padding-bottom: 36px;
+        border-bottom: 1.5px solid var(--paper-12);
+        margin-bottom: 22px;
+      }
+      .footer-left .badge {
+        width: 72px;
+        margin-bottom: 18px;
+      }
+      .footer-left p {
+        font-size: 30px;
+        font-weight: 900;
+        letter-spacing: -0.045em;
+        line-height: 1;
+      }
+      .footer-right h5 {
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--mint);
+        margin-bottom: 14px;
+      }
+      .footer-right a {
+        display: block;
+        font-size: 15px;
+        color: var(--paper);
+        text-decoration: none;
+        border-bottom: 1px solid var(--paper-30);
+        width: fit-content;
+      }
+      .footer-right a:hover {
+        border-bottom-color: var(--paper);
+      }
+      .footer-right .contact-name {
+        font-weight: 700;
+        margin-bottom: 4px;
+        font-size: 15px;
+      }
+      .footer-copy {
+        font-size: 13px;
+        color: var(--paper-74);
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+      .footer-copy a {
+        color: inherit;
+        text-decoration: none;
+        border-bottom: 1px solid var(--paper-30);
+      }
+      .footer-copy a:hover {
+        color: var(--paper);
+        border-bottom-color: var(--paper);
+      }
+
+      /* ── RESPONSIVE ── */
+      @media (max-width: 1024px) {
+        :root {
+          --gutter: 40px;
+        }
+        .legal-inner {
+          grid-template-columns: 1fr;
+          gap: 48px;
+        }
+        .toc {
+          position: static;
+          max-width: 480px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        :root {
+          --gutter: 20px;
+        }
+        .band {
+          padding-top: 72px;
+          padding-bottom: 72px;
+        }
+        .hero {
+          padding-top: 56px;
+          padding-bottom: 64px;
+        }
+        nav {
+          padding: 10px var(--gutter);
+        }
+        .nav-logo .badge {
+          width: 42px;
+        }
+        .nav-logo-text {
+          display: none;
+        }
+        nav .btn {
+          padding: 11px 16px;
+          font-size: 15px;
+        }
+        .legal {
+          padding: 56px var(--gutter) 80px;
+        }
+        .article h2 {
+          margin-top: 40px;
+          scroll-margin-top: 80px;
+        }
+        .article p,
+        .article li {
+          font-size: 16px;
+        }
+        .contact-box {
+          padding: 22px;
+        }
+        .footer-top {
+          flex-direction: column;
+        }
+        .bigx {
+          --size: 300px !important;
+        }
+      }
+
+      /* Tables stack into cards on narrow screens. */
+      @media (max-width: 640px) {
+        .article table,
+        .article tbody,
+        .article tr,
+        .article td {
+          display: block;
+          width: 100%;
+        }
+        .article thead {
+          display: none;
+        }
+        .article tr {
+          padding: 12px 0;
+          border-top: 1px solid var(--ink-12);
+        }
+        .article tbody tr:last-child {
+          border-bottom: 1px solid var(--ink-12);
+        }
+        .article td,
+        .article tbody tr:last-child td {
+          border: none;
+          padding: 2px 0;
+        }
+        .article td:first-child {
+          width: auto;
+          padding-bottom: 4px;
+        }
+        .article td.none {
+          display: none;
+        }
+      }
+    </style>
+
+    <!-- Privacy-friendly analytics by Plausible -->
+    <script
+      async
+      src="https://plausible.io/js/pa-qHOjqUWF-Thbw-s6U85u-.js"
+    ></script>
+    <script>
+      ((window.plausible =
+        window.plausible ||
+        function () {
+          (plausible.q = plausible.q || []).push(arguments);
+        }),
+        (plausible.init =
+          plausible.init ||
+          function (i) {
+            plausible.o = i || {};
+          }));
+      plausible.init();
+    </script>
+
+    <!-- Meta Pixel Code -->
+    <script>
+      !(function (f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function () {
+          n.callMethod
+            ? n.callMethod.apply(n, arguments)
+            : n.queue.push(arguments);
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = "2.0";
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s);
+      })(
+        window,
+        document,
+        "script",
+        "https://connect.facebook.net/en_US/fbevents.js",
+      );
+      fbq("init", "1791620218654307");
+      fbq("track", "PageView");
+    </script>
+    <!-- End Meta Pixel Code -->
+  </head>
+  <body>
+    <noscript
+      ><img
+        height="1"
+        width="1"
+        style="display: none"
+        src="https://www.facebook.com/tr?id=1791620218654307&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- NAV -->
+    <nav>
+      <a class="nav-logo" href="/">
+        <span class="badge"
+          ><img src="logo_hero.webp" alt="YXO" width="52" height="52"
+        /></span>
+        <span class="nav-logo-text"
+          ><strong>YXO</strong>Young Extraordinary Odyssey</span
+        >
+      </a>
+      <div class="nav-right">
+        <a class="nav-link" href="team.html">Meet the team</a>
+        <a class="btn btn-mint" href="index.html#register">Register →</a>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="band bg-ink hero">
+      <span class="bigx br" style="--size: 560px" aria-hidden="true"></span>
+      <div class="band-inner">
+        <div class="kicker">Your information</div>
+        <h1>Privacy <span class="accent">policy.</span></h1>
+        <p class="subhead">
+          What we collect when you register a teen, join the waitlist or visit
+          yxo.world, what we do with it, and the choices you have.
+        </p>
+        <p class="hero-meta">Last updated: <strong>October 29, 2026</strong></p>
+      </div>
+    </header>
+
+    <!-- POLICY -->
+    <section class="legal">
+      <div class="legal-inner">
+        <aside class="toc" aria-label="On this page">
+          <div class="kicker">On this page</div>
+          <ol>
+            <li><a href="#who-we-are">Who we are and what this covers</a></li>
+            <li><a href="#what-we-collect">What we collect</a></li>
+            <li><a href="#how-we-use-it">How we use it</a></li>
+            <li><a href="#teens">Teens' information</a></li>
+            <li><a href="#sharing">Who we share it with</a></li>
+            <li><a href="#cookies">Cookies, analytics and ads</a></li>
+            <li><a href="#retention">How long we keep it, and security</a></li>
+            <li><a href="#your-rights">Your choices and rights</a></li>
+            <li><a href="#changes">Changes and contact</a></li>
+          </ol>
+        </aside>
+
+        <article class="article">
+          <p class="intro">
+            We collect only what we need to run safe, well-organized workshops
+            for teens, and we never sell personal information. This policy
+            explains what we collect through yxo.world, at workshops and by
+            email, and what we do with it.
+          </p>
+
+          <h2 id="who-we-are">
+            <span class="num">1</span>Who we are and what this covers
+          </h2>
+          <p>
+            "YXO," "we" and "us" mean OpenExo Inc, doing business as YXO,
+            <mark class="todo">[mailing address]</mark>. Questions go to
+            <a href="mailto:yxoworld@gmail.com">yxoworld@gmail.com</a>.
+          </p>
+          <p>
+            This policy is part of our
+            <a href="terms.html">Terms and Conditions</a>. It covers yxo.world,
+            our forms, our workshops, and the emails we exchange with you.
+          </p>
+
+          <h2 id="what-we-collect">
+            <span class="num">2</span>What we collect
+          </h2>
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Where</th>
+                <th scope="col">What we collect</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Registration form (filled in by a parent)</td>
+                <td>
+                  Your teen's first and last name, date of birth, grade and, if
+                  you give it, school. Whether they have food allergies and the
+                  details. Your name, email and phone number. How you heard
+                  about YXO, the number of seats, any discount code, your
+                  phone-free-day confirmation, whether you give photo consent,
+                  and your agreement to the Terms. We also give each family a
+                  reference code so we can match the form to the payment.
+                </td>
+              </tr>
+              <tr>
+                <td>Stripe checkout</td>
+                <td>
+                  Your name, email, billing details and the payment result.
+                  Stripe handles your card; we see only the last four digits and
+                  the card type.
+                </td>
+              </tr>
+              <tr>
+                <td>Waitlist form</td>
+                <td>
+                  Your name, email, city and state or country, and how you heard
+                  about us.
+                </td>
+              </tr>
+              <tr>
+                <td>Workshop request form</td>
+                <td>
+                  Your name, email, city, the expected number and ages of
+                  students, and whether you have space to host.
+                </td>
+              </tr>
+              <tr>
+                <td>Emails and messages</td>
+                <td>
+                  Whatever you choose to tell us when you write to us, such as a
+                  cancellation or a change to your teen's details.
+                </td>
+              </tr>
+              <tr>
+                <td>At workshops</td>
+                <td>
+                  Attendance, photos and video (see section 4), and work your
+                  teen chooses to share.
+                </td>
+              </tr>
+              <tr>
+                <td>Website visits</td>
+                <td>
+                  Totals from Plausible, such as pages viewed, referring site,
+                  country, device and browser type, plus the city entered on the
+                  waitlist and workshop forms. Plausible uses no cookies and
+                  does not store IP addresses. Our Meta Pixel also records
+                  visits and actions, as section 6 explains.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <p>
+            We do not ask for Social Security numbers, home addresses, or teens'
+            own phone numbers or social media accounts.
+          </p>
+
+          <h2 id="how-we-use-it"><span class="num">3</span>How we use it</h2>
+          <ul>
+            <li>
+              Register your teen, hold their seat, and match the registration to
+              the payment
+            </li>
+            <li>
+              Keep your teen safe, including planning food around allergies and
+              reaching you in an emergency
+            </li>
+            <li>
+              Send confirmations, venue details, reminders and updates about the
+              cohort
+            </li>
+            <li>Process refunds, credits and seat transfers</li>
+            <li>
+              Answer your questions and requests to bring YXO to your city
+            </li>
+            <li>
+              Tell waitlist members about new cohorts and early registration
+              (you can opt out at any time)
+            </li>
+            <li>
+              Understand which pages and channels bring people to YXO, and
+              measure our ads, so we can improve the site and our outreach
+            </li>
+            <li>
+              Meet legal, tax and accounting duties, and protect our rights
+            </li>
+          </ul>
+          <p>
+            We use allergy and dietary details only for safety and catering. We
+            do not use them for marketing.
+          </p>
+
+          <h2 id="teens"><span class="num">4</span>Teens' information</h2>
+          <p>
+            YXO serves teens ages 13 to 17, but we collect their information
+            from their parent or guardian, not from the teens themselves. The
+            website and its forms are meant for adults.
+          </p>
+          <p>
+            We do not knowingly collect personal information directly from
+            anyone under 13. If we learn that a child under 13 has sent us
+            information, we will delete it. If you think this has happened,
+            email <a href="mailto:yxoworld@gmail.com">yxoworld@gmail.com</a>.
+          </p>
+          <p>
+            <strong>Photos and video.</strong> We take photos and video at
+            workshops. We use images in which your teen can be identified only
+            if you tick the photo-consent box at registration, and we never post
+            a teen's full name or school with their image. You can withdraw
+            consent at any time by email.
+          </p>
+          <p>
+            During workshops, teens may use third-party AI and web tools under
+            supervision. We teach them not to enter personal details such as
+            full names, addresses or school names into those tools. Those
+            providers' own privacy policies apply to what is entered there.
+          </p>
+          <p>
+            A parent or guardian can ask to see, correct or delete their teen's
+            information at any time (section 8).
+          </p>
+
+          <h2 id="sharing"><span class="num">5</span>Who we share it with</h2>
+          <p>
+            We do not sell or rent personal information, and we do not share it
+            for other companies' advertising. We share it only with:
+          </p>
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Who</th>
+                <th scope="col">Why</th>
+                <th scope="col">Their policy</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Stripe</td>
+                <td>Processes payments and refunds</td>
+                <td>
+                  <a href="https://stripe.com/privacy" rel="noopener"
+                    >Stripe privacy policy</a
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>Graceworks International Inc.</td>
+                <td>
+                  Payments for YXO Miami go through its Stripe account, so its
+                  name appears on your receipt and card statement. It sees the
+                  same payment details we do.
+                </td>
+                <td class="none">—</td>
+              </tr>
+              <tr>
+                <td>Formspree</td>
+                <td>
+                  Receives and stores form submissions, and emails them to us
+                </td>
+                <td>
+                  <a
+                    href="https://formspree.io/legal/privacy-policy"
+                    rel="noopener"
+                    >Formspree privacy policy</a
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>Plausible Analytics</td>
+                <td>Counts website visits without cookies</td>
+                <td>
+                  <a href="https://plausible.io/privacy" rel="noopener"
+                    >Plausible privacy policy</a
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>Meta (Facebook and Instagram)</td>
+                <td>
+                  Measures our ads and helps show them to people likely to be
+                  interested (section 6)
+                </td>
+                <td>
+                  <a
+                    href="https://www.facebook.com/privacy/policy/"
+                    rel="noopener"
+                    >Meta privacy policy</a
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>Google (Gmail)</td>
+                <td>Hosts our inbox and sends our emails</td>
+                <td>
+                  <a href="https://policies.google.com/privacy" rel="noopener"
+                    >Google privacy policy</a
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>GitHub (GitHub Pages)</td>
+                <td>
+                  Hosts and serves yxo.world, and may log technical details of
+                  each visit, such as IP address, for security
+                </td>
+                <td>
+                  <a
+                    href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement"
+                    rel="noopener"
+                    >GitHub privacy statement</a
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>Venue staff and facilitators</td>
+                <td>
+                  Need-to-know safety details only, such as a teen's name and
+                  allergies
+                </td>
+                <td class="none">—</td>
+              </tr>
+              <tr>
+                <td>Medical and emergency services</td>
+                <td>If your teen needs urgent care, the details they need</td>
+                <td class="none">—</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>
+            Apart from Meta, which also uses pixel data for its own purposes as
+            section 6 explains, these providers may use the information only to
+            provide their service to us.
+          </p>
+          <p>
+            We may also disclose information if the law requires it, to protect
+            someone's safety, or as part of a merger or sale of the business, in
+            which case the buyer must honor this policy.
+          </p>
+
+          <h2 id="cookies">
+            <span class="num">6</span>Cookies, analytics and ads
+          </h2>
+          <p>
+            <strong>Analytics.</strong> Our analytics tool, Plausible, works
+            without cookies and reports only totals, such as how many people
+            visited a page or which cities waitlist members are from.
+          </p>
+          <p>
+            <strong>Advertising.</strong> We advertise on Instagram and
+            Facebook, and yxo.world uses the Meta Pixel to measure those ads.
+            The pixel is a small piece of Meta's code that runs on every page of
+            the site. It sets cookies in your browser (named _fbp and, if you
+            arrive from one of our ads, _fbc) and sends Meta the pages you
+            visit, the actions you take (viewing a page, joining the waitlist,
+            requesting a workshop, going to checkout, and completing a payment,
+            with the package price), and technical details such as your IP
+            address, browser and device. If you are logged in to Facebook or
+            Instagram, Meta can link this to your account. Meta uses it to
+            report how our ads perform and to show our ads to people more likely
+            to be interested, under its own privacy policy. We do not send Meta
+            your name, your email address, anything you type into our forms, or
+            any of your teen's details.
+          </p>
+          <p>
+            <strong>Your options.</strong> You can limit this in your Facebook
+            or Instagram settings, under "Your activity off Meta technologies"
+            and in your
+            <a href="https://www.facebook.com/adpreferences/" rel="noopener"
+              >ad preferences</a
+            >, or block the pixel with your browser's tracking protection, a
+            content blocker, or private browsing. The site works the same either
+            way. Like most sites, yxo.world does not respond to browser "Do Not
+            Track" signals.
+          </p>
+          <p>
+            Stripe's checkout page may use its own cookies for security and
+            fraud prevention.
+          </p>
+
+          <h2 id="retention">
+            <span class="num">7</span>How long we keep it, and security
+          </h2>
+          <p>We keep information only as long as we need it:</p>
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Information</th>
+                <th scope="col">How long we keep it</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Allergy and dietary details</td>
+                <td>Deleted within 90 days after the cohort ends</td>
+              </tr>
+              <tr>
+                <td>
+                  Registration details (your teen's name, date of birth, grade
+                  and school, and your contact details)
+                </td>
+                <td>
+                  2 years after the cohort, so we can answer questions and
+                  invite you back
+                </td>
+              </tr>
+              <tr>
+                <td>Payment and refund records</td>
+                <td>7 years, as tax and accounting rules require</td>
+              </tr>
+              <tr>
+                <td>Waitlist and workshop-request entries</td>
+                <td>
+                  Until you ask us to stop writing to you or to delete them
+                </td>
+              </tr>
+              <tr>
+                <td>Photos and video</td>
+                <td>As long as we use them, or until you withdraw consent</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>
+            We limit access to the small team that runs each cohort, use
+            providers with industry-standard security, and never store full card
+            numbers. No system is perfectly secure; if a breach affects your
+            information, we will tell you as the law requires.
+          </p>
+
+          <h2 id="your-rights">
+            <span class="num">8</span>Your choices and rights
+          </h2>
+          <p>Wherever you live, you can ask us to:</p>
+          <ul>
+            <li>Show you the information we hold about you or your teen</li>
+            <li>Correct anything that is wrong or out of date</li>
+            <li>
+              Delete it, unless we must keep it for legal or accounting reasons
+            </li>
+            <li>
+              Stop sending you waitlist or marketing emails (reply "stop" to any
+              of them, or write to us)
+            </li>
+            <li>Stop using your teen's photos or video in new materials</li>
+          </ul>
+          <p>
+            Email <a href="mailto:yxoworld@gmail.com">yxoworld@gmail.com</a>
+            from the address you used to register. We will confirm who you are
+            and reply within 30 days. We will not treat you differently for
+            making a request.
+          </p>
+          <p>
+            Residents of some states, such as California, have extra rights
+            under their state laws. We will honor those requests as those laws
+            require.
+          </p>
+
+          <h2 id="changes"><span class="num">9</span>Changes and contact</h2>
+          <p>
+            We may update this policy as YXO grows. The date at the top shows
+            the latest version. If we make a significant change to how we use
+            information you already gave us, we will email you before it takes
+            effect.
+          </p>
+
+          <div class="contact-box">
+            <h3>Questions about your information?</h3>
+            <p>
+              Email Lily Safrani at
+              <a href="mailto:yxoworld@gmail.com">yxoworld@gmail.com</a>, or
+              write to OpenExo Inc at the address in section 1, and we will get
+              back to you quickly.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-top">
+          <div class="footer-left">
+            <span class="badge"
+              ><img
+                src="logo_hero.webp"
+                alt="YXO"
+                width="72"
+                height="72"
+                loading="lazy"
+            /></span>
+            <p>Think 10× bigger.</p>
+          </div>
+          <div class="footer-right">
+            <h5>Questions? Get in touch</h5>
+            <div class="contact-name">Lily Safrani</div>
+            <a href="mailto:yxoworld@gmail.com">yxoworld@gmail.com</a>
+          </div>
+        </div>
+        <div class="footer-copy">
+          <span>© 2026 Young Extraordinary Odyssey. All rights reserved.</span>
+          <span
+            >yxo.world · <a href="terms.html">Terms</a> ·
+            <a href="privacy.html">Privacy</a></span
+          >
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
