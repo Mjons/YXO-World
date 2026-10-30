@@ -633,6 +633,10 @@
         "script",
         "https://connect.facebook.net/en_US/fbevents.js",
       );
+      // Keep the pixel from collecting button text and page metadata on
+      // its own. Automatic Advanced Matching is a separate switch in Meta
+      // Events Manager and must stay off too; see FORMS.md, "Privacy policy".
+      fbq("set", "autoConfig", false, "1791620218654307");
       fbq("init", "1791620218654307");
       fbq("track", "PageView");
     </script>
@@ -748,7 +752,7 @@
             Within 7 days, or if your teen does not attend, no refund is owed.
             You can transfer the seat to another eligible teen at no cost. To
             cancel, email
-            <a href="mailto:lily@exospeakers.com">lily@exospeakers.com</a>.
+            <a href="mailto:yxoworld@gmail.com">yxoworld@gmail.com</a>.
             Questions about a charge? Email us first and we will sort it out
             quickly.
           </p>

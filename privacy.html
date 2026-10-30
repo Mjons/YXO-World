@@ -29,8 +29,9 @@
       Still to confirm before this page goes live (see FORMS.md, "Privacy policy"):
       - The mailing address in section 1 is a placeholder. Search for "todo".
       - The retention periods in section 7 are the proposals from the Oct 25 draft.
-      - Section 6 says we send Meta nothing typed into our forms. That is true only
-        while Automatic Advanced Matching is switched off for pixel 1791620218654307
+      - Section 6 says we send Meta nothing typed into our forms. Every page turns
+        off the pixel's automatic configuration in code, but Automatic Advanced
+        Matching is a separate switch and must stay off for pixel 1791620218654307
         in Meta Events Manager.
     -->
 
@@ -736,6 +737,10 @@
         "script",
         "https://connect.facebook.net/en_US/fbevents.js",
       );
+      // Keep the pixel from collecting button text and page metadata on
+      // its own. Automatic Advanced Matching is a separate switch in Meta
+      // Events Manager and must stay off too; see FORMS.md, "Privacy policy".
+      fbq("set", "autoConfig", false, "1791620218654307");
       fbq("init", "1791620218654307");
       fbq("track", "PageView");
     </script>
@@ -834,12 +839,14 @@
                 <td>Registration form (filled in by a parent)</td>
                 <td>
                   Your teen's first and last name, date of birth, grade and, if
-                  you give it, school. Whether they have food allergies and the
-                  details. Your name, email and phone number. How you heard
-                  about YXO, the number of seats, any discount code, your
-                  phone-free-day confirmation, whether you give photo consent,
-                  and your agreement to the Terms. We also give each family a
-                  reference code so we can match the form to the payment.
+                  you give it, school. Whether they have food allergies, medical
+                  conditions, medication or other needs, and the details. Your
+                  name, email and phone number, and the name, phone number and
+                  relationship of an emergency contact. How you heard about YXO,
+                  the number of seats, any discount code, your phone-free-day
+                  confirmation, whether you give photo consent, and your
+                  agreement to the Terms. We also give each family a reference
+                  code so we can match the form to the payment.
                 </td>
               </tr>
               <tr>
@@ -1130,7 +1137,10 @@
             </thead>
             <tbody>
               <tr>
-                <td>Allergy and dietary details</td>
+                <td>
+                  Allergy, dietary and medical details, and the emergency
+                  contact
+                </td>
                 <td>Deleted within 90 days after the cohort ends</td>
               </tr>
               <tr>

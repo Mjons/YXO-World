@@ -301,6 +301,11 @@
         opacity: 0.72;
         margin-top: 6px;
       }
+      .fieldset-note {
+        font-size: 14px;
+        opacity: 0.72;
+        margin: -8px 0 16px;
+      }
       .form-group input[type="text"],
       .form-group input[type="email"],
       .form-group input[type="tel"],
@@ -637,6 +642,10 @@
         "script",
         "https://connect.facebook.net/en_US/fbevents.js",
       );
+      // Keep the pixel from collecting button text and page metadata on
+      // its own. Automatic Advanced Matching is a separate switch in Meta
+      // Events Manager and must stay off too; see FORMS.md, "Privacy policy".
+      fbq("set", "autoConfig", false, "1791620218654307");
       fbq("init", "1791620218654307");
       fbq("track", "PageView");
     </script>
@@ -732,8 +741,14 @@
                 <label for="rf-dob"
                   >Date of birth<span class="req">*</span></label
                 >
-                <input type="date" id="rf-dob" required />
-                <p class="helper">YXO is for ages 13 to 17.</p>
+                <input
+                  type="date"
+                  id="rf-dob"
+                  min="2008-11-08"
+                  max="2013-11-07"
+                  required
+                />
+                <p class="helper">YXO is for teens aged 13 to 17 on Nov 7.</p>
               </div>
               <div class="form-group">
                 <label for="rf-grade">Grade<span class="req">*</span></label>
@@ -794,8 +809,51 @@
             </div>
           </fieldset>
 
+          <fieldset id="emergencySet">
+            <legend>In an emergency</legend>
+            <p class="fieldset-note">
+              Someone we can reach on the day if we can't reach you.
+            </p>
+            <div class="form-group">
+              <label for="rf-emergency-name"
+                >Emergency contact's name<span class="req">*</span></label
+              >
+              <input
+                type="text"
+                id="rf-emergency-name"
+                autocomplete="off"
+                required
+              />
+            </div>
+            <div class="row">
+              <div class="form-group">
+                <label for="rf-emergency-phone"
+                  >Their phone<span class="req">*</span></label
+                >
+                <input
+                  type="tel"
+                  id="rf-emergency-phone"
+                  autocomplete="off"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="rf-emergency-relation"
+                  >Relationship to your teen<span class="req">*</span></label
+                >
+                <input
+                  type="text"
+                  id="rf-emergency-relation"
+                  autocomplete="off"
+                  placeholder="e.g. Grandmother"
+                  required
+                />
+              </div>
+            </div>
+          </fieldset>
+
           <fieldset>
-            <legend>Food allergies</legend>
+            <legend>Health and safety</legend>
             <div
               class="form-group"
               role="radiogroup"
@@ -831,6 +889,44 @@
                   id="rf-allergy-details"
                   placeholder="e.g. Tree nuts. Carries an EpiPen."
                 ></textarea>
+              </div>
+            </div>
+            <div
+              class="form-group"
+              role="radiogroup"
+              aria-labelledby="q-medical"
+            >
+              <span class="question" id="q-medical"
+                >Any medical conditions, medication or other needs we should
+                know about?<span class="req">*</span></span
+              >
+              <div class="choices">
+                <label class="choice"
+                  ><input
+                    type="radio"
+                    name="medical"
+                    value="Yes"
+                    required
+                  /><span>Yes</span></label
+                >
+                <label class="choice"
+                  ><input type="radio" name="medical" value="No" /><span
+                    >No</span
+                  ></label
+                >
+              </div>
+              <div class="reveal" id="medicalWrap" hidden>
+                <label class="question" for="rf-medical-details"
+                  >What should we know?<span class="req">*</span></label
+                >
+                <textarea
+                  id="rf-medical-details"
+                  placeholder="e.g. Asthma. Carries an inhaler."
+                ></textarea>
+                <p class="helper">
+                  Teens carry their own emergency medication, such as an EpiPen
+                  or inhaler. Staff do not give medication.
+                </p>
               </div>
             </div>
           </fieldset>
@@ -1088,7 +1184,19 @@
           });
       }
       toggle("allergies", "Yes", "allergyWrap", "rf-allergy-details");
+      toggle("medical", "Yes", "medicalWrap", "rf-medical-details");
       toggle("source", "Other", "sourceOtherWrap", "rf-source-other");
+
+      // Age on the workshop day. YXO is for 13 to 17; the min and max on
+      // the date-of-birth field match this. Update both for a new cohort.
+      var WORKSHOP_DATE = "2026-11-07";
+      function ageOn(dob, day) {
+        var b = dob.split("-").map(Number);
+        var d = day.split("-").map(Number);
+        var age = d[0] - b[0];
+        if (d[1] < b[1] || (d[1] === b[1] && d[2] < b[2])) age--;
+        return age;
+      }
 
       function showError(html) {
         errorBox.innerHTML = html;
@@ -1102,6 +1210,7 @@
           "rf-dob",
           "rf-grade",
           "rf-allergy-details",
+          "rf-medical-details",
           "rf-source-other",
         ];
         for (var i = 0; i < required.length; i++) {
@@ -1113,6 +1222,9 @@
             "rf-parent-name",
             "rf-parent-email",
             "rf-parent-phone",
+            "rf-emergency-name",
+            "rf-emergency-phone",
+            "rf-emergency-relation",
           ];
           for (var j = 0; j < parentFields.length; j++) {
             var field = document.getElementById(parentFields[j]);
@@ -1121,6 +1233,9 @@
         }
         if (!radioValue("allergies")) {
           return form.querySelector('input[name="allergies"]');
+        }
+        if (!radioValue("medical")) {
+          return form.querySelector('input[name="medical"]');
         }
         if (teen === 1 && !radioValue("source")) {
           return form.querySelector('input[name="source"]');
@@ -1181,6 +1296,19 @@
           return;
         }
 
+        var dobField = document.getElementById("rf-dob");
+        var age = /^\d{4}-\d{2}-\d{2}$/.test(dobField.value)
+          ? ageOn(dobField.value, WORKSHOP_DATE)
+          : NaN;
+        if (!(age >= 13 && age <= 17)) {
+          showError(
+            "YXO is for teens who are 13 to 17 on Nov 7, 2026. Please check the date of birth, or email " +
+              '<a href="mailto:yxoworld@gmail.com">yxoworld@gmail.com</a> if your teen is just outside that range.',
+          );
+          dobField.focus();
+          return;
+        }
+
         if (teen === 1) {
           var email = document.getElementById("rf-parent-email");
           if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim())) {
@@ -1192,6 +1320,15 @@
             name: document.getElementById("rf-parent-name").value.trim(),
             email: email.value.trim(),
             phone: document.getElementById("rf-parent-phone").value.trim(),
+            emergencyName: document
+              .getElementById("rf-emergency-name")
+              .value.trim(),
+            emergencyPhone: document
+              .getElementById("rf-emergency-phone")
+              .value.trim(),
+            emergencyRelation: document
+              .getElementById("rf-emergency-relation")
+              .value.trim(),
           };
           heardFrom = radioValue("source");
           if (heardFrom === "Other") {
@@ -1213,9 +1350,16 @@
           parentName: parent.name,
           parentEmail: parent.email,
           parentPhone: parent.phone,
+          emergencyContactName: parent.emergencyName,
+          emergencyContactPhone: parent.emergencyPhone,
+          emergencyContactRelationship: parent.emergencyRelation,
           foodAllergies: radioValue("allergies"),
           allergyDetails: document
             .getElementById("rf-allergy-details")
+            .value.trim(),
+          medicalNeeds: radioValue("medical"),
+          medicalDetails: document
+            .getElementById("rf-medical-details")
             .value.trim(),
           heardFrom: heardFrom,
           confirmedPhoneFreeDay: "Yes",
@@ -1263,8 +1407,9 @@
       });
 
       // Clear the teen's answers for the second form. The package, the
-      // parent, "how did you hear" and the terms were answered once for the
-      // family. Photo consent is asked again, since it's per teen.
+      // parent, the emergency contact, "how did you hear" and the terms were
+      // answered once for the family. Allergies, medical needs and photo
+      // consent are asked again, since they're per teen.
       function startSecondTeen() {
         teen = 2;
         [
@@ -1274,18 +1419,24 @@
           "rf-grade",
           "rf-school",
           "rf-allergy-details",
+          "rf-medical-details",
         ].forEach(function (id) {
           document.getElementById(id).value = "";
         });
-        form.querySelectorAll('input[name="allergies"]').forEach(function (r) {
-          r.checked = false;
-        });
+        form
+          .querySelectorAll('input[name="allergies"], input[name="medical"]')
+          .forEach(function (r) {
+            r.checked = false;
+          });
         document.getElementById("allergyWrap").hidden = true;
         document.getElementById("rf-allergy-details").required = false;
+        document.getElementById("medicalWrap").hidden = true;
+        document.getElementById("rf-medical-details").required = false;
         document.getElementById("rf-commit").checked = false;
         document.getElementById("rf-photo").checked = false;
         document.getElementById("seatsSet").hidden = true;
         document.getElementById("parentSet").hidden = true;
+        document.getElementById("emergencySet").hidden = true;
         document.getElementById("sourceSet").hidden = true;
         document.getElementById("termsSet").hidden = true;
         document.getElementById("savedNote").classList.add("show");

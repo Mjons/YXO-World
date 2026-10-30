@@ -471,6 +471,10 @@
         "script",
         "https://connect.facebook.net/en_US/fbevents.js",
       );
+      // Keep the pixel from collecting button text and page metadata on
+      // its own. Automatic Advanced Matching is a separate switch in Meta
+      // Events Manager and must stay off too; see FORMS.md, "Privacy policy".
+      fbq("set", "autoConfig", false, "1791620218654307");
       fbq("init", "1791620218654307");
       fbq("track", "PageView");
     </script>
@@ -581,10 +585,10 @@
             <p>A laptop and charger. Everything else is provided.</p>
           </div>
           <div class="callout">
-            <h4>Parents at the close</h4>
+            <h4>Pickup at 4 PM</h4>
             <p>
-              The workshop is teens only so students can engage freely. Parents
-              are invited to the closing ceremony at 3:50 PM.
+              The workshop is teens only so students can engage freely. Drop-off
+              is at 10 AM and pickup at 4 PM.
             </p>
           </div>
           <div class="callout">
@@ -639,7 +643,7 @@
           "DTEND:20261024T210000Z",
           "SUMMARY:YXO workshop · Austin, TX",
           "LOCATION:Austin, Texas",
-          "DESCRIPTION:A full-day workshop for ages 13 to 17. Bring a laptop and charger. Venue details to follow by email. Parents are welcome at the closing ceremony at 3:50 PM.",
+          "DESCRIPTION:A full-day workshop for ages 13 to 17. Bring a laptop and charger. Venue details to follow by email. Pickup is at 4 PM.",
           "URL:https://yxo.world",
           "END:VEVENT",
           "END:VCALENDAR",

@@ -174,7 +174,7 @@
                 "name": "Can parents attend?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "The workshop is teens only, so they can engage freely. Parents are welcome at the closing ceremony."
+                  "text": "The workshop is teens only, so they can engage freely. Drop-off is at 10 AM and pickup at 4 PM."
                 }
               }
             ]
@@ -1639,6 +1639,10 @@
         "script",
         "https://connect.facebook.net/en_US/fbevents.js",
       );
+      // Keep the pixel from collecting button text and page metadata on
+      // its own. Automatic Advanced Matching is a separate switch in Meta
+      // Events Manager and must stay off too; see FORMS.md, "Privacy policy".
+      fbq("set", "autoConfig", false, "1791620218654307");
       fbq("init", "1791620218654307");
       fbq("track", "PageView");
     </script>
@@ -1842,6 +1846,7 @@
                 <a
                   href="https://www.youtube.com/watch?v=nEmjcz5LS-o"
                   target="_blank"
+                  rel="noopener"
                   class="btn btn-secondary"
                   >Watch on YouTube →</a
                 >
@@ -1909,9 +1914,7 @@
           <div class="foot">
             <div>
               <div class="foot-1">Bring a laptop and charger</div>
-              <div class="foot-2">
-                Parents welcome at 3:50 PM for the closing ceremony
-              </div>
+              <div class="foot-2">Drop-off at 10 AM · Pickup at 4 PM</div>
             </div>
           </div>
         </div>
@@ -2004,8 +2007,10 @@
           <div class="schedule-item">
             <div class="schedule-time">3:50 PM</div>
             <div class="schedule-content">
-              <h4>Closing ceremony and certificates</h4>
-              <p>Parents are welcome to join for the closing ceremony.</p>
+              <h4>Wrap-up and certificates</h4>
+              <p>
+                Teens get their certificate of completion. Pickup is at 4 PM.
+              </p>
             </div>
           </div>
         </div>
@@ -2157,8 +2162,8 @@
           <div class="faq-card">
             <h4>Can parents attend?</h4>
             <p>
-              The workshop is teens only, so they can engage freely. Parents are
-              welcome at the closing ceremony.
+              The workshop is teens only, so they can engage freely. Drop-off is
+              at 10 AM and pickup at 4 PM.
             </p>
           </div>
         </div>

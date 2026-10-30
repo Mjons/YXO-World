@@ -1,0 +1,14 @@
+# GitHub Pages publishes everything committed here on yxo.world, so anything
+# that shows minors or is not part of the website must never be added.
+# Workshop footage and the ad cuts and renders live next to the site only
+# for convenience. See FORMS.md and dashboard/README.md.
+marketing_assets/
+YXO ads/
+
+# Local tooling and secrets
+node_modules/
+dashboard/.env
+dashboard/data.js
+
+# Empty files Windows creates from "> nul" redirects
+nul
