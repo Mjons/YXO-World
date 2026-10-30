@@ -1,0 +1,12 @@
+{
+  "name": "yxo-film",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "export": "node export.mjs",
+    "export:60": "node export.mjs --fps=60"
+  },
+  "dependencies": {
+    "puppeteer-core": "^23.0.0"
+  }
+}

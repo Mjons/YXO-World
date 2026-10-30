@@ -1,0 +1,35 @@
+{
+  "plausible": {
+    "site": "yxo.world",
+    "registerGoal": "Register click",
+    "waitlistGoal": "Waitlist signup",
+    "requestGoal": "Workshop request"
+  },
+  "workshops": [
+    {
+      "key": "austin",
+      "name": "Austin",
+      "date": "2026-10-24",
+      "capacity": 50,
+      "paymentLinks": {
+        "https://buy.stripe.com/bJe28r2ym9SBcfAbMicV20F": 1,
+        "https://buy.stripe.com/9B63cvdd03ud2F0cQmcV20G": 2
+      }
+    },
+    {
+      "key": "miami",
+      "name": "Miami",
+      "date": "2026-11-07",
+      "capacity": 50,
+      "paymentLinks": {
+        "https://buy.stripe.com/14AdR84O29U39ST2t99AA00": 1,
+        "https://buy.stripe.com/28EaEW4O20jt1mnaZF9AA01": 2
+      }
+    }
+  ],
+  "notes": [
+    "Analytics starts with the Miami run-up, so Austin has no visitor numbers.",
+    "Signups count from when the site started sending them to Plausible; earlier ones are only in Formspree's emails."
+  ],
+  "reminders": ["Test PostHog against Plausible"]
+}
