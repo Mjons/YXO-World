@@ -25,11 +25,22 @@
         "https://buy.stripe.com/14AdR84O29U39ST2t99AA00": 1,
         "https://buy.stripe.com/28EaEW4O20jt1mnaZF9AA01": 2
       }
+    },
+    {
+      "key": "virtual-dec5",
+      "name": "Virtual (Dec 5)",
+      "date": "2026-12-05",
+      "capacity": 50,
+      "paymentLinks": {
+        "https://buy.stripe.com/3cI3cubcq9U35CD1p59AA02": "per-student"
+      }
     }
   ],
   "notes": [
     "Analytics starts with the Miami run-up, so Austin has no visitor numbers.",
     "Signups count from when the site started sending them to Plausible; earlier ones are only in Formspree's emails."
   ],
-  "reminders": ["Test PostHog against Plausible"]
+  "reminders": [
+    "Test PostHog against Plausible"
+  ]
 }

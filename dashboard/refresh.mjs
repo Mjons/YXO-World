@@ -50,7 +50,9 @@ async function loadStripe() {
       orders: [],
     };
 
-  // Payment link URL → workshop and number of students.
+  // Payment link URL → workshop and number of students. "per-student"
+  // links let the parent pick the quantity, so the count comes from the
+  // order's line items instead.
   const byUrl = {};
   for (const w of config.workshops)
     for (const [url, students] of Object.entries(w.paymentLinks))
@@ -71,7 +73,14 @@ async function loadStripe() {
         refundedByIntent[r.payment_intent] =
           (refundedByIntent[r.payment_intent] || 0) + r.amount;
 
-    const sessions = await stripeList(key, "checkout/sessions");
+    const perStudent = Object.values(byUrl).some(
+      (i) => i.students === "per-student",
+    );
+    const sessions = await stripeList(
+      key,
+      "checkout/sessions",
+      perStudent ? { "expand[]": "data.line_items" } : {},
+    );
     for (const s of sessions) {
       const info = linkInfo[s.payment_link];
       if (!info) continue; // something else sold from this account
@@ -80,7 +89,11 @@ async function loadStripe() {
       orders.push({
         date: day(s.created),
         workshop: info.workshop,
-        students: info.students,
+        students:
+          info.students === "per-student"
+            ? (s.line_items?.data || []).reduce((n, li) => n + li.quantity, 0) ||
+              1
+            : info.students,
         status: paid ? "paid" : "abandoned",
         amount: paid ? s.amount_total / 100 : 0,
         refunded: paid ? (refundedByIntent[s.payment_intent] || 0) / 100 : 0,

@@ -1,14 +1,33 @@
 # Website forms: where they go and how to change them
 
-The site has three forms. All send their answers to **Formspree** (formspree.io), a service that emails each submission to you and keeps a copy online.
+The site has four forms. All send their answers to **Formspree** (formspree.io), a service that emails each submission to you and keeps a copy online.
 
 | Form               | Where it is on the site                                   | What it asks                                                                                                                                                                                                                                                                                                           | Formspree form ID |
 | ------------------ | --------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------- |
 | Waitlist           | "Join the waitlist →" button                              | Name, email, city, state/country, how they heard about YXO                                                                                                                                                                                                                                                             | `mzedjjql`        |
 | Workshop request   | "Request a workshop →" button                             | Name, email, city, number of students, age range, hosting space                                                                                                                                                                                                                                                        | `mvkzwwjk`        |
-| Miami registration | `register-miami.html`, opened by the Miami card's buttons | Teen's name, date of birth, grade, school; parent's name, email, phone; emergency contact's name, phone and relationship; food allergies and details; medical conditions, medication or other needs and details; how they heard about YXO; the phone-free-day checkbox; optional photo consent; agreement to the Terms | `xqppezva`        |
+| Virtual registration (Dec 5) | `register-virtual.html`, opened by the cohort card's Register button | Same as Miami registration below, for any number of teens, minus the food-allergy questions. The checkbox asks the teen to stay on camera, engaged and phone-free | `xqppezva` (shared with Miami; the `cohort` line and the email subject tell them apart) |
+| Miami registration (closed) | `register-miami.html`, now sends visitors on to `register-virtual.html` | Teen's name, date of birth, grade, school; parent's name, email, phone; emergency contact's name, phone and relationship; food allergies and details; medical conditions, medication or other needs and details; how they heard about YXO; the phone-free-day checkbox; optional photo consent; agreement to the Terms | `xqppezva`        |
 
-## How Miami registration works
+## The Dec 5 virtual cohort
+
+Live on Zoom, Sat, Dec 5, 2026, 10 AM to 4 PM Eastern. **$100 USD per student**, no sibling or bundle pricing.
+
+1. A parent clicks "Register" on the cohort card. That opens `register-virtual.html`.
+2. They fill in the form for their first teen. To register more, they click **+ Add another teen** and fill it in again; the parent's details, emergency contact, "how did you hear" and the Terms are asked only once. Each teen is a separate Formspree submission, with the same family reference code (like `yxo-vir-7k2p9q`) and a `teen` line ("Teen 2 in this family").
+3. After **Continue to payment**, a last step lists the teens and tells the parent what quantity to choose on Stripe ("set the quantity to 3, one for each teen. Total: $300 USD"). A Payment Link can't preset the quantity, so the parent sets it on the Stripe page.
+4. **Go to payment** opens the one live Payment Link, `https://buy.stripe.com/3cI3cubcq9U35CD1p59AA02` (Graceworks account), with the parent's email filled in and the reference code as `client_reference_id`. Stripe collects only email and card. Promotion codes are on.
+5. After paying, Stripe sends them to `thank-you-virtual.html`, which offers a calendar invite for 10 AM to 4 PM ET and says the Zoom link comes by email. **Send the Zoom link to every family before Dec 5.**
+
+Checking the numbers: the count of Formspree submissions with a family's reference code should match the quantity on that family's Stripe payment. If a family paid for fewer teens than they registered, follow up by email.
+
+Canadian visitors (and others) may see the price in their own currency first. That is Stripe's Adaptive Pricing; the site always says "$100 USD per student".
+
+Other differences from Miami: no food-allergy questions; ages are checked against Dec 5, 2026 (a date of birth from Dec 6, 2008 to Dec 5, 2013); the checkbox asks teens to stay on camera, engaged and phone-free. The old 2-student virtual link is deactivated and must not be used.
+
+`register-miami.html` now redirects to `register-virtual.html`, keeping `?code=`, so old Miami ads and links reach the open cohort. Delete the redirect block at the top of that file to reopen it. The two Miami Payment Links are still active in Stripe, so someone with a saved Miami link can still pay $300.
+
+## How Miami registration worked
 
 1. A parent clicks "Register 1 student" or "Register 2 students" on the Miami card. That opens `register-miami.html`.
 2. They fill in the form once per teen. The parent's details, the emergency contact, "how did you hear" and the Terms checkbox are asked only on the first teen, but are included in every submission. Allergies, medical needs and photo consent are asked for each teen. Each submission goes to the Miami registration form in Formspree.
@@ -24,16 +43,16 @@ The Terms and Conditions live at `terms.html` (https://yxo.world/terms), linked 
 
 Each registration email records:
 
-- `agreedToTerms`: "Yes, terms dated October 29, 2026". The date is the "Last updated" date on the terms page, so you can tell which version a family agreed to.
+- `agreedToTerms`: "Yes, terms dated November 17, 2026". The date is the "Last updated" date on the terms page, so you can tell which version a family agreed to.
 - `photoConsent`: "Yes" or "No", per teen. Only use identifiable photos of teens whose form says "Yes". A parent can withdraw consent by email at any time.
 
-**When you change the terms:** update the "Last updated" date in `terms.html` and the `TERMS_VERSION` line at the top of the script in `register-miami.html` so the two match. The terms say changes don't affect registrations already paid for.
+**When you change the terms:** update the "Last updated" date in `terms.html` and the `TERMS_VERSION` line at the top of the script in `register-virtual.html` so the two match. The terms say changes don't affect registrations already paid for.
 
 ## Privacy policy
 
 The Privacy Policy lives at `privacy.html` (https://yxo.world/privacy). It is linked next to "Terms" in every footer, under each of the three forms, and from section 9 of the Terms.
 
-It describes exactly what the site does today: the three Formspree forms, Stripe checkout (through Graceworks International Inc.'s account), Plausible, the Meta Pixel and its events, Gmail, and GitHub Pages hosting. **Update it whenever a form asks a new question, a tracking script is added or removed, or a provider changes**, and move the "Last updated" date.
+It describes exactly what the site does today: the Formspree forms, Stripe checkout (through Graceworks International Inc.'s account), Zoom, Plausible, the Meta Pixel and its events, Gmail, and GitHub Pages hosting. **Update it whenever a form asks a new question, a tracking script is added or removed, or a provider changes**, and move the "Last updated" date.
 
 Still to confirm before it is final (also listed in a comment at the top of `privacy.html`):
 
@@ -47,7 +66,7 @@ Still to confirm before it is final (also listed in a comment at the top of `pri
 
 Discount codes are made in Stripe, not on the website. Adding or changing a code never needs a website change.
 
-### Codes live now (Miami, Nov 7 cohort)
+### Miami codes (Nov 7 cohort, now expired)
 
 | Code       | What the parent pays | Works on            | Expires                       |
 | ---------- | -------------------- | ------------------- | ----------------------------- |
