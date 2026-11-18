@@ -840,7 +840,7 @@
         position: relative;
       }
       .mentor-video img,
-      .mentor-video iframe {
+      .mentor-video video {
         position: absolute;
         inset: 0;
         width: 100%;
@@ -1782,21 +1782,21 @@
           <button
             type="button"
             class="mentor-video"
-            data-video-id="nEmjcz5LS-o"
-            aria-label="Play Natasha Tsakos's TEDx talk"
+            data-video-src="yxo-film.mp4"
+            aria-label="Play the YXO film, with Natasha Tsakos and Salim Ismail"
           >
             <img
-              src="https://i.ytimg.com/vi/nEmjcz5LS-o/maxresdefault.jpg"
+              src="yxo-film-poster.jpg"
               alt=""
-              width="1280"
-              height="720"
+              width="960"
+              height="540"
               loading="lazy"
             />
             <span class="play-btn" aria-hidden="true">
               <svg viewBox="0 0 24 24"><path d="M6 4l15 8-15 8z" /></svg>
             </span>
             <span class="ted-badge"
-              ><strong>TEDx</strong>Watch Natasha's talk</span
+              ><strong>Film</strong>A day at YXO</span
             >
           </button>
           <div class="mentor-info">
@@ -1829,13 +1829,6 @@
                 <a class="btn btn-primary" href="#register">Register →</a>
                 <a href="team.html" class="btn btn-secondary"
                   >Meet the full team →</a
-                >
-                <a
-                  href="https://www.youtube.com/watch?v=nEmjcz5LS-o"
-                  target="_blank"
-                  rel="noopener"
-                  class="btn btn-secondary"
-                  >Watch on YouTube →</a
                 >
               </div>
             </div>
@@ -2477,25 +2470,25 @@
       })();
 
       // ── MENTOR VIDEO ──
-      // Shows a thumbnail first and only loads YouTube's player on click,
-      // so the page stays fast.
+      // Shows a poster first and only loads the film (about 10 MB) on
+      // click, so the page stays fast. The film shows teens from the Miami
+      // workshop, all with photo consent.
       document.querySelectorAll(".mentor-video").forEach(function (box) {
         box.addEventListener(
           "click",
           function () {
-            var iframe = document.createElement("iframe");
-            iframe.src =
-              "https://www.youtube-nocookie.com/embed/" +
-              box.dataset.videoId +
-              "?autoplay=1&rel=0";
-            iframe.title = "Natasha Tsakos TEDx talk";
-            iframe.allow =
-              "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
-            iframe.allowFullscreen = true;
+            var video = document.createElement("video");
+            video.src = box.dataset.videoSrc;
+            video.poster = box.querySelector("img").src;
+            video.controls = true;
+            video.autoplay = true;
+            video.playsInline = true;
+            video.setAttribute("aria-label", "The YXO film");
             var player = document.createElement("div");
             player.className = "mentor-video playing";
-            player.appendChild(iframe);
+            player.appendChild(video);
             box.replaceWith(player);
+            video.play().catch(function () {});
           },
           { once: true },
         );
