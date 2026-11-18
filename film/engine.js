@@ -870,7 +870,7 @@
           r2 = smooth((lt - chord - 2.2) / 0.8),
           r3 = smooth((lt - chord - 2.8) / 0.8);
         text(
-          "Young Extraordinary Odyssey",
+          "Your Extraordinary Opportunity",
           960,
           668 + (1 - r1) * 12,
           "700 58px Syne, sans-serif",

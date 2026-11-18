@@ -13,7 +13,7 @@
 
     <!-- Link previews (WhatsApp, iMessage, Facebook, LinkedIn, Slack) -->
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="YXO · Young Extraordinary Odyssey" />
+    <meta property="og:site_name" content="YXO · Your Extraordinary Opportunity" />
     <meta property="og:url" content="https://yxo.world/" />
     <meta
       property="og:title"
@@ -25,17 +25,17 @@
     />
     <!-- Give each new preview image a new filename so chat apps fetch it
          instead of a cached copy of the old one. -->
-    <meta property="og:image" content="https://yxo.world/og-image-virtual.jpg" />
+    <meta property="og:image" content="https://yxo.world/og-image-dec5.jpg" />
     <meta
       property="og:image:secure_url"
-      content="https://yxo.world/og-image-virtual.jpg"
+      content="https://yxo.world/og-image-dec5.jpg"
     />
     <meta property="og:image:type" content="image/jpeg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta
       property="og:image:alt"
-      content="YXO badge with the headline Think 10× bigger. Virtual cohort, live on Zoom, Sat, Dec 5."
+      content="YXO logo with the headline Think 10× bigger. Virtual cohort, live on Zoom, Sat, Dec 5."
     />
     <meta property="og:locale" content="en_US" />
     <meta name="twitter:card" content="summary_large_image" />
@@ -47,9 +47,10 @@
       name="twitter:description"
       content="AI, entrepreneurship and purpose for teens. Virtual cohort, live on Zoom · Sat, Dec 5."
     />
-    <meta name="twitter:image" content="https://yxo.world/og-image-virtual.jpg" />
+    <meta name="twitter:image" content="https://yxo.world/og-image-dec5.jpg" />
 
     <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
@@ -73,7 +74,8 @@
             "name": "YXO",
             "alternateName": "Young Extraordinary Odyssey",
             "url": "https://yxo.world/",
-            "logo": "https://yxo.world/logo_hero.webp",
+            "logo": "https://yxo.world/brand/yxo-logo/png/yxo-logo-light-bg-800w.png",
+            "slogan": "Your Extraordinary Opportunity",
             "description": "Full-day workshops, in person and live online, that teach teens ages 13 to 17 to think bigger, use AI as a tool for their own ideas, and build a personal roadmap for an extraordinary life.",
             "founder": { "@id": "https://yxo.world/#lily" },
             "email": "yxoworld@gmail.com",
@@ -107,7 +109,7 @@
             "name": "YXO virtual cohort for teens",
             "description": "YXO's virtual cohort: AI, entrepreneurship and purpose discovery for teens, live on Zoom. Saturday, December 5, 2026, 10 AM to 4 PM Eastern.",
             "url": "https://yxo.world/#register",
-            "image": "https://yxo.world/og-image-virtual.jpg",
+            "image": "https://yxo.world/og-image-dec5.jpg",
             "startDate": "2026-12-05T10:00:00-05:00",
             "endDate": "2026-12-05T16:00:00-05:00",
             "eventStatus": "https://schema.org/EventScheduled",
@@ -550,6 +552,10 @@
         width: 100%;
         height: auto;
       }
+      .badge-mark img {
+        box-sizing: border-box;
+        padding: 24%;
+      }
 
       /* ── ANNOUNCEMENT BAR ── */
       .announcement {
@@ -590,21 +596,20 @@
         color: var(--paper);
         text-decoration: none;
       }
-      .nav-logo .badge {
-        width: 52px;
+      .nav-wordmark {
+        display: block;
+        height: 36px;
+        width: auto;
       }
       .nav-logo-text {
-        font-size: 13px;
-        font-weight: 500;
-        line-height: 1.25;
-        color: var(--paper-74);
-      }
-      .nav-logo-text strong {
-        display: block;
+        padding-left: 14px;
+        border-left: 1.5px solid var(--paper-30);
+        font-size: 10.5px;
+        font-weight: 800;
+        line-height: 1.45;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
         color: var(--paper);
-        font-weight: 900;
-        font-size: 18px;
-        letter-spacing: -0.02em;
       }
       .nav-right {
         display: flex;
@@ -1236,9 +1241,11 @@
         border-bottom: 1.5px solid var(--paper-12);
         margin-bottom: 22px;
       }
-      .footer-left .badge {
-        width: 72px;
-        margin-bottom: 18px;
+      .footer-logo {
+        display: block;
+        width: 200px;
+        height: auto;
+        margin-bottom: 22px;
       }
       .footer-left p {
         font-size: 30px;
@@ -1488,8 +1495,8 @@
         nav {
           padding: 10px var(--gutter);
         }
-        .nav-logo .badge {
-          width: 42px;
+        .nav-wordmark {
+          height: 30px;
         }
         .nav-logo-text {
           display: none;
@@ -1651,11 +1658,9 @@
     <!-- NAV -->
     <nav>
       <a class="nav-logo" href="/">
-        <span class="badge"
-          ><img src="logo_hero.webp" alt="YXO" width="52" height="52"
-        /></span>
+        <img class="nav-wordmark" src="brand/yxo-logo/svg/yxo-wordmark-dark-bg.svg" alt="YXO" width="105" height="36" />
         <span class="nav-logo-text"
-          ><strong>YXO</strong>Young Extraordinary Odyssey</span
+          >Your Extraordinary<br />Opportunity</span
         >
       </a>
       <div class="nav-right">
@@ -1711,9 +1716,7 @@
               aria-hidden="true"
             ></span>
             <div class="kicker">From a YXO parent</div>
-            <span class="badge"
-              ><img src="logo_hero.webp" alt="" width="64" height="64"
-            /></span>
+            <span class="badge badge-mark"><img src="brand/yxo-logo/svg/yxo-mark-light-bg.svg" alt="" width="64" height="64" /></span>
             <div class="testimonial-track">
               <blockquote class="testimonial active">
                 <p class="testimonial-quote">
@@ -2612,14 +2615,7 @@
       <div class="footer-inner">
         <div class="footer-top">
           <div class="footer-left">
-            <span class="badge"
-              ><img
-                src="logo_hero.webp"
-                alt="YXO"
-                width="72"
-                height="72"
-                loading="lazy"
-            /></span>
+            <img class="footer-logo" src="brand/yxo-logo/svg/yxo-logo-dark-bg.svg" alt="YXO, Your Extraordinary Opportunity" width="200" height="87" loading="lazy" />
             <p>Think 10× bigger.</p>
           </div>
           <div class="footer-right">
@@ -2629,7 +2625,7 @@
           </div>
         </div>
         <div class="footer-copy">
-          <span>© 2026 Young Extraordinary Odyssey. All rights reserved.</span>
+          <span>© 2026 YXO. All rights reserved.</span>
           <span
             >yxo.world · <a href="terms.html">Terms</a> ·
             <a href="privacy.html">Privacy</a></span

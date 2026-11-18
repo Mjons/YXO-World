@@ -6,7 +6,7 @@ import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const here = dirname(fileURLToPath(import.meta.url));
-const logo = join(here, "..", "logo_icononly.png");
+const logo = join(here, "..", "brand", "archive", "old-logo", "logo_icononly.png");
 const W = 400,
   H = Math.round((W * 647) / 1024);
 const raw = execFileSync(
