@@ -7,6 +7,7 @@ The site has four forms. All send their answers to **Formspree** (formspree.io),
 | Waitlist           | "Join the waitlist →" button                              | Name, email, city, state/country, how they heard about YXO                                                                                                                                                                                                                                                             | `mzedjjql`        |
 | Workshop request   | "Request a workshop →" button                             | Name, email, city, number of students, age range, hosting space                                                                                                                                                                                                                                                        | `mvkzwwjk`        |
 | Virtual registration (Dec 5) | `register-virtual.html`, opened by the cohort card's Register button | Same as Miami registration below, for any number of teens, minus the food-allergy questions. The checkbox asks the teen to stay on camera, engaged and phone-free | `xqppezva` (shared with Miami; the `cohort` line and the email subject tell them apart) |
+| Alpine registration (Dec 12) | `register-alpine.html`, opened by the Alpine cohort card's Register button | Same as virtual registration, plus the food-allergy questions from Miami. The checkbox asks the teen to stay engaged and phone-free for the whole day | `xqppezva` (shared; the `cohort` line and the email subject "New YXO Alpine registration" tell them apart) |
 | Miami registration (closed) | `register-miami.html`, now sends visitors on to `register-virtual.html` | Teen's name, date of birth, grade, school; parent's name, email, phone; emergency contact's name, phone and relationship; food allergies and details; medical conditions, medication or other needs and details; how they heard about YXO; the phone-free-day checkbox; optional photo consent; agreement to the Terms | `xqppezva`        |
 
 ## The Dec 5 virtual cohort
@@ -26,6 +27,20 @@ Canadian visitors (and others) may see the price in their own currency first. Th
 Other differences from Miami: no food-allergy questions; ages are checked against Dec 5, 2026 (a date of birth from Dec 6, 2008 to Dec 5, 2013); the checkbox asks teens to stay on camera, engaged and phone-free. The old 2-student virtual link is deactivated and must not be used.
 
 `register-miami.html` now redirects to `register-virtual.html`, keeping `?code=`, so old Miami ads and links reach the open cohort. Delete the redirect block at the top of that file to reopen it. The two Miami Payment Links are still active in Stripe, so someone with a saved Miami link can still pay $300.
+
+## The Dec 12 Alpine, NJ cohort
+
+In person in Alpine, NJ, Sat, Dec 12, 2026. **$300 USD per student**, no sibling or bundle pricing. Times and the exact address are not on the site yet: the thank-you page and calendar invite say they come by email.
+
+It works exactly like the virtual cohort above (multi-teen form, one payment with quantity = number of teens), with these differences:
+
+- Page: `register-alpine.html`. Reference codes look like `yxo-alp-7k2p9q`.
+- Payment Link: `https://buy.stripe.com/14AeVcbcq3vFfdd6Jp9AA04` (`STRIPE_LINK` at the top of the script). In Stripe it must allow adjustable quantity, have promotion codes on, and send parents to `https://yxo.world/thank-you-alpine.html` after paying.
+- If `STRIPE_LINK` is ever blanked, the form still saves registrations and the last step tells parents a payment link is coming by email within one business day.
+- Food-allergy questions are back (in person). Allergy details are health information: see the privacy notes below.
+- Ages are checked against Dec 12, 2026 (a date of birth from Dec 13, 2008 to Dec 12, 2013).
+- `thank-you-alpine.html` offers an all-day calendar invite for Dec 12. Once the times are set, change it to timed `DTSTART`/`DTEND` (UTC; Eastern is UTC-5) and update the "Schedule" box.
+- **Email every family the schedule, address, drop-off details and packing list before Dec 12.**
 
 ## How Miami registration worked
 
